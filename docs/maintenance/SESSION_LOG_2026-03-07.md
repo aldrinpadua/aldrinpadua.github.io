@@ -46,6 +46,41 @@ This file records major work completed in the repository on March 7, 2026.
 - Refined About layout to reduce awkward card sizing by using consistent grid/card height behavior.
 - Build validation completed successfully with `ASTRO_TELEMETRY_DISABLED=1 npm run build`.
 
+### 16:27 ET
+- Adjusted About grid to display cards in horizontal columns on desktop.
+- Removed unintended vertical stacking effect caused by adjacent `.content-card` margin behavior inside the About grid.
+- Kept mobile responsiveness unchanged (single-column under mobile breakpoint).
+
+### 16:30 ET
+- Updated GitHub social handling for privacy/compliance:
+  - Removed direct personal GitHub link from public socials list
+  - Kept GitHub icon/label visible
+  - Added note that GitHub/project details can be provided on request after securing proper permissions due to government-associated private work
+- Updated About and Contact social components to render non-public placeholders as disabled, non-clickable items.
+- Added styling for disabled social items.
+
+### 16:32 ET
+- Hid `Projects` and `Insights` tabs from visible site navigation:
+  - header navbar
+  - footer quick links
+- Preserved Projects/Insights routes in codebase for future activation.
+
+### 16:35 ET
+- Updated hero summary text to be more informative while preserving professional, factual positioning.
+- Applied justified text alignment for the hero summary paragraph.
+- Added new logo asset (`public/assets/site-logo.svg`).
+- Updated navbar branding:
+  - logo icon in front of name
+  - brand name rendered in all caps
+  - responsive centering preserved on smaller viewports.
+
+### 16:37 ET
+- Refactored navbar for true responsive behavior by device width:
+  - desktop keeps always-visible link row
+  - mobile/tablet uses toggle button and collapsible menu
+- Added accessible nav toggle state handling (`aria-expanded`) and automatic close when a menu link is selected.
+- Updated CSS breakpoints, spacing, and menu layout for small screens.
+
 ## Notable Constraints Enforced
 
 - No phone number published

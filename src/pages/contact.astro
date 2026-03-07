@@ -28,14 +28,25 @@ import { socials } from '../data/socials';
       <h2>Social Profiles</h2>
       <ul class="social-list">
         {
-          socials.map((social) => (
-            <li>
-              <a href={social.url} target="_blank" rel="noreferrer">
-                <Icon name={social.icon} class="icon" />
-                <span>{social.label}</span>
-              </a>
-            </li>
-          ))
+          socials.map((social) => {
+            const isExternal = social.url.startsWith('http');
+            const isPlaceholder = social.url === '#';
+            return (
+              <li>
+                {isPlaceholder ? (
+                  <span class="social-inline is-disabled" aria-disabled="true">
+                    <Icon name={social.icon} class="icon" />
+                    <span>{social.label}</span>
+                  </span>
+                ) : (
+                  <a href={social.url} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noreferrer' : undefined}>
+                    <Icon name={social.icon} class="icon" />
+                    <span>{social.label}</span>
+                  </a>
+                )}
+              </li>
+            );
+          })
         }
       </ul>
       {

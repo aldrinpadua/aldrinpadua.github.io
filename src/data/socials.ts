@@ -8,8 +8,9 @@ export const socials: SocialLink[] = [
   },
   {
     label: 'GitHub',
-    url: 'https://github.com/aldrinpadua',
-    icon: 'github'
+    url: '#',
+    icon: 'github',
+    note: 'GitHub project details can be provided on request after proper permissions are secured, as related projects are government-associated and private.'
   },
   {
     label: 'Email',

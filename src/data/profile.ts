@@ -4,7 +4,7 @@ export const profile: Profile = {
   name: 'Aldrin Padua',
   title: 'Robotics Researcher and Engineer',
   heroSummary:
-    'Ph.D. researcher focused on human-safe manipulation, digital human modeling, and simulation-driven robotics. I build and evaluate systems by combining control, simulation, and mechatronic prototyping for physically interactive tasks.',
+    'Ph.D. researcher focused on human-safe manipulation, digital human modeling, and simulation-driven robotics for physically interactive tasks. I work across algorithm development, controls, and prototype implementation, using ROS2/Gazebo/OpenSim-centered workflows to connect simulation evidence with practical mechatronic design decisions.',
   professionalPositioning:
     'I work at the intersection of robotics research and hands-on engineering execution, translating simulation insights into practical robotic system design and validation.',
   aboutSummary:

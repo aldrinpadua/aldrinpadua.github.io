@@ -68,12 +68,26 @@ import { socials } from '../data/socials';
 
     <div class="social-row" aria-label="Social profiles">
       {
-        socials.map((social) => (
-          <a class="social-pill" href={social.url} target="_blank" rel="noreferrer">
-            <Icon name={social.icon} class="icon" />
-            <span>{social.label}</span>
-          </a>
-        ))
+        socials.map((social) => {
+          const isExternal = social.url.startsWith('http');
+          const isMail = social.url.startsWith('mailto:');
+          const isPlaceholder = social.url === '#';
+          if (isPlaceholder) {
+            return (
+              <span class="social-pill is-disabled" aria-disabled="true">
+                <Icon name={social.icon} class="icon" />
+                <span>{social.label}</span>
+              </span>
+            );
+          }
+          return (
+            <a class="social-pill" href={social.url} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noreferrer' : undefined}>
+              <Icon name={social.icon} class="icon" />
+              <span>{social.label}</span>
+              {isMail && <span class="sr-only"> (email link)</span>}
+            </a>
+          );
+        })
       }
     </div>
 
