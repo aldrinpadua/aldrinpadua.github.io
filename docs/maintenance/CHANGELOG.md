@@ -4,6 +4,20 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 16:48 ET - Home section swap + robotics logo update
+- Hid Featured Projects and Latest Insights previews from Home page
+- Added new animated skill-logo wall section on Home with side-wall bouncing skill badges
+- Added reusable `SkillLogoWall.astro` component
+- Updated navbar/site logo to a larger robotics/mechanical engineering-inspired mark
+- Preserved responsive behavior by hiding side-wall animation on smaller screens
+
+### 16:45 ET - Navbar alignment, animated header effect, grayscale theme
+- Adjusted navbar layout so brand (logo + name) and tabs align cleanly on the same row for desktop
+- Preserved mobile responsive menu behavior with toggle menu
+- Added subtle animated grid-style background effect to the navigation header
+- Updated site-wide color motif to black/white/shades of gray
+- Refreshed logo, favicon, and social preview image assets to grayscale palette
+
 ### 16:37 ET - Responsive navigation behavior improved
 - Reworked navbar to use device-aware behavior:
   - desktop: full inline navigation links

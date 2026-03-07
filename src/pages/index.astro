@@ -1,27 +1,11 @@
 ---
-import { getCollection } from 'astro:content';
 import MainLayout from '../layouts/MainLayout.astro';
 import Hero from '../components/Hero.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import InsightCard from '../components/InsightCard.astro';
+import SkillLogoWall from '../components/SkillLogoWall.astro';
 import { profile } from '../data/profile';
 import { experience } from '../data/experience';
 import { publications } from '../data/publications';
 import { skillGroups } from '../data/skills';
-import { contentSettings } from '../data/contentSettings';
-
-const projects = (await getCollection('projects'))
-  .filter((entry) => !entry.data.draft)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-
-const featuredProjects = projects
-  .filter((project) => project.data.featured)
-  .slice(0, contentSettings.homepageFeaturedProjects);
-
-const insights = (await getCollection('insights'))
-  .filter((entry) => !entry.data.draft)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, contentSettings.homepageLatestInsights);
 ---
 
 <MainLayout title="Home" description={profile.seoDescription}>
@@ -57,27 +41,5 @@ const insights = (await getCollection('insights'))
     </article>
   </section>
 
-  {featuredProjects.length > 0 && (
-    <section class="stack-section" aria-label="Homepage featured projects">
-      <div class="section-row">
-        <h2>Featured Projects</h2>
-        <a class="inline-link" href="/projects">View all projects</a>
-      </div>
-      <div class="project-grid">
-        {featuredProjects.map((project) => <ProjectCard project={project} compact={true} />)}
-      </div>
-    </section>
-  )}
-
-  {insights.length > 0 && (
-    <section class="stack-section" aria-label="Homepage latest insights">
-      <div class="section-row">
-        <h2>Latest Insights</h2>
-        <a class="inline-link" href="/insights">View all insights</a>
-      </div>
-      <div class="project-grid">
-        {insights.map((insight) => <InsightCard insight={insight} />)}
-      </div>
-    </section>
-  )}
+  <SkillLogoWall />
 </MainLayout>

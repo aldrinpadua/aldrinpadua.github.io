@@ -81,6 +81,25 @@ This file records major work completed in the repository on March 7, 2026.
 - Added accessible nav toggle state handling (`aria-expanded`) and automatic close when a menu link is selected.
 - Updated CSS breakpoints, spacing, and menu layout for small screens.
 
+### 16:45 ET
+- Updated navbar alignment so desktop tabs line up with the logo/name brand row.
+- Added a subtle animated background layer to the sticky header for a more polished technical feel.
+- Shifted overall site visual motif to grayscale (black/white/shades of gray):
+  - root color tokens and component accents
+  - status badges, chips, filters, and cards
+  - hero and section decorative layers
+- Updated branding assets to match grayscale motif:
+  - `public/assets/site-logo.svg`
+  - `public/assets/favicon.svg`
+  - `public/assets/og-image.svg`
+
+### 16:48 ET
+- Home page adjustments:
+  - removed Featured Projects and Latest Insights preview sections
+  - added animated skill-logo wall section (`SkillLogoWall.astro`) with side-wall bounce motion
+- Updated site logo to a larger robotics/mechanical-themed mark and retained navbar brand alignment.
+- Added responsive fallback so skill-wall side animations are hidden on small screens.
+
 ## Notable Constraints Enforced
 
 - No phone number published

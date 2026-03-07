@@ -1,0 +1,51 @@
+---
+const leftWall = [
+  { label: 'ROS2', mark: 'R2' },
+  { label: 'Gazebo', mark: 'GZ' },
+  { label: 'OpenSim', mark: 'OS' },
+  { label: 'Python', mark: 'PY' },
+  { label: 'MATLAB', mark: 'ML' }
+];
+
+const rightWall = [
+  { label: 'Control', mark: 'CT' },
+  { label: 'SolidWorks', mark: 'SW' },
+  { label: 'Simulink', mark: 'SL' },
+  { label: 'OpenCV', mark: 'CV' },
+  { label: 'ROS2', mark: 'R2' }
+];
+---
+
+<section class="skill-wall-section reveal" aria-label="Core skill logos">
+  <div class="skill-wall left" aria-hidden="true">
+    {
+      leftWall.map((item, index) => (
+        <div class="skill-logo" style={`--delay:${index * 0.35}s;`}>
+          <span class="mark">{item.mark}</span>
+          <span class="label">{item.label}</span>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="skill-wall-center card">
+    <p class="card-kicker">Technical Toolkit</p>
+    <h2>Simulation, Controls, and Prototype Engineering Stack</h2>
+    <p>
+      Core tools span ROS2-centered robotics workflows, simulation and digital human modeling, controls analysis,
+      and practical prototyping platforms used across research and implementation.
+    </p>
+    <a class="inline-link" href="/skills">Explore full skills</a>
+  </div>
+
+  <div class="skill-wall right" aria-hidden="true">
+    {
+      rightWall.map((item, index) => (
+        <div class="skill-logo" style={`--delay:${index * 0.3}s;`}>
+          <span class="mark">{item.mark}</span>
+          <span class="label">{item.label}</span>
+        </div>
+      ))
+    }
+  </div>
+</section>
