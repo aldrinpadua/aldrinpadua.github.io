@@ -91,6 +91,7 @@ const skillLogos = [
           y: Math.min(Math.max(0, y), bounds.height - height),
           vx: Math.cos(tangent) * speed * (Math.random() > 0.5 ? 1 : -1),
           vy: Math.sin(tangent) * speed * (Math.random() > 0.5 ? 1 : -1),
+          radius: Math.max(width, height) * 0.42,
           width,
           height
         };
@@ -144,7 +145,54 @@ const skillLogos = [
             particle.vy -= 2 * velocityDot * uy;
           }
         }
+      }
 
+      // Resolve pairwise collisions so logos bounce off each other.
+      for (let i = 0; i < particles.length - 1; i += 1) {
+        for (let j = i + 1; j < particles.length; j += 1) {
+          const a = particles[i];
+          const b = particles[j];
+          const ax = a.x + a.width / 2;
+          const ay = a.y + a.height / 2;
+          const bx = b.x + b.width / 2;
+          const by = b.y + b.height / 2;
+          let dx = bx - ax;
+          let dy = by - ay;
+          let dist = Math.hypot(dx, dy);
+          const minimum = a.radius + b.radius;
+
+          if (dist === 0) {
+            dx = 0.001;
+            dy = 0.001;
+            dist = 0.0014;
+          }
+
+          if (dist < minimum) {
+            const nx = dx / dist;
+            const ny = dy / dist;
+            const overlap = (minimum - dist) / 2;
+
+            a.x -= nx * overlap;
+            a.y -= ny * overlap;
+            b.x += nx * overlap;
+            b.y += ny * overlap;
+
+            const relative =
+              (b.vx - a.vx) * nx + (b.vy - a.vy) * ny;
+
+            if (relative < 0) {
+              const restitution = 0.92;
+              const impulse = (-(1 + restitution) * relative) / 2;
+              a.vx -= impulse * nx;
+              a.vy -= impulse * ny;
+              b.vx += impulse * nx;
+              b.vy += impulse * ny;
+            }
+          }
+        }
+      }
+
+      for (const particle of particles) {
         setPosition(particle);
       }
 

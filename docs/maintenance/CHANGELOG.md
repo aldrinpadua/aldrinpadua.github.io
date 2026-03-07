@@ -4,6 +4,11 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 18:11 ET - Home skills logos now bounce off each other
+- Added pairwise collision detection/resolution between moving skill logos in Home skills arena
+- Implemented elastic-style velocity response and overlap separation for node-to-node impacts
+- Preserved existing wall and center-hub collision behavior
+
 ### 18:09 ET - Navbar top-region visibility/contrast enhancement
 - Increased navbar visual separation from global background for users primarily viewing the top strip
 - Strengthened header contrast, shadow, border, and top-line accent treatment

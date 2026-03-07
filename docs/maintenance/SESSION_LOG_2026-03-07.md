@@ -207,6 +207,10 @@ This file records major work completed in the repository on March 7, 2026.
   - refined border/shadow/accent treatment while keeping engineering motif
 - Kept existing animation behavior and reduced-motion safeguards.
 
+### 18:11 ET
+- Updated Home skills arena motion physics so moving logos bounce off each other.
+- Added pairwise collision resolution (separation + elastic velocity response) while keeping wall/center collisions active.
+
 ## Notable Constraints Enforced
 
 - No phone number published
