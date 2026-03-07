@@ -47,44 +47,46 @@ body {
   pointer-events: none;
   overflow: hidden;
   background:
-    radial-gradient(circle at 14% 18%, rgba(74, 163, 255, 0.09), transparent 32%),
-    radial-gradient(circle at 86% 24%, rgba(65, 219, 178, 0.08), transparent 36%),
-    radial-gradient(circle at 52% 86%, rgba(255, 193, 99, 0.08), transparent 38%);
+    radial-gradient(circle at 50% 115%, rgba(94, 170, 224, 0.1), transparent 44%),
+    linear-gradient(180deg, rgba(245, 249, 253, 0.95) 0%, rgba(233, 241, 248, 0.92) 100%);
 }
 
 .robotics-bg-grid {
   position: absolute;
-  inset: -8%;
-  opacity: 0.3;
+  inset: -10%;
+  opacity: 0.42;
   background-image:
-    linear-gradient(to right, rgba(70, 95, 122, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(70, 95, 122, 0.08) 1px, transparent 1px);
-  background-size: 44px 44px;
-  animation: bg-grid-drift 40s linear infinite;
+    radial-gradient(circle, rgba(64, 112, 158, 0.14) 1.1px, transparent 1.2px),
+    linear-gradient(to right, rgba(112, 147, 183, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(112, 147, 183, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px, 56px 56px, 56px 56px;
+  animation: bg-matrix-drift 34s linear infinite;
 }
 
 .robotics-bg::before {
   content: '';
   position: absolute;
-  width: 65vmax;
-  height: 65vmax;
-  top: -28vmax;
-  left: -26vmax;
+  width: 88vmax;
+  height: 88vmax;
+  top: -45vmax;
+  right: -32vmax;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(93, 133, 180, 0.14), transparent 65%);
-  animation: bg-orb-float 24s ease-in-out infinite;
+  background:
+    repeating-radial-gradient(
+      circle,
+      rgba(74, 133, 190, 0.14) 0 1.5px,
+      transparent 1.5px 34px
+    );
+  animation: bg-ring-rotate 60s linear infinite;
 }
 
 .robotics-bg::after {
   content: '';
   position: absolute;
-  width: 52vmax;
-  height: 52vmax;
-  right: -20vmax;
-  bottom: -22vmax;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(82, 197, 167, 0.12), transparent 64%);
-  animation: bg-orb-float 28s ease-in-out infinite reverse;
+  inset: -22% -8%;
+  background:
+    linear-gradient(115deg, transparent 0 44%, rgba(109, 187, 235, 0.12) 50%, transparent 56%);
+  animation: bg-scan 12s ease-in-out infinite;
 }
 
 .robotics-bg-network {
@@ -92,20 +94,20 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.3;
-  animation: bg-network-drift 34s linear infinite;
+  opacity: 0.36;
+  animation: bg-trace-slide 28s linear infinite;
 }
 
 .robotics-bg-network path {
   fill: none;
-  stroke: rgba(40, 88, 135, 0.22);
-  stroke-width: 0.28;
-  stroke-dasharray: 2.5 2.3;
+  stroke: rgba(52, 112, 170, 0.26);
+  stroke-width: 0.34;
+  stroke-dasharray: 2.2 2.8;
 }
 
 .robotics-bg-network circle {
-  fill: rgba(52, 118, 186, 0.38);
-  animation: bg-node-pulse 6s ease-in-out infinite;
+  fill: rgba(53, 139, 223, 0.44);
+  animation: bg-node-glow 5.6s ease-in-out infinite;
 }
 
 img,
@@ -406,43 +408,55 @@ button:focus-visible {
   }
 }
 
-@keyframes bg-grid-drift {
+@keyframes bg-matrix-drift {
   from {
     transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translate3d(44px, 22px, 0);
+    transform: translate3d(56px, 28px, 0);
   }
 }
 
-@keyframes bg-network-drift {
+@keyframes bg-trace-slide {
   from {
-    transform: translateX(0);
+    transform: translateX(-6%);
   }
   to {
     transform: translateX(8%);
   }
 }
 
-@keyframes bg-orb-float {
+@keyframes bg-ring-rotate {
   0%,
   100% {
-    transform: translate3d(0, 0, 0);
+    transform: rotate(0deg);
   }
-  50% {
-    transform: translate3d(16px, -12px, 0);
+  to {
+    transform: rotate(360deg);
   }
 }
 
-@keyframes bg-node-pulse {
+@keyframes bg-scan {
+  0%,
+  100% {
+    transform: translateX(-8%);
+    opacity: 0.38;
+  }
+  50% {
+    transform: translateX(8%);
+    opacity: 0.72;
+  }
+}
+
+@keyframes bg-node-glow {
   0%,
   100% {
     opacity: 0.24;
     transform: scale(1);
   }
   50% {
-    opacity: 0.52;
-    transform: scale(1.45);
+    opacity: 0.6;
+    transform: scale(1.35);
   }
 }
 
