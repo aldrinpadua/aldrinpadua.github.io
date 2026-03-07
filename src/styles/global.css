@@ -28,12 +28,84 @@ html {
 body {
   margin: 0;
   color: var(--text);
-  background:
-    radial-gradient(circle at 90% -5%, rgba(0, 0, 0, 0.08), transparent 42%),
-    linear-gradient(180deg, #f8f8f8 0%, var(--bg) 48%, #e8eaed 100%);
+  background: linear-gradient(180deg, #f9fbfd 0%, #eef2f6 100%);
   font-family: 'IBM Plex Sans', 'Segoe UI', Roboto, sans-serif;
   text-rendering: optimizeLegibility;
   line-height: 1.72;
+  position: relative;
+}
+
+.site-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.robotics-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(74, 163, 255, 0.09), transparent 32%),
+    radial-gradient(circle at 86% 24%, rgba(65, 219, 178, 0.08), transparent 36%),
+    radial-gradient(circle at 52% 86%, rgba(255, 193, 99, 0.08), transparent 38%);
+}
+
+.robotics-bg-grid {
+  position: absolute;
+  inset: -8%;
+  opacity: 0.3;
+  background-image:
+    linear-gradient(to right, rgba(70, 95, 122, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(70, 95, 122, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  animation: bg-grid-drift 40s linear infinite;
+}
+
+.robotics-bg::before {
+  content: '';
+  position: absolute;
+  width: 65vmax;
+  height: 65vmax;
+  top: -28vmax;
+  left: -26vmax;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(93, 133, 180, 0.14), transparent 65%);
+  animation: bg-orb-float 24s ease-in-out infinite;
+}
+
+.robotics-bg::after {
+  content: '';
+  position: absolute;
+  width: 52vmax;
+  height: 52vmax;
+  right: -20vmax;
+  bottom: -22vmax;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(82, 197, 167, 0.12), transparent 64%);
+  animation: bg-orb-float 28s ease-in-out infinite reverse;
+}
+
+.robotics-bg-network {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  animation: bg-network-drift 34s linear infinite;
+}
+
+.robotics-bg-network path {
+  fill: none;
+  stroke: rgba(40, 88, 135, 0.22);
+  stroke-width: 0.28;
+  stroke-dasharray: 2.5 2.3;
+}
+
+.robotics-bg-network circle {
+  fill: rgba(52, 118, 186, 0.38);
+  animation: bg-node-pulse 6s ease-in-out infinite;
 }
 
 img,
@@ -107,8 +179,8 @@ button:focus-visible {
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
-  background: color-mix(in srgb, #f8f8f8 88%, transparent);
+  border-bottom: 1px solid rgba(23, 32, 45, 0.7);
+  background: linear-gradient(180deg, rgba(20, 29, 40, 0.94) 0%, rgba(29, 41, 56, 0.9) 100%);
   backdrop-filter: blur(10px);
   overflow: hidden;
 }
@@ -118,10 +190,10 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+    linear-gradient(to right, rgba(150, 182, 220, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(150, 182, 220, 0.12) 1px, transparent 1px);
   background-size: 30px 30px;
-  opacity: 0.35;
+  opacity: 0.42;
   mask-image: linear-gradient(to right, transparent, #000 16%, #000 84%, transparent);
   animation: nav-grid 18s linear infinite;
   pointer-events: none;
@@ -152,7 +224,7 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 0.52rem;
-  color: var(--text);
+  color: #f4f8fc;
   font-size: 1.12rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -167,10 +239,10 @@ button:focus-visible {
 
 .nav-toggle {
   display: none;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(168, 189, 214, 0.5);
   border-radius: 10px;
-  background: #f5f5f5;
-  color: var(--text);
+  background: rgba(241, 247, 255, 0.12);
+  color: #e9f2fb;
   font-size: 0.86rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -189,7 +261,7 @@ button:focus-visible {
 }
 
 .nav li a {
-  color: var(--muted);
+  color: rgba(229, 238, 248, 0.88);
   font-size: 0.92rem;
   font-weight: 500;
   border-radius: 999px;
@@ -199,8 +271,8 @@ button:focus-visible {
 
 .nav li a.active,
 .nav li a:hover {
-  color: var(--brand-strong);
-  background: color-mix(in srgb, #dddddd 64%, white);
+  color: #ffffff;
+  background: rgba(132, 170, 211, 0.28);
   text-decoration: none;
 }
 
@@ -334,23 +406,43 @@ button:focus-visible {
   }
 }
 
-@keyframes wall-bounce-left {
-  0%,
-  100% {
-    transform: translateX(0);
+@keyframes bg-grid-drift {
+  from {
+    transform: translate3d(0, 0, 0);
   }
-  50% {
-    transform: translateX(13px);
+  to {
+    transform: translate3d(44px, 22px, 0);
   }
 }
 
-@keyframes wall-bounce-right {
-  0%,
-  100% {
+@keyframes bg-network-drift {
+  from {
     transform: translateX(0);
   }
+  to {
+    transform: translateX(8%);
+  }
+}
+
+@keyframes bg-orb-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
   50% {
-    transform: translateX(-13px);
+    transform: translate3d(16px, -12px, 0);
+  }
+}
+
+@keyframes bg-node-pulse {
+  0%,
+  100% {
+    opacity: 0.24;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.52;
+    transform: scale(1.45);
   }
 }
 
@@ -382,8 +474,17 @@ button:focus-visible {
 .hero-summary {
   max-width: 67ch;
   color: #3f444a;
+}
+
+main :where(p, li) {
   text-align: justify;
   text-justify: inter-word;
+}
+
+main [style*='text-align: center'] :where(p, li),
+main :where(p, li).text-center,
+main :where(p, li)[style*='text-align: center'] {
+  text-align: center;
 }
 
 .hero-cta {
@@ -438,13 +539,16 @@ button:focus-visible {
 }
 
 .icon-badge {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  border: 1px solid #c6cace;
-  background: #f0f2f4;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  border: 1px solid #c6d0db;
+  background:
+    radial-gradient(circle at 26% 22%, rgba(255, 255, 255, 0.8), transparent 35%),
+    linear-gradient(150deg, rgba(73, 120, 172, 0.2), rgba(94, 197, 166, 0.2));
   display: grid;
   place-items: center;
+  box-shadow: 0 12px 24px rgba(43, 71, 103, 0.14);
 }
 
 .icon {
@@ -452,6 +556,44 @@ button:focus-visible {
   height: 21px;
   fill: currentColor;
   color: var(--brand);
+}
+
+.section-icon {
+  width: 34px;
+  height: 34px;
+  filter: drop-shadow(0 3px 5px rgba(18, 28, 42, 0.18));
+}
+
+.icon-about {
+  color: #f97316;
+}
+
+.icon-education {
+  color: #2563eb;
+}
+
+.icon-experience {
+  color: #06b6d4;
+}
+
+.icon-publication {
+  color: #8b5cf6;
+}
+
+.icon-project {
+  color: #10b981;
+}
+
+.icon-insight {
+  color: #ef4444;
+}
+
+.icon-skills {
+  color: #0ea5e9;
+}
+
+.icon-contact {
+  color: #ec4899;
 }
 
 .overview-grid,
@@ -481,83 +623,105 @@ button:focus-visible {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-.skill-wall-section {
+.skill-arena-section {
   margin-top: 2rem;
+}
+
+.skill-arena {
   position: relative;
-  min-height: 300px;
+  min-height: 420px;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, #ffffff 0%, #f1f2f3 100%);
+  background:
+    radial-gradient(circle at 50% 50%, #ffffff 0%, #f1f3f5 48%, #e8ebef 100%),
+    linear-gradient(130deg, rgba(0, 0, 0, 0.045), transparent 55%);
   box-shadow: var(--shadow-card);
   overflow: hidden;
-  display: grid;
-  place-items: center;
 }
 
-.skill-wall-center {
-  position: relative;
-  z-index: 2;
-  width: min(92%, 720px);
-}
-
-.skill-wall {
+.skill-core {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 135px;
-  display: grid;
-  align-content: center;
-  gap: 0.75rem;
-  padding: 1rem 0.6rem;
-}
-
-.skill-wall.left {
-  left: 0;
-}
-
-.skill-wall.right {
-  right: 0;
-}
-
-.skill-logo {
-  display: grid;
-  grid-template-columns: 38px 1fr;
-  gap: 0.5rem;
-  align-items: center;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: #f6f7f8;
-  padding: 0.42rem 0.52rem;
-  box-shadow: 0 7px 16px rgba(0, 0, 0, 0.08);
-}
-
-.skill-wall.left .skill-logo {
-  animation: wall-bounce-left 2.8s ease-in-out infinite;
-  animation-delay: var(--delay);
-}
-
-.skill-wall.right .skill-logo {
-  animation: wall-bounce-right 2.8s ease-in-out infinite;
-  animation-delay: var(--delay);
-}
-
-.skill-logo .mark {
-  width: 30px;
-  height: 30px;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: clamp(138px, 22vw, 220px);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  border: 2px solid #282d33;
+  background: radial-gradient(circle at 38% 32%, #2f353c 0%, #121519 78%);
+  color: #f5f8fb;
   display: grid;
   place-items: center;
-  border-radius: 8px;
-  background: #212428;
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  box-shadow: 0 16px 30px rgba(11, 14, 18, 0.24);
 }
 
-.skill-logo .label {
-  font-size: 0.78rem;
-  color: var(--muted);
-  font-weight: 600;
+.skill-core span {
+  font-family: 'Space Grotesk', 'IBM Plex Sans', sans-serif;
+  font-size: clamp(1.2rem, 2.9vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.skill-orbit {
+  position: absolute;
+  inset: 0;
+}
+
+.skill-node {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: clamp(68px, 8vw, 88px);
+  min-height: clamp(68px, 8vw, 88px);
+  padding: 0.5rem 0.35rem 0.4rem;
+  border: 1px solid #c6cbd2;
+  border-radius: 16px;
+  background: rgba(247, 248, 250, 0.95);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  user-select: none;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.skill-node img {
+  width: clamp(24px, 3.2vw, 34px);
+  height: clamp(24px, 3.2vw, 34px);
+  object-fit: contain;
+  margin-bottom: 0.28rem;
+}
+
+.skill-node span {
+  text-align: center;
+  font-size: clamp(0.59rem, 1.1vw, 0.7rem);
+  line-height: 1.2;
+  color: #2a3036;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.skill-arena-link {
+  display: inline-block;
+  margin-top: 0.72rem;
+}
+
+.skill-arena-section .inline-link {
+  font-weight: 700;
+}
+
+.skill-arena::before {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border-radius: calc(var(--radius-lg) - 4px);
+  border: 1px dashed rgba(49, 56, 64, 0.15);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-node {
+    transition: transform 0.25s ease;
+  }
 }
 
 .card,
@@ -1069,6 +1233,10 @@ button:focus-visible {
   .reveal.is-visible,
   .orb,
   .grid-layer,
+  .robotics-bg-grid,
+  .robotics-bg::before,
+  .robotics-bg::after,
+  .robotics-bg-network,
   .path-field path,
   .path-field circle {
     animation: none !important;
@@ -1131,6 +1299,16 @@ button:focus-visible {
   .nav[data-open='true'] .nav-list {
     grid-template-columns: 1fr;
   }
+
+  .icon-badge {
+    width: 56px;
+    height: 56px;
+  }
+
+  .section-icon {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media (max-width: 760px) {
@@ -1154,17 +1332,8 @@ button:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .skill-wall-section {
-    min-height: auto;
-    padding: 1rem;
-  }
-
-  .skill-wall {
-    display: none;
-  }
-
-  .skill-wall-center {
-    width: 100%;
+  .skill-arena {
+    min-height: 360px;
   }
 
   .article-nav {

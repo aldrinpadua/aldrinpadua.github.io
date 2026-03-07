@@ -1,51 +1,157 @@
 ---
-const leftWall = [
-  { label: 'ROS2', mark: 'R2' },
-  { label: 'Gazebo', mark: 'GZ' },
-  { label: 'OpenSim', mark: 'OS' },
-  { label: 'Python', mark: 'PY' },
-  { label: 'MATLAB', mark: 'ML' }
-];
-
-const rightWall = [
-  { label: 'Control', mark: 'CT' },
-  { label: 'SolidWorks', mark: 'SW' },
-  { label: 'Simulink', mark: 'SL' },
-  { label: 'OpenCV', mark: 'CV' },
-  { label: 'ROS2', mark: 'R2' }
+const skillLogos = [
+  { label: 'Python', logo: 'https://cdn.simpleicons.org/python/3776AB' },
+  { label: 'C++', logo: 'https://cdn.simpleicons.org/cplusplus/00599C' },
+  { label: 'Java', logo: 'https://cdn.simpleicons.org/openjdk/FFFFFF' },
+  { label: 'ROS2', logo: 'https://cdn.simpleicons.org/ros/22314E' },
+  { label: 'Git', logo: 'https://cdn.simpleicons.org/git/F05032' },
+  { label: 'GitHub', logo: 'https://cdn.simpleicons.org/github/181717' },
+  { label: 'Ubuntu', logo: 'https://cdn.simpleicons.org/ubuntu/E95420' },
+  { label: 'OpenCV', logo: 'https://cdn.simpleicons.org/opencv/5C3EE8' },
+  { label: 'TensorFlow', logo: 'https://cdn.simpleicons.org/tensorflow/FF6F00' },
+  { label: 'Keras', logo: 'https://cdn.simpleicons.org/keras/D00000' },
+  { label: 'Scikit-learn', logo: 'https://cdn.simpleicons.org/scikitlearn/F7931E' },
+  { label: 'Arduino', logo: 'https://cdn.simpleicons.org/arduino/00878F' },
+  { label: 'Raspberry Pi', logo: 'https://cdn.simpleicons.org/raspberrypi/A22846' },
+  { label: 'SolidWorks', logo: 'https://cdn.simpleicons.org/dassaultsystemes/005386' }
 ];
 ---
 
-<section class="skill-wall-section reveal" aria-label="Core skill logos">
-  <div class="skill-wall left" aria-hidden="true">
-    {
-      leftWall.map((item, index) => (
-        <div class="skill-logo" style={`--delay:${index * 0.35}s;`}>
-          <span class="mark">{item.mark}</span>
-          <span class="label">{item.label}</span>
-        </div>
-      ))
-    }
+<section class="skill-arena-section reveal" aria-label="Core skill logos">
+  <div class="skill-arena" data-skill-arena>
+    <div class="skill-core" aria-label="Skills center">
+      <span>SKILLS</span>
+    </div>
+
+    <div class="skill-orbit" aria-hidden="true">
+      {
+        skillLogos.map((item) => (
+          <div class="skill-node" data-skill-node>
+            <img src={item.logo} alt="" loading="lazy" decoding="async" />
+            <span>{item.label}</span>
+          </div>
+        ))
+      }
+    </div>
   </div>
 
-  <div class="skill-wall-center card">
-    <p class="card-kicker">Technical Toolkit</p>
-    <h2>Simulation, Controls, and Prototype Engineering Stack</h2>
-    <p>
-      Core tools span ROS2-centered robotics workflows, simulation and digital human modeling, controls analysis,
-      and practical prototyping platforms used across research and implementation.
-    </p>
-    <a class="inline-link" href="/skills">Explore full skills</a>
-  </div>
-
-  <div class="skill-wall right" aria-hidden="true">
-    {
-      rightWall.map((item, index) => (
-        <div class="skill-logo" style={`--delay:${index * 0.3}s;`}>
-          <span class="mark">{item.mark}</span>
-          <span class="label">{item.label}</span>
-        </div>
-      ))
-    }
-  </div>
+  <a class="inline-link skill-arena-link" href="/skills">Explore full skills</a>
 </section>
+
+<script>
+  const arena = document.querySelector('[data-skill-arena]');
+
+  if (arena) {
+    const nodes = Array.from(arena.querySelectorAll('[data-skill-node]'));
+    const core = arena.querySelector('.skill-core');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let particles = [];
+    let rafId = 0;
+
+    const randomSpeed = () => 0.65 + Math.random() * 0.65;
+
+    const measure = () => {
+      const bounds = arena.getBoundingClientRect();
+      const cx = bounds.width / 2;
+      const cy = bounds.height / 2;
+      const coreSize = core ? core.getBoundingClientRect().width : 180;
+      const coreRadius = coreSize / 2 + 10;
+      const orbitRadius = Math.min(bounds.width, bounds.height) * 0.33;
+
+      particles = nodes.map((node, index) => {
+        const nodeBounds = node.getBoundingClientRect();
+        const width = nodeBounds.width || 84;
+        const height = nodeBounds.height || 84;
+        const angle = (index / nodes.length) * Math.PI * 2;
+        const tangent = angle + Math.PI / 2;
+        const speed = randomSpeed();
+
+        const x = cx + Math.cos(angle) * orbitRadius - width / 2;
+        const y = cy + Math.sin(angle) * orbitRadius - height / 2;
+
+        return {
+          node,
+          x: Math.min(Math.max(0, x), bounds.width - width),
+          y: Math.min(Math.max(0, y), bounds.height - height),
+          vx: Math.cos(tangent) * speed * (Math.random() > 0.5 ? 1 : -1),
+          vy: Math.sin(tangent) * speed * (Math.random() > 0.5 ? 1 : -1),
+          width,
+          height
+        };
+      });
+
+      return { width: bounds.width, height: bounds.height, cx, cy, coreRadius };
+    };
+
+    const setPosition = (particle) => {
+      particle.node.style.transform = `translate3d(${particle.x}px, ${particle.y}px, 0)`;
+    };
+
+    let metrics = measure();
+    particles.forEach(setPosition);
+
+    const tick = () => {
+      if (prefersReducedMotion) {
+        return;
+      }
+
+      for (const particle of particles) {
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+
+        if (particle.x <= 0 || particle.x + particle.width >= metrics.width) {
+          particle.vx *= -1;
+          particle.x = Math.min(Math.max(0, particle.x), metrics.width - particle.width);
+        }
+
+        if (particle.y <= 0 || particle.y + particle.height >= metrics.height) {
+          particle.vy *= -1;
+          particle.y = Math.min(Math.max(0, particle.y), metrics.height - particle.height);
+        }
+
+        const nx = particle.x + particle.width / 2 - metrics.cx;
+        const ny = particle.y + particle.height / 2 - metrics.cy;
+        const distance = Math.hypot(nx, ny);
+        const minimum = metrics.coreRadius + Math.max(particle.width, particle.height) * 0.45;
+
+        if (distance < minimum) {
+          const invDistance = distance === 0 ? 1 : 1 / distance;
+          const ux = nx * invDistance;
+          const uy = ny * invDistance;
+          const velocityDot = particle.vx * ux + particle.vy * uy;
+
+          particle.x = metrics.cx + ux * minimum - particle.width / 2;
+          particle.y = metrics.cy + uy * minimum - particle.height / 2;
+
+          if (velocityDot < 0) {
+            particle.vx -= 2 * velocityDot * ux;
+            particle.vy -= 2 * velocityDot * uy;
+          }
+        }
+
+        setPosition(particle);
+      }
+
+      rafId = requestAnimationFrame(tick);
+    };
+
+    if (!prefersReducedMotion) {
+      rafId = requestAnimationFrame(tick);
+    }
+
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      window.clearTimeout(resizeTimeout);
+      resizeTimeout = window.setTimeout(() => {
+        metrics = measure();
+        particles.forEach(setPosition);
+      }, 120);
+    });
+
+    window.addEventListener('beforeunload', () => {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+    });
+  }
+</script>
