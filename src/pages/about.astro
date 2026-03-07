@@ -17,18 +17,41 @@ import { socials } from '../data/socials';
   />
 
   <section class="about-grid" aria-label="About overview">
-    <article class="content-card reveal" aria-labelledby="bio-title">
+    <article class="content-card about-card reveal" aria-labelledby="bio-title">
       <h2 id="bio-title">Professional Summary</h2>
-      <p>{profile.bio}</p>
+      <p>{profile.aboutSummary}</p>
+      <p class="body-spacer">{profile.technicalIdentity}</p>
       <p class="body-spacer">{profile.professionalPositioning}</p>
     </article>
 
-    <article class="content-card reveal" aria-labelledby="focus-title">
+    <article class="content-card about-card reveal" aria-labelledby="focus-title">
       <h2 id="focus-title">Current Focus</h2>
       <ul class="bullet-list compact">
         {
           profile.currentFocus.map((focusItem) => (
             <li>{focusItem}</li>
+          ))
+        }
+      </ul>
+    </article>
+
+    <article class="content-card about-card reveal" aria-labelledby="research-title">
+      <h2 id="research-title">Research Interests</h2>
+      <ul class="bullet-list compact">
+        {
+          profile.researchInterests.map((item) => (
+            <li>{item}</li>
+          ))
+        }
+      </ul>
+    </article>
+
+    <article class="content-card about-card reveal" aria-labelledby="approach-title">
+      <h2 id="approach-title">Engineering Approach</h2>
+      <ul class="bullet-list compact">
+        {
+          profile.engineeringApproach.map((item) => (
+            <li>{item}</li>
           ))
         }
       </ul>

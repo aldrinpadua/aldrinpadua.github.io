@@ -3,12 +3,16 @@ export interface Profile {
   title: string;
   heroSummary: string;
   professionalPositioning: string;
+  aboutSummary: string;
+  technicalIdentity: string;
   location: string;
   email: string;
   resumePath: string;
   seoDescription: string;
   keywords: string[];
   currentFocus: string[];
+  researchInterests: string[];
+  engineeringApproach: string[];
   bio: string;
 }
 
