@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Path planning concept logo">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#ecf6ff"/>
+  <g fill="none" stroke="#2f6ca7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="14" cy="20" r="3"/>
+    <circle cx="28" cy="34" r="3"/>
+    <circle cx="46" cy="20" r="3"/>
+    <circle cx="50" cy="44" r="3"/>
+    <path d="M14 20l14 14 18-14 4 24"/>
+  </g>
+</svg>

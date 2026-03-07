@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Microsoft Office concept logo">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#fff1e7"/>
+  <g fill="none" stroke="#d2571f" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M20 18 38 12l12 8v24l-12 8-18-6z"/>
+    <path d="M30 22v20"/>
+    <path d="M30 22 44 18v28l-14-4"/>
+  </g>
+</svg>

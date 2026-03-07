@@ -175,6 +175,27 @@ This file records major work completed in the repository on March 7, 2026.
 - Added `.skill-bg-pan` layer and `skill-bg-marquee` keyframes to eliminate visible reset/jump during looping.
 - Updated layer stacking so background remains behind moving skill logos and center hub.
 
+### 17:58 ET
+- Expanded Home skills logo set with more brands and concept icons:
+  - added multiple Gazebo-themed entries
+  - added made-up MATLAB/path-planning/motion-planning/engineering-math concept logos
+- Redesigned navbar background again to maintain contrast while staying subtle and engineering-themed.
+- Added additional navbar overlay animation layer and wired reduced-motion override for header pseudo-element animations.
+
+### 18:01 ET
+- Finalized Home skills logo expansion by moving concept logos to local static SVG assets under `public/assets/skills`.
+- Updated `SkillLogoWall.astro` to reference local concept assets and preserved existing motion behavior.
+- Build validation passed after replacing the previous inline-data-URI implementation.
+
+### 18:02 ET
+- Added additional requested Home skills logos:
+  - macOS
+  - Windows OS
+  - Microsoft Office
+  - Bambu Lab
+  - Formlabs
+- Added local concept SVG assets for Windows/Microsoft Office/Formlabs where public icon endpoints were unavailable.
+
 ## Notable Constraints Enforced
 
 - No phone number published

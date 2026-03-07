@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Motion planning concept logo">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#eefdf8"/>
+  <g fill="none" stroke="#2f8f73" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 44c8-16 16-24 24-24s14 6 20 16"/>
+    <path d="M46 30l8 6-10 2"/>
+    <circle cx="14" cy="42" r="3"/>
+  </g>
+</svg>

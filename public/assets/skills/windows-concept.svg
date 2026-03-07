@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Windows concept logo">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#ecf4ff"/>
+  <g fill="#1f74d2">
+    <path d="M10 14l20-3v22H10z"/>
+    <path d="M34 10l20-3v26H34z"/>
+    <path d="M10 36h20v18l-20-3z"/>
+    <path d="M34 36h20v21l-20-3z"/>
+  </g>
+</svg>

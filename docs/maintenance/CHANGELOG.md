@@ -4,6 +4,23 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 18:02 ET - Home skills logos expanded with OS/tooling/manufacturing brands
+- Added `macOS`, `Windows OS`, `Microsoft Office`, `Bambu Lab`, and `Formlabs` to Home skills logo set
+- Used direct brand icon sources where available (Apple, Bambu Lab)
+- Added local concept SVG assets for unavailable brand icons (Windows, Microsoft Office, Formlabs)
+- Preserved existing skill-node motion and section animation behavior
+
+### 18:01 ET - Skills logo expansion implementation finalized with local concept SVG assets
+- Replaced unstable inline custom-logo data URI approach with local SVG asset files under `public/assets/skills`
+- Added concept icon assets for Gazebo variants, MATLAB, path planning, motion planning, and engineering math
+- Updated Home skills logo list to reference local concept assets plus existing brand logos
+
+### 17:58 ET - Home skills logos expanded + navbar background redesign (v3)
+- Expanded Home skills logo set with many additional entries, including multiple Gazebo-themed icons
+- Added custom concept logos for MATLAB, path planning, motion planning, and engineering mathematics
+- Redesigned navbar background again for subtle high-contrast differentiation from global background
+- Added layered engineering motifs (grid points, wave/band overlays) and updated navbar animation/accessibility behavior
+
 ### 17:49 ET - Home skills doodle background converted to true endless marquee loop
 - Replaced single-layer scrolling with dual-track doodle background marquee for continuous non-jumping left-to-right pan effect
 - Added dedicated `.skill-bg-pan` layer and `skill-bg-marquee` keyframes

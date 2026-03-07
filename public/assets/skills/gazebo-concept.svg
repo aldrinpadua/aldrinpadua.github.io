@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Gazebo concept logo">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#edf6ff"/>
+  <g fill="none" stroke="#2d6cb2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 18h16v12H14z"/>
+    <path d="M34 14h16v16H34z"/>
+    <path d="M18 34h14v16H18z"/>
+    <path d="M36 34h14v10H36z"/>
+  </g>
+</svg>

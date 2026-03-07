@@ -199,9 +199,9 @@ button:focus-visible {
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid rgba(72, 111, 151, 0.6);
+  border-bottom: 1px solid rgba(102, 156, 204, 0.54);
   background:
-    linear-gradient(118deg, rgba(22, 36, 52, 0.96) 0%, rgba(28, 48, 69, 0.96) 48%, rgba(38, 66, 92, 0.95) 100%);
+    linear-gradient(115deg, rgba(18, 30, 44, 0.95) 0%, rgba(24, 42, 62, 0.95) 52%, rgba(31, 56, 80, 0.94) 100%);
   backdrop-filter: blur(10px);
   overflow: hidden;
 }
@@ -211,13 +211,31 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(90deg, rgba(91, 214, 205, 0.22) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(91, 214, 205, 0.18) 1px, transparent 1px),
-    radial-gradient(circle at 20% 34%, rgba(89, 160, 240, 0.34) 1.3px, transparent 1.5px),
-    radial-gradient(circle at 66% 72%, rgba(255, 171, 64, 0.24) 1.1px, transparent 1.3px);
-  background-size: 36px 36px, 36px 36px, 84px 84px, 96px 96px;
-  opacity: 0.48;
+    linear-gradient(90deg, rgba(112, 227, 214, 0.16) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(112, 227, 214, 0.12) 1px, transparent 1px),
+    radial-gradient(circle at 18% 26%, rgba(108, 176, 245, 0.22) 1.3px, transparent 1.5px),
+    radial-gradient(circle at 72% 72%, rgba(255, 186, 104, 0.18) 1.1px, transparent 1.3px);
+  background-size: 34px 34px, 34px 34px, 96px 96px, 108px 108px;
+  opacity: 0.44;
   animation: nav-dots-drift 26s linear infinite;
+  pointer-events: none;
+}
+
+.site-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(60% 120% at 12% 50%, rgba(93, 158, 236, 0.18), transparent 72%),
+    radial-gradient(58% 120% at 88% 50%, rgba(94, 218, 194, 0.14), transparent 74%),
+    repeating-linear-gradient(
+      100deg,
+      transparent 0 42px,
+      rgba(161, 216, 255, 0.06) 42px 44px,
+      transparent 44px 88px
+    );
+  opacity: 0.5;
+  animation: nav-wave-drift 18s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -251,7 +269,7 @@ button:focus-visible {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(95, 205, 221, 0.24);
+  text-shadow: 0 0 12px rgba(120, 214, 228, 0.26);
 }
 
 .brand img {
@@ -262,9 +280,9 @@ button:focus-visible {
 
 .nav-toggle {
   display: none;
-  border: 1px solid rgba(119, 199, 223, 0.46);
+  border: 1px solid rgba(127, 203, 229, 0.42);
   border-radius: 10px;
-  background: rgba(118, 200, 223, 0.16);
+  background: rgba(118, 200, 223, 0.14);
   color: #e6f6ff;
   font-size: 0.86rem;
   font-weight: 700;
@@ -295,7 +313,7 @@ button:focus-visible {
 .nav li a.active,
 .nav li a:hover {
   color: #ffffff;
-  background: linear-gradient(120deg, rgba(78, 162, 229, 0.35), rgba(91, 214, 205, 0.32));
+  background: linear-gradient(120deg, rgba(82, 168, 238, 0.34), rgba(98, 218, 201, 0.3));
   text-decoration: none;
 }
 
@@ -426,6 +444,18 @@ button:focus-visible {
   }
   to {
     transform: translate3d(28px, 14px, 0);
+  }
+}
+
+@keyframes nav-wave-drift {
+  0%,
+  100% {
+    transform: translateX(-2%);
+    opacity: 0.42;
+  }
+  50% {
+    transform: translateX(2%);
+    opacity: 0.62;
   }
 }
 
@@ -1367,6 +1397,8 @@ main :where(p, li)[style*='text-align: center'] {
 
   .reveal,
   .reveal.is-visible,
+  .site-header::before,
+  .site-header::after,
   .orb,
   .grid-layer,
   .robotics-bg-grid,

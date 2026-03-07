@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MATLAB concept logo">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#fff3e7"/>
+  <g fill="none" stroke="#c45a1b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 44c10-20 18-20 24 0"/>
+    <path d="M34 44c6-14 12-18 20-18"/>
+    <path d="M12 48h40"/>
+  </g>
+</svg>
