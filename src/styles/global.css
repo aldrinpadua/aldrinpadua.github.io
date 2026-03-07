@@ -218,12 +218,13 @@ button:focus-visible {
     linear-gradient(0deg, rgba(121, 238, 226, 0.12) 1px, transparent 1px),
     radial-gradient(circle at 16% 22%, rgba(118, 190, 255, 0.25) 1.4px, transparent 1.7px),
     radial-gradient(circle at 70% 68%, rgba(255, 194, 112, 0.2) 1.2px, transparent 1.5px),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='120' viewBox='0 0 280 120'%3E%3Cg fill='none' stroke='%23a8d7ff' stroke-opacity='0.22' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='16' y='18' width='24' height='16' rx='4'/%3E%3Ccircle cx='24' cy='26' r='1.4'/%3E%3Ccircle cx='32' cy='26' r='1.4'/%3E%3Cpath d='M20 35h16M28 18v-4'/%3E%3Ccircle cx='88' cy='26' r='8'/%3E%3Ccircle cx='88' cy='26' r='3'/%3E%3Cpath d='M88 14v-3M88 41v-3M76 26h-3M103 26h-3'/%3E%3Cpath d='M126 18h20M132 14v8M140 14v8M148 14v8'/%3E%3Cpath d='M166 30h10v8h10v-8h10v8h10v-8h10'/%3E%3Cpath d='M228 18h16l4 8-4 8h-16z'/%3E%3Ccircle cx='236' cy='26' r='2.2'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 26px 26px, 26px 26px, 84px 84px, 92px 92px, 1120px 120px;
-  background-position: 0 0, 0 0, 0 0, 0 0, 50% 50%;
-  background-repeat: repeat, repeat, repeat, repeat, no-repeat;
-  opacity: 0.56;
-  animation: nav-dots-drift 26s linear infinite;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='120' viewBox='0 0 1600 120'%3E%3Cg fill='none' stroke='%23a8d7ff' stroke-opacity='0.24' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='18' y='16' width='28' height='18' rx='4'/%3E%3Ccircle cx='27' cy='25' r='1.4'/%3E%3Ccircle cx='37' cy='25' r='1.4'/%3E%3Cpath d='M24 36h16M32 16v-4M16 24h-4M50 24h4'/%3E%3Ccircle cx='106' cy='24' r='10'/%3E%3Ccircle cx='106' cy='24' r='4'/%3E%3Cpath d='M106 10v-4M106 42v-4M92 24h-4M124 24h-4M96 14l-3-3M116 34l3 3M96 34l-3 3M116 14l3-3'/%3E%3Cpath d='M170 18h44M182 10v16M196 12v12M210 9v18'/%3E%3Cpath d='M248 24h10v8h10v-8h10v8h10v-8h10'/%3E%3Crect x='314' y='14' width='20' height='20' rx='2'/%3E%3Cpath d='M338 20h8M338 28h8M308 20h-8M308 28h-8M320 8v-8M328 8v-8M320 42v8M328 42v8'/%3E%3Cpath d='M390 34h34l5-10h20l5 10h34'/%3E%3Ccircle cx='424' cy='38' r='3.5'/%3E%3Ccircle cx='454' cy='38' r='3.5'/%3E%3Cpath d='M514 30h26l8-8h20'/%3E%3Ccircle cx='512' cy='30' r='2.4'/%3E%3Ccircle cx='548' cy='22' r='2.4'/%3E%3Cpath d='M602 10v30M588 24h28M636 16l22 16-22 16'/%3E%3Cpath d='M694 14h34l6 10-6 10h-34z'/%3E%3Ccircle cx='708' cy='24' r='3'/%3E%3Cpath d='M772 36c8-18 18-18 26 0s18 18 26 0'/%3E%3Cpath d='M860 12h24v24h-24zM868 20h8v8h-8z'/%3E%3Cpath d='M924 12l14 24 14-24M918 36h40'/%3E%3Ccircle cx='1010' cy='24' r='9'/%3E%3Ccircle cx='1010' cy='24' r='3'/%3E%3Cpath d='M996 24h-4M1024 24h4M1010 10v-4M1010 42v-4'/%3E%3Crect x='1068' y='16' width='30' height='16' rx='3'/%3E%3Cpath d='M1098 22h8M1098 28h8M1068 22h-8M1068 28h-8'/%3E%3Cpath d='M1160 20h16l6 6-6 6h-16z'/%3E%3Ccircle cx='1168' cy='26' r='2.2'/%3E%3Cpath d='M1224 12h18M1233 12v28M1224 40h18'/%3E%3Cpath d='M1278 30h38M1288 18v24M1302 18v24'/%3E%3Cpath d='M1360 12h34l8 10-8 10h-34z'/%3E%3Cpath d='M1438 26h14M1458 20h8M1458 32h8M1472 14h22v24h-22z'/%3E%3Cpath d='M1528 20h34l10 10-10 10h-34z'/%3E%3Ccircle cx='1546' cy='30' r='3.2'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='120' viewBox='0 0 1600 120'%3E%3Cg fill='none' stroke='%23a8d7ff' stroke-opacity='0.24' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='18' y='16' width='28' height='18' rx='4'/%3E%3Ccircle cx='27' cy='25' r='1.4'/%3E%3Ccircle cx='37' cy='25' r='1.4'/%3E%3Cpath d='M24 36h16M32 16v-4M16 24h-4M50 24h4'/%3E%3Ccircle cx='106' cy='24' r='10'/%3E%3Ccircle cx='106' cy='24' r='4'/%3E%3Cpath d='M106 10v-4M106 42v-4M92 24h-4M124 24h-4M96 14l-3-3M116 34l3 3M96 34l-3 3M116 14l3-3'/%3E%3Cpath d='M170 18h44M182 10v16M196 12v12M210 9v18'/%3E%3Cpath d='M248 24h10v8h10v-8h10v8h10v-8h10'/%3E%3Crect x='314' y='14' width='20' height='20' rx='2'/%3E%3Cpath d='M338 20h8M338 28h8M308 20h-8M308 28h-8M320 8v-8M328 8v-8M320 42v8M328 42v8'/%3E%3Cpath d='M390 34h34l5-10h20l5 10h34'/%3E%3Ccircle cx='424' cy='38' r='3.5'/%3E%3Ccircle cx='454' cy='38' r='3.5'/%3E%3Cpath d='M514 30h26l8-8h20'/%3E%3Ccircle cx='512' cy='30' r='2.4'/%3E%3Ccircle cx='548' cy='22' r='2.4'/%3E%3Cpath d='M602 10v30M588 24h28M636 16l22 16-22 16'/%3E%3Cpath d='M694 14h34l6 10-6 10h-34z'/%3E%3Ccircle cx='708' cy='24' r='3'/%3E%3Cpath d='M772 36c8-18 18-18 26 0s18 18 26 0'/%3E%3Cpath d='M860 12h24v24h-24zM868 20h8v8h-8z'/%3E%3Cpath d='M924 12l14 24 14-24M918 36h40'/%3E%3Ccircle cx='1010' cy='24' r='9'/%3E%3Ccircle cx='1010' cy='24' r='3'/%3E%3Cpath d='M996 24h-4M1024 24h4M1010 10v-4M1010 42v-4'/%3E%3Crect x='1068' y='16' width='30' height='16' rx='3'/%3E%3Cpath d='M1098 22h8M1098 28h8M1068 22h-8M1068 28h-8'/%3E%3Cpath d='M1160 20h16l6 6-6 6h-16z'/%3E%3Ccircle cx='1168' cy='26' r='2.2'/%3E%3Cpath d='M1224 12h18M1233 12v28M1224 40h18'/%3E%3Cpath d='M1278 30h38M1288 18v24M1302 18v24'/%3E%3Cpath d='M1360 12h34l8 10-8 10h-34z'/%3E%3Cpath d='M1438 26h14M1458 20h8M1458 32h8M1472 14h22v24h-22z'/%3E%3Cpath d='M1528 20h34l10 10-10 10h-34z'/%3E%3Ccircle cx='1546' cy='30' r='3.2'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 26px 26px, 26px 26px, 84px 84px, 92px 92px, 1600px 120px, 1600px 120px;
+  background-position: 0 0, 0 0, 0 0, 0 0, 0 50%, 1600px 50%;
+  background-repeat: repeat, repeat, repeat, repeat, no-repeat, no-repeat;
+  opacity: 0.62;
+  animation: nav-dots-drift 34s linear infinite;
   pointer-events: none;
 }
 
@@ -450,10 +451,22 @@ button:focus-visible {
 
 @keyframes nav-dots-drift {
   from {
-    transform: translate3d(0, 0, 0);
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 50%,
+      1600px 50%;
   }
   to {
-    transform: translate3d(28px, 14px, 0);
+    background-position:
+      26px 13px,
+      13px 26px,
+      84px 42px,
+      92px 46px,
+      -1600px 50%,
+      0 50%;
   }
 }
 
@@ -691,6 +704,30 @@ main :where(p, li)[style*='text-align: center'] {
   color: #ec4899;
 }
 
+.section-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.62rem;
+  margin-bottom: 0.2rem;
+}
+
+.section-card-head h2 {
+  margin-bottom: 0;
+}
+
+.section-card-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  border: 1px solid #c4d4e5;
+  background:
+    radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.86), transparent 38%),
+    linear-gradient(140deg, rgba(95, 173, 230, 0.2), rgba(99, 210, 186, 0.2));
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
 .overview-grid,
 .skills-grid {
   margin-top: 1.65rem;
@@ -722,22 +759,17 @@ main :where(p, li)[style*='text-align: center'] {
   margin-top: 2rem;
   padding: 1rem;
   border-radius: calc(var(--radius-lg) + 2px);
-  border: 1px solid rgba(150, 168, 188, 0.3);
-  background:
-    radial-gradient(circle at 16% 14%, rgba(104, 176, 232, 0.12), transparent 40%),
-    radial-gradient(circle at 84% 76%, rgba(116, 206, 187, 0.1), transparent 38%),
-    rgba(244, 248, 252, 0.65);
+  border: 1px solid transparent;
+  background: transparent;
 }
 
 .skill-arena {
   position: relative;
   min-height: 420px;
-  border: 1px solid var(--line);
+  border: 0;
   border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at 50% 50%, #ffffff 0%, #f1f3f5 48%, #e8ebef 100%),
-    linear-gradient(130deg, rgba(0, 0, 0, 0.045), transparent 55%);
-  box-shadow: var(--shadow-card);
+  background: transparent;
+  box-shadow: none;
   overflow: hidden;
 }
 
@@ -775,7 +807,7 @@ main :where(p, li)[style*='text-align: center'] {
 }
 
 .skill-arena::after {
-  content: '';
+  content: none;
   position: absolute;
   inset: -14% -8%;
   background:
@@ -864,7 +896,9 @@ main :where(p, li)[style*='text-align: center'] {
 .skill-node span {
   text-align: center;
   font-size: clamp(0.59rem, 1.1vw, 0.7rem);
-  line-height: 1.2;
+  line-height: 1.08;
+  white-space: pre-line;
+  max-width: 92%;
   color: #2a3036;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -880,7 +914,7 @@ main :where(p, li)[style*='text-align: center'] {
 }
 
 .skill-arena::before {
-  content: '';
+  content: none;
   position: absolute;
   inset: 10px;
   border-radius: calc(var(--radius-lg) - 4px);
@@ -1258,6 +1292,13 @@ main :where(p, li)[style*='text-align: center'] {
   grid-template-columns: minmax(152px, 184px) 1fr;
   gap: 1rem;
   padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-2px);
+  border-color: #b5c8dc;
+  box-shadow: 0 16px 30px rgba(17, 31, 46, 0.1);
 }
 
 .timeline-card.highlight {
@@ -1325,6 +1366,16 @@ main :where(p, li)[style*='text-align: center'] {
 
 .publication-card {
   background: linear-gradient(180deg, #ffffff 0%, #f5f6f7 100%);
+  border-left: 4px solid #5b8fbe;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.publication-card:hover,
+.contact-panel:hover,
+.scholar-card:hover {
+  transform: translateY(-2px);
+  border-color: #b5c8dc;
+  box-shadow: 0 16px 30px rgba(17, 31, 46, 0.1);
 }
 
 .publication-header {
@@ -1392,6 +1443,17 @@ main :where(p, li)[style*='text-align: center'] {
 
 .contact-grid .content-card {
   height: 100%;
+}
+
+.contact-panel {
+  border-left: 4px solid #df6ca9;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.scholar-card {
+  margin-bottom: 1rem;
+  border-left: 4px solid #6e6cd7;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .contact-grid .content-card + .content-card {

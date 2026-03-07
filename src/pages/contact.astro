@@ -14,8 +14,13 @@ import { socials } from '../data/socials';
   />
 
   <section class="contact-grid" aria-label="Contact channels">
-    <article class="content-card reveal">
-      <h2>Direct Contact</h2>
+    <article class="content-card contact-panel reveal">
+      <div class="section-card-head">
+        <span class="section-card-icon">
+          <Icon name="mail" class="icon section-icon icon-contact" />
+        </span>
+        <h2>Direct Contact</h2>
+      </div>
       <p>
         <strong>Email:</strong>
         <a href={`mailto:${profile.email}`}>{profile.email}</a>
@@ -24,8 +29,13 @@ import { socials } from '../data/socials';
       <p class="muted-note">Location is intentionally shown at city/state-level for privacy.</p>
     </article>
 
-    <article class="content-card reveal">
-      <h2>Social Profiles</h2>
+    <article class="content-card contact-panel reveal">
+      <div class="section-card-head">
+        <span class="section-card-icon">
+          <Icon name="contact" class="icon section-icon icon-contact" />
+        </span>
+        <h2>Social Profiles</h2>
+      </div>
       <ul class="social-list">
         {
           socials.map((social) => {

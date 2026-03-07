@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import Icon from '../components/Icon.astro';
 import { experience } from '../data/experience';
 ---
 
@@ -27,7 +28,12 @@ import { experience } from '../data/experience';
           <div class="timeline-date">{item.dateRange}</div>
           <div>
             <p class={`role-badge role-badge-${item.category}`}>{item.category}</p>
-            <h2>{item.role}</h2>
+            <div class="section-card-head">
+              <span class="section-card-icon">
+                <Icon name="experience" class="icon section-icon icon-experience" />
+              </span>
+              <h2>{item.role}</h2>
+            </div>
             <p class="timeline-meta">{item.organization} • {item.location}</p>
             <ul class="bullet-list compact">
               {

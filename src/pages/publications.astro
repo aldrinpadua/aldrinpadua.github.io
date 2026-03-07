@@ -15,8 +15,13 @@ import { publications } from '../data/publications';
     intro="Peer-reviewed work at the intersection of safety, biomechanics, and physically interactive robotics."
   />
 
-  <section class="content-card reveal" aria-label="Scholar profile">
-    <h2>Google Scholar</h2>
+  <section class="content-card scholar-card reveal" aria-label="Scholar profile">
+    <div class="section-card-head">
+      <span class="section-card-icon">
+        <Icon name="scholar" class="icon section-icon icon-publication" />
+      </span>
+      <h2>Google Scholar</h2>
+    </div>
     <p>
       Track publication record and citation details on my scholar profile.
     </p>
@@ -37,7 +42,12 @@ import { publications } from '../data/publications';
             <p class="year-pill">{publication.year}</p>
           </div>
 
-          <h2>{publication.title}</h2>
+          <div class="section-card-head">
+            <span class="section-card-icon">
+              <Icon name="publication" class="icon section-icon icon-publication" />
+            </span>
+            <h2>{publication.title}</h2>
+          </div>
           <p class="timeline-meta">{publication.venue}</p>
           <p>{publication.summary}</p>
 

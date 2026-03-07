@@ -268,6 +268,25 @@ This file records major work completed in the repository on March 7, 2026.
 - Added Google Scholar item in Contact tab social list.
 - Extended shared icon component with a `scholar` icon for consistent visual treatment.
 
+### 18:45 ET
+- Applied About-style card-header pattern (icon + title row) to Education, Experience, Publications, and Contact cards where it fits.
+- Added consistent card hover polish and accent-border styling across non-About content cards.
+- Updated Home skills node labels for `Gazebo Sim`, `Path Planning`, and `Raspberry Pi` to two-line text rendering.
+- Removed duplicated `Path Planning` entry from the Home skills logo list.
+
+### 18:46 ET
+- Added Google Scholar link to the About tab `Contact and Socials` section.
+- Reused existing social-pill style and scholar icon for visual consistency.
+
+### 18:49 ET
+- Made the Home skills section container/arena fully transparent by removing translucent panel backgrounds.
+- Disabled rectangular arena overlay frame layers while preserving the center octagon translucency.
+
+### 18:51 ET
+- Expanded navbar doodle overlay with more unique engineering motifs (robotics/electronics/mechanics).
+- Reworked navbar doodle motion into a dual-strip marquee for seamless continuous looping.
+- Switched navbar doodle animation from pseudo-element transform drift to background-position loop to remove reset snap.
+
 ## Notable Constraints Enforced
 
 - No phone number published

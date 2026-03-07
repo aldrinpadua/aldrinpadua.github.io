@@ -4,6 +4,26 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 18:51 ET - Navbar doodles expanded and converted to seamless marquee animation
+- Added a denser set of unique robotics/electronics/mechanics doodles in the navbar background layer
+- Replaced single-pass doodle movement with a dual-strip marquee setup for continuous seamless looping
+- Updated navbar doodle animation to background-position based motion to eliminate visible reset snapping
+
+### 18:49 ET - Home skills square container made fully transparent
+- Removed translucent background layers from the Home skills section container and arena
+- Disabled rectangular overlay/frame layers in the skills arena so only the intended elements remain visible
+- Kept center `SKILLS` octagon translucency unchanged
+
+### 18:46 ET - Google Scholar added to About tab Contact and Socials
+- Added Google Scholar social pill link in the About page `Contact and Socials` section
+- Reused existing scholar icon styling for consistency with other tabs
+
+### 18:45 ET - Cross-tab card polish + Home skills label/layout fixes
+- Applied About-style card heading treatment (icon + structured header) across Education, Experience, Publications, and Contact where appropriate
+- Added subtle hover elevation and accent-border styling to timeline/publication/contact cards for consistent visual engagement
+- Updated Home skills labels (`Gazebo Sim`, `Path Planning`, `Raspberry Pi`) to forced two-line display so text stays inside circular nodes
+- Removed duplicated `Path Planning` entry from Home skills logo list
+
 ### 18:39 ET - Google Scholar added to Publications and Contact tabs
 - Added a dedicated Google Scholar profile block to the Publications page
 - Added Google Scholar as a social profile item in the Contact page

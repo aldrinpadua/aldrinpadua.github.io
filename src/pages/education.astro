@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import Icon from '../components/Icon.astro';
 import { education } from '../data/education';
 ---
 
@@ -18,7 +19,12 @@ import { education } from '../data/education';
           <div class="timeline-date">{item.completed}</div>
           <div>
             {index < 2 && <p class="role-badge role-badge-research">priority degree</p>}
-            <h2>{item.degree}</h2>
+            <div class="section-card-head">
+              <span class="section-card-icon">
+                <Icon name="education" class="icon section-icon icon-education" />
+              </span>
+              <h2>{item.degree}</h2>
+            </div>
             <p class="timeline-meta">{item.institution} • {item.location}</p>
             <ul class="bullet-list compact">
               {item.focus && <li><strong>Research Focus:</strong> {item.focus}</li>}
