@@ -9,6 +9,7 @@ interface Props {
     | 'skills'
     | 'about'
     | 'contact'
+    | 'scholar'
     | 'linkedin'
     | 'github'
     | 'mail';
@@ -71,6 +72,15 @@ const { name, class: className = '' } = Astro.props;
     <svg viewBox="0 0 24 24" class={className} aria-hidden="true">
       <path d="M12 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 11c4.6 0 8 2.3 8 5.2V22H4v-2.8C4 16.3 7.4 14 12 14Z" />
       <path d="M18.5 4.5h2v2h-2Zm1 3h2v2h-2Z" opacity="0.55" />
+    </svg>
+  )
+}
+{
+  name === 'scholar' && (
+    <svg viewBox="0 0 24 24" class={className} aria-hidden="true">
+      <path d="M12 3 1.8 8.2 12 13.4l10.2-5.2L12 3Z" />
+      <path d="M5.2 11.2V15c0 3 3 5.2 6.8 5.2s6.8-2.2 6.8-5.2v-3.8L12 15.1l-6.8-3.9Z" opacity="0.55" />
+      <circle cx="19.6" cy="12.7" r="1.1" />
     </svg>
   )
 }

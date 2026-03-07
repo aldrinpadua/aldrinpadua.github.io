@@ -248,6 +248,26 @@ This file records major work completed in the repository on March 7, 2026.
 - Changed Home skills center hub (`SKILLS`) shape from hexagon to octagon.
 - Updated clip-path polygon to an eight-sided geometry while preserving current size and translucency.
 
+### 18:33 ET
+- Updated navbar doodle overlay so motifs no longer repeat/tile across the header.
+- Kept existing animated navbar background layers while switching doodle placement to a single centered pass.
+
+### 18:35 ET
+- Added `education-entry` styling so each Education timeline card includes a highlighted left border.
+- Updated Education page card class wiring to apply the same left-border emphasis pattern used in Experience.
+
+### 18:37 ET
+- Refreshed About tab layout and visual style to be more engaging while keeping a professional tone.
+- Added a journey strip and highlight-chip row for quick profile scanning.
+- Added section-icon card headers, per-card accent borders, and subtle hover motion for About cards.
+- Added a new `Now and Next` section that summarizes current focus and near-term engineering direction.
+- Added responsive behavior for the new About components on smaller viewports.
+
+### 18:39 ET
+- Added Google Scholar profile link in Publications tab with a dedicated scholar block.
+- Added Google Scholar item in Contact tab social list.
+- Extended shared icon component with a `scholar` icon for consistent visual treatment.
+
 ## Notable Constraints Enforced
 
 - No phone number published

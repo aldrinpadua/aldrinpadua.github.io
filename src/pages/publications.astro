@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import Icon from '../components/Icon.astro';
 import { publications } from '../data/publications';
 ---
 
@@ -13,6 +14,19 @@ import { publications } from '../data/publications';
     icon="publication"
     intro="Peer-reviewed work at the intersection of safety, biomechanics, and physically interactive robotics."
   />
+
+  <section class="content-card reveal" aria-label="Scholar profile">
+    <h2>Google Scholar</h2>
+    <p>
+      Track publication record and citation details on my scholar profile.
+    </p>
+    <p class="doi-line">
+      <Icon name="scholar" class="icon" />
+      <a class="doi-link" href="https://scholar.google.com/citations?user=uYye3P4AAAAJ&hl=en" target="_blank" rel="noreferrer">
+        scholar.google.com/citations?user=uYye3P4AAAAJ
+      </a>
+    </p>
+  </section>
 
   <section class="publication-list" aria-label="Publication entries">
     {

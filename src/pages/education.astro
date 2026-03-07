@@ -14,7 +14,7 @@ import { education } from '../data/education';
   <section class="timeline" aria-label="Education timeline">
     {
       education.map((item, index) => (
-        <article class={`timeline-card reveal ${index < 2 ? 'highlight' : ''}`}>
+        <article class={`timeline-card education-entry reveal ${index < 2 ? 'highlight' : ''}`}>
           <div class="timeline-date">{item.completed}</div>
           <div>
             {index < 2 && <p class="role-badge role-badge-research">priority degree</p>}

@@ -4,6 +4,22 @@ import SectionHeading from '../components/SectionHeading.astro';
 import Icon from '../components/Icon.astro';
 import { profile } from '../data/profile';
 import { socials } from '../data/socials';
+
+const aboutHighlights = [
+  'PhD Robotics (In Progress)',
+  'MS Robotics',
+  'Human-Robot Interaction',
+  'ROS2 + Gazebo + OpenSim',
+  'Simulation-to-Prototype',
+  'Safety-Oriented Validation'
+];
+
+const journeySteps = [
+  'Electronics Engineering',
+  'MS Robotics',
+  'PhD Robotics Research',
+  'Human-Safe Manipulation Systems'
+];
 ---
 
 <MainLayout
@@ -16,16 +32,43 @@ import { socials } from '../data/socials';
     intro="Robotics researcher and engineer focused on safe physical interaction, simulation-informed design, and practical robotic implementation."
   />
 
+  <section class="content-card about-story-strip reveal" aria-label="Career and research snapshot">
+    <div class="about-journey" aria-label="Professional journey">
+      {
+        journeySteps.map((step) => (
+          <span class="about-journey-step">{step}</span>
+        ))
+      }
+    </div>
+    <ul class="about-highlight-grid" aria-label="Profile highlights">
+      {
+        aboutHighlights.map((highlight) => (
+          <li class="about-highlight-chip">{highlight}</li>
+        ))
+      }
+    </ul>
+  </section>
+
   <section class="about-grid" aria-label="About overview">
-    <article class="content-card about-card reveal" aria-labelledby="bio-title">
-      <h2 id="bio-title">Professional Summary</h2>
-      <p>{profile.aboutSummary}</p>
-      <p class="body-spacer">{profile.technicalIdentity}</p>
-      <p class="body-spacer">{profile.professionalPositioning}</p>
+    <article class="content-card about-card about-card-summary reveal" aria-labelledby="bio-title">
+      <div class="about-card-head">
+        <span class="about-card-icon">
+          <Icon name="about" class="icon section-icon icon-about" />
+        </span>
+        <h2 id="bio-title">Professional Summary</h2>
+      </div>
+      <p><strong>Research identity:</strong> {profile.aboutSummary}</p>
+      <p class="body-spacer"><strong>Technical profile:</strong> {profile.technicalIdentity}</p>
+      <p class="body-spacer"><strong>Implementation stance:</strong> {profile.professionalPositioning}</p>
     </article>
 
-    <article class="content-card about-card reveal" aria-labelledby="focus-title">
-      <h2 id="focus-title">Current Focus</h2>
+    <article class="content-card about-card about-card-focus reveal" aria-labelledby="focus-title">
+      <div class="about-card-head">
+        <span class="about-card-icon">
+          <Icon name="skills" class="icon section-icon icon-skills" />
+        </span>
+        <h2 id="focus-title">Current Focus</h2>
+      </div>
       <ul class="bullet-list compact">
         {
           profile.currentFocus.map((focusItem) => (
@@ -35,8 +78,13 @@ import { socials } from '../data/socials';
       </ul>
     </article>
 
-    <article class="content-card about-card reveal" aria-labelledby="research-title">
-      <h2 id="research-title">Research Interests</h2>
+    <article class="content-card about-card about-card-research reveal" aria-labelledby="research-title">
+      <div class="about-card-head">
+        <span class="about-card-icon">
+          <Icon name="publication" class="icon section-icon icon-publication" />
+        </span>
+        <h2 id="research-title">Research Interests</h2>
+      </div>
       <ul class="bullet-list compact">
         {
           profile.researchInterests.map((item) => (
@@ -46,8 +94,13 @@ import { socials } from '../data/socials';
       </ul>
     </article>
 
-    <article class="content-card about-card reveal" aria-labelledby="approach-title">
-      <h2 id="approach-title">Engineering Approach</h2>
+    <article class="content-card about-card about-card-approach reveal" aria-labelledby="approach-title">
+      <div class="about-card-head">
+        <span class="about-card-icon">
+          <Icon name="experience" class="icon section-icon icon-experience" />
+        </span>
+        <h2 id="approach-title">Engineering Approach</h2>
+      </div>
       <ul class="bullet-list compact">
         {
           profile.engineeringApproach.map((item) => (
@@ -58,7 +111,33 @@ import { socials } from '../data/socials';
     </article>
   </section>
 
-  <section class="content-card reveal" aria-labelledby="contact-title">
+  <section class="content-card about-now-next reveal" aria-labelledby="now-next-title">
+    <h2 id="now-next-title">Now and Next</h2>
+    <div class="about-now-next-grid">
+      <article class="about-now-next-block">
+        <h3>Now</h3>
+        <ul class="bullet-list compact">
+          {
+            profile.currentFocus.slice(0, 3).map((item) => (
+              <li>{item}</li>
+            ))
+          }
+        </ul>
+      </article>
+      <article class="about-now-next-block">
+        <h3>Next</h3>
+        <ul class="bullet-list compact">
+          {
+            profile.engineeringApproach.slice(0, 3).map((item) => (
+              <li>{item}</li>
+            ))
+          }
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="content-card about-contact-card reveal" aria-labelledby="contact-title">
     <h2 id="contact-title">Contact and Socials</h2>
     <p>
       <strong>Email:</strong>

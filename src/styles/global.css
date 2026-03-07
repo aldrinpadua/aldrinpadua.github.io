@@ -219,8 +219,9 @@ button:focus-visible {
     radial-gradient(circle at 16% 22%, rgba(118, 190, 255, 0.25) 1.4px, transparent 1.7px),
     radial-gradient(circle at 70% 68%, rgba(255, 194, 112, 0.2) 1.2px, transparent 1.5px),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='120' viewBox='0 0 280 120'%3E%3Cg fill='none' stroke='%23a8d7ff' stroke-opacity='0.22' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='16' y='18' width='24' height='16' rx='4'/%3E%3Ccircle cx='24' cy='26' r='1.4'/%3E%3Ccircle cx='32' cy='26' r='1.4'/%3E%3Cpath d='M20 35h16M28 18v-4'/%3E%3Ccircle cx='88' cy='26' r='8'/%3E%3Ccircle cx='88' cy='26' r='3'/%3E%3Cpath d='M88 14v-3M88 41v-3M76 26h-3M103 26h-3'/%3E%3Cpath d='M126 18h20M132 14v8M140 14v8M148 14v8'/%3E%3Cpath d='M166 30h10v8h10v-8h10v8h10v-8h10'/%3E%3Cpath d='M228 18h16l4 8-4 8h-16z'/%3E%3Ccircle cx='236' cy='26' r='2.2'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 26px 26px, 26px 26px, 84px 84px, 92px 92px, 280px 120px;
-  background-repeat: repeat, repeat, repeat, repeat, repeat;
+  background-size: 26px 26px, 26px 26px, 84px 84px, 92px 92px, 1120px 120px;
+  background-position: 0 0, 0 0, 0 0, 0 0, 50% 50%;
+  background-repeat: repeat, repeat, repeat, repeat, no-repeat;
   opacity: 0.56;
   animation: nav-dots-drift 26s linear infinite;
   pointer-events: none;
@@ -1030,10 +1031,112 @@ main :where(p, li)[style*='text-align: center'] {
   align-items: start;
 }
 
+.about-story-strip {
+  margin-bottom: 1rem;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(86, 170, 231, 0.14), transparent 42%),
+    radial-gradient(circle at 84% 78%, rgba(98, 208, 184, 0.13), transparent 44%),
+    linear-gradient(180deg, #ffffff 0%, #f3f6f9 100%);
+}
+
+.about-journey {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.58rem;
+}
+
+.about-journey-step {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.62rem;
+  border-radius: 999px;
+  border: 1px solid #c3d3e3;
+  background: rgba(243, 249, 255, 0.95);
+  color: #213246;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.about-journey-step:not(:last-child)::after {
+  content: '->';
+  margin-left: 0.58rem;
+  color: #6f8cab;
+  font-weight: 700;
+}
+
+.about-highlight-grid {
+  list-style: none;
+  margin: 0.86rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.about-highlight-chip {
+  padding: 0.34rem 0.62rem;
+  border-radius: 999px;
+  border: 1px solid #c5d1dd;
+  background: rgba(246, 249, 252, 0.95);
+  color: #2b3340;
+  font-size: 0.79rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 .about-card {
   height: 100%;
   display: flex;
   flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-2px);
+  border-color: #b5c8dc;
+  box-shadow: 0 16px 30px rgba(17, 31, 46, 0.1);
+}
+
+.about-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.64rem;
+  margin-bottom: 0.2rem;
+}
+
+.about-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid #c4d4e5;
+  background:
+    radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.86), transparent 38%),
+    linear-gradient(140deg, rgba(95, 173, 230, 0.2), rgba(99, 210, 186, 0.2));
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.about-card h2 {
+  margin-bottom: 0;
+}
+
+.about-card-summary {
+  border-left: 4px solid #1f9fd9;
+}
+
+.about-card-focus {
+  border-left: 4px solid #0aa88b;
+}
+
+.about-card-research {
+  border-left: 4px solid #7c6af1;
+}
+
+.about-card-approach {
+  border-left: 4px solid #2f84c6;
 }
 
 .about-card .bullet-list {
@@ -1070,6 +1173,40 @@ main :where(p, li)[style*='text-align: center'] {
 .lead-panel {
   margin-bottom: 1rem;
   background: linear-gradient(180deg, #ffffff 0%, #f4f5f6 100%);
+}
+
+.about-now-next {
+  margin-top: 1rem;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f2f5f8 100%);
+}
+
+.about-now-next h2 {
+  margin-bottom: 0.65rem;
+}
+
+.about-now-next-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.about-now-next-block {
+  border: 1px solid #ccd8e3;
+  border-radius: 14px;
+  padding: 0.85rem;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(111, 176, 230, 0.12), transparent 46%),
+    rgba(249, 252, 255, 0.88);
+}
+
+.about-now-next-block h3 {
+  font-size: 1rem;
+  margin-bottom: 0.22rem;
+}
+
+.about-contact-card {
+  margin-top: 1rem;
 }
 
 .muted-note {
@@ -1175,6 +1312,10 @@ main :where(p, li)[style*='text-align: center'] {
 
 .role-industry {
   border-left: 3px solid #5d6269;
+}
+
+.education-entry {
+  border-left: 3px solid #2e3339;
 }
 
 .publication-list {
@@ -1535,6 +1676,15 @@ main :where(p, li)[style*='text-align: center'] {
   .timeline-card {
     grid-template-columns: 1fr;
     gap: 0.66rem;
+  }
+
+  .about-now-next-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-journey-step:not(:last-child)::after {
+    content: '';
+    margin-left: 0;
   }
 
   .footer-layout {

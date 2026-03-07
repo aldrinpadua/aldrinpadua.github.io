@@ -4,6 +4,26 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 18:39 ET - Google Scholar added to Publications and Contact tabs
+- Added a dedicated Google Scholar profile block to the Publications page
+- Added Google Scholar as a social profile item in the Contact page
+- Added a reusable `scholar` icon to the shared icon component set
+
+### 18:37 ET - About tab visual refresh for stronger readability and engagement
+- Added a career journey strip and profile highlight chips at the top of About for faster scanning
+- Upgraded About cards with section icons, colored accent borders, and subtle hover elevation
+- Reframed summary copy into labeled short blocks (`Research identity`, `Technical profile`, `Implementation stance`)
+- Added a new `Now and Next` panel with focused bullet summaries
+- Added responsive adjustments so the new About elements collapse cleanly on smaller screens
+
+### 18:35 ET - Education cards aligned with Experience left-border styling
+- Added an education-specific timeline card class so all Education entries show a highlighted left border
+- Matched Education left-border treatment to Experience card visual language for consistency
+
+### 18:33 ET - Navbar doodle layer made non-repeating
+- Updated navbar doodle texture layer to render once across the header instead of tiled repetition
+- Kept existing animated grid/dot layers and overall navbar visual theme intact
+
 ### 18:27 ET - Home skills hub shape changed to octagon
 - Updated center `SKILLS` hub geometry from hexagon to octagon
 - Replaced clip-path coordinates to an eight-sided form while preserving size, translucency, and interaction behavior
