@@ -244,6 +244,10 @@ This file records major work completed in the repository on March 7, 2026.
 - Updated Home skills center hub (`SKILLS`) background to be more translucent.
 - Reduced fill-layer opacity while preserving text readability and existing hexagon styling.
 
+### 18:27 ET
+- Changed Home skills center hub (`SKILLS`) shape from hexagon to octagon.
+- Updated clip-path polygon to an eight-sided geometry while preserving current size and translucency.
+
 ## Notable Constraints Enforced
 
 - No phone number published

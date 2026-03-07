@@ -4,6 +4,10 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 18:27 ET - Home skills hub shape changed to octagon
+- Updated center `SKILLS` hub geometry from hexagon to octagon
+- Replaced clip-path coordinates to an eight-sided form while preserving size, translucency, and interaction behavior
+
 ### 18:24 ET - Home skills hub background made more translucent
 - Reduced opacity in the center `SKILLS` hub fill layers for a lighter translucent look
 - Kept contrast and legibility of hub text while preserving existing hexagon shape and interaction

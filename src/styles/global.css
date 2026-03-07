@@ -794,12 +794,14 @@ main :where(p, li)[style*='text-align: center'] {
   aspect-ratio: 1 / 1;
   border-radius: 18px;
   clip-path: polygon(
-    25% 6.7%,
-    75% 6.7%,
-    93.3% 50%,
-    75% 93.3%,
-    25% 93.3%,
-    6.7% 50%
+    30% 5%,
+    70% 5%,
+    95% 30%,
+    95% 70%,
+    70% 95%,
+    30% 95%,
+    5% 70%,
+    5% 30%
   );
   border: 1px solid rgba(227, 240, 255, 0.55);
   background:
