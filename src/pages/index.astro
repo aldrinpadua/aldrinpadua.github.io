@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import InsightCard from '../components/InsightCard.astro';
+import { profile } from '../data/profile';
+import { experience } from '../data/experience';
+import { publications } from '../data/publications';
+import { skillGroups } from '../data/skills';
+import { contentSettings } from '../data/contentSettings';
+
+const projects = (await getCollection('projects'))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const featuredProjects = projects
+  .filter((project) => project.data.featured)
+  .slice(0, contentSettings.homepageFeaturedProjects);
+
+const insights = (await getCollection('insights'))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, contentSettings.homepageLatestInsights);
+---
+
+<MainLayout title="Home" description={profile.seoDescription}>
+  <Hero />
+
+  <section class="overview-grid" aria-label="Portfolio highlights">
+    <article class="card reveal">
+      <p class="card-kicker">Positioning</p>
+      <h2>Research-to-Implementation Engineering</h2>
+      <p>{profile.professionalPositioning}</p>
+      <a class="inline-link" href="/about">Read profile</a>
+    </article>
+
+    <article class="card reveal">
+      <p class="card-kicker">Current Work</p>
+      <h2>Human-Safe Manipulation Research</h2>
+      <p>{experience[0].bullets[1]}</p>
+      <a class="inline-link" href="/experience">View experience</a>
+    </article>
+
+    <article class="card reveal">
+      <p class="card-kicker">Publication</p>
+      <h2>Latest First-Author Paper</h2>
+      <p>{publications[0].title}</p>
+      <a class="inline-link" href="/publications">View publications</a>
+    </article>
+
+    <article class="card reveal">
+      <p class="card-kicker">Technical Breadth</p>
+      <h2>Core Capabilities</h2>
+      <p>{skillGroups.slice(0, 4).map((group) => group.category).join(' • ')}</p>
+      <a class="inline-link" href="/skills">View skill groups</a>
+    </article>
+  </section>
+
+  {featuredProjects.length > 0 && (
+    <section class="stack-section" aria-label="Homepage featured projects">
+      <div class="section-row">
+        <h2>Featured Projects</h2>
+        <a class="inline-link" href="/projects">View all projects</a>
+      </div>
+      <div class="project-grid">
+        {featuredProjects.map((project) => <ProjectCard project={project} compact={true} />)}
+      </div>
+    </section>
+  )}
+
+  {insights.length > 0 && (
+    <section class="stack-section" aria-label="Homepage latest insights">
+      <div class="section-row">
+        <h2>Latest Insights</h2>
+        <a class="inline-link" href="/insights">View all insights</a>
+      </div>
+      <div class="project-grid">
+        {insights.map((insight) => <InsightCard insight={insight} />)}
+      </div>
+    </section>
+  )}
+</MainLayout>

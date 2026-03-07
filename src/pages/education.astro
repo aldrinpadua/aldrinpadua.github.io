@@ -1,0 +1,34 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { education } from '../data/education';
+---
+
+<MainLayout title="Education" description="Academic progression and training in robotics and engineering.">
+  <SectionHeading
+    title="Education"
+    icon="education"
+    intro="Academic progression from electronics engineering to robotics graduate training and current doctoral research."
+  />
+
+  <section class="timeline" aria-label="Education timeline">
+    {
+      education.map((item, index) => (
+        <article class={`timeline-card reveal ${index < 2 ? 'highlight' : ''}`}>
+          <div class="timeline-date">{item.completed}</div>
+          <div>
+            {index < 2 && <p class="role-badge role-badge-research">priority degree</p>}
+            <h2>{item.degree}</h2>
+            <p class="timeline-meta">{item.institution} • {item.location}</p>
+            <ul class="bullet-list compact">
+              {item.focus && <li><strong>Research Focus:</strong> {item.focus}</li>}
+              {item.gpa && <li><strong>GPA:</strong> {item.gpa}</li>}
+              {item.award && <li><strong>Award:</strong> {item.award}</li>}
+              {item.highlight && <li>{item.highlight}</li>}
+            </ul>
+          </div>
+        </article>
+      ))
+    }
+  </section>
+</MainLayout>

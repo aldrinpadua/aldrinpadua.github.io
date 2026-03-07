@@ -1,0 +1,50 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import Icon from '../components/Icon.astro';
+import { profile } from '../data/profile';
+import { socials } from '../data/socials';
+---
+
+<MainLayout title="Contact" description="Professional contact and social links for Aldrin Padua.">
+  <SectionHeading
+    title="Contact"
+    icon="contact"
+    intro="Open to recruiter outreach, research collaboration, and robotics engineering opportunities."
+  />
+
+  <section class="contact-grid" aria-label="Contact channels">
+    <article class="content-card reveal">
+      <h2>Direct Contact</h2>
+      <p>
+        <strong>Email:</strong>
+        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+      </p>
+      <p class="body-spacer"><strong>Location:</strong> {profile.location}</p>
+      <p class="muted-note">Location is intentionally shown at city/state-level for privacy.</p>
+    </article>
+
+    <article class="content-card reveal">
+      <h2>Social Profiles</h2>
+      <ul class="social-list">
+        {
+          socials.map((social) => (
+            <li>
+              <a href={social.url} target="_blank" rel="noreferrer">
+                <Icon name={social.icon} class="icon" />
+                <span>{social.label}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      {
+        socials
+          .filter((social) => social.note)
+          .map((social) => (
+            <p class="muted-note"><strong>{social.label}:</strong> {social.note}</p>
+          ))
+      }
+    </article>
+  </section>
+</MainLayout>

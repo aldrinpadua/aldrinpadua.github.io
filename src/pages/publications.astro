@@ -1,0 +1,40 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { publications } from '../data/publications';
+---
+
+<MainLayout
+  title="Publications"
+  description="Research publications in casualty manipulation, digital human modeling, and tactile human-robot interaction simulation."
+>
+  <SectionHeading
+    title="Publications"
+    icon="publication"
+    intro="Peer-reviewed work at the intersection of safety, biomechanics, and physically interactive robotics."
+  />
+
+  <section class="publication-list" aria-label="Publication entries">
+    {
+      publications.map((publication) => (
+        <article class="publication-card reveal">
+          <div class="publication-header">
+            <p class="eyebrow-text">{publication.authorshipRole}</p>
+            <p class="year-pill">{publication.year}</p>
+          </div>
+
+          <h2>{publication.title}</h2>
+          <p class="timeline-meta">{publication.venue}</p>
+          <p>{publication.summary}</p>
+
+          <p class="doi-line">
+            <strong>DOI</strong>
+            <a class="doi-link" href={`https://doi.org/${publication.doi}`} target="_blank" rel="noreferrer">
+              {publication.doi}
+            </a>
+          </p>
+        </article>
+      ))
+    }
+  </section>
+</MainLayout>

@@ -1,0 +1,44 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { experience } from '../data/experience';
+---
+
+<MainLayout
+  title="Experience"
+  description="Professional experience in robotics research, teaching, and software engineering delivery."
+>
+  <SectionHeading
+    title="Professional Experience"
+    icon="experience"
+    intro="A cohesive engineering path across robotics research, teaching, and earlier software systems work."
+  />
+
+  <section class="lead-panel reveal" aria-label="Experience overview">
+    <p>
+      Current work is centered on robotics research and human-safe manipulation. Earlier IT and software engineering roles strengthen practical systems thinking, implementation discipline, and cross-functional delivery.
+    </p>
+  </section>
+
+  <section class="timeline" aria-label="Experience timeline">
+    {
+      experience.map((item) => (
+        <article class={`timeline-card reveal role-${item.category}`}>
+          <div class="timeline-date">{item.dateRange}</div>
+          <div>
+            <p class={`role-badge role-badge-${item.category}`}>{item.category}</p>
+            <h2>{item.role}</h2>
+            <p class="timeline-meta">{item.organization} • {item.location}</p>
+            <ul class="bullet-list compact">
+              {
+                item.bullets.map((bullet) => (
+                  <li>{bullet}</li>
+                ))
+              }
+            </ul>
+          </div>
+        </article>
+      ))
+    }
+  </section>
+</MainLayout>

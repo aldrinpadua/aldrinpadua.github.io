@@ -1,0 +1,65 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import Icon from '../components/Icon.astro';
+import { profile } from '../data/profile';
+import { socials } from '../data/socials';
+---
+
+<MainLayout
+  title="About"
+  description="About Aldrin Padua: robotics researcher and engineer working across simulation, control, and mechatronic prototyping."
+>
+  <SectionHeading
+    title="About"
+    icon="about"
+    intro="Robotics researcher and engineer focused on safe physical interaction, simulation-informed design, and practical robotic implementation."
+  />
+
+  <section class="about-grid" aria-label="About overview">
+    <article class="content-card reveal" aria-labelledby="bio-title">
+      <h2 id="bio-title">Professional Summary</h2>
+      <p>{profile.bio}</p>
+      <p class="body-spacer">{profile.professionalPositioning}</p>
+    </article>
+
+    <article class="content-card reveal" aria-labelledby="focus-title">
+      <h2 id="focus-title">Current Focus</h2>
+      <ul class="bullet-list compact">
+        {
+          profile.currentFocus.map((focusItem) => (
+            <li>{focusItem}</li>
+          ))
+        }
+      </ul>
+    </article>
+  </section>
+
+  <section class="content-card reveal" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact and Socials</h2>
+    <p>
+      <strong>Email:</strong>
+      <a href={`mailto:${profile.email}`}>{profile.email}</a>
+    </p>
+    <p class="body-spacer"><strong>Location:</strong> {profile.location}</p>
+
+    <div class="social-row" aria-label="Social profiles">
+      {
+        socials.map((social) => (
+          <a class="social-pill" href={social.url} target="_blank" rel="noreferrer">
+            <Icon name={social.icon} class="icon" />
+            <span>{social.label}</span>
+          </a>
+        ))
+      }
+    </div>
+
+    {
+      socials
+        .filter((social) => social.note)
+        .map((social) => (
+          <p class="muted-note"><strong>{social.label}:</strong> {social.note}</p>
+        ))
+    }
+  </section>
+</MainLayout>

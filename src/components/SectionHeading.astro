@@ -1,0 +1,21 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  title: string;
+  icon: 'about' | 'education' | 'experience' | 'publication' | 'project' | 'insight' | 'skills' | 'contact';
+  intro?: string;
+}
+
+const { title, icon, intro } = Astro.props;
+---
+
+<div class="section-heading reveal">
+  <span class="icon-badge" aria-hidden="true">
+    <Icon name={icon} class="icon" />
+  </span>
+  <div>
+    <h1>{title}</h1>
+    {intro && <p>{intro}</p>}
+  </div>
+</div>

@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate, normalizeCategory } from '../utils/content';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  compact?: boolean;
+}
+
+const { project, compact = false } = Astro.props;
+const categorySlug = normalizeCategory(project.data.category);
+---
+
+<article class={`card project-card reveal ${compact ? 'compact' : ''}`} data-category={categorySlug}>
+  {
+    project.data.thumbnail && (
+      <a class="project-thumb" href={`/projects/${project.slug}/`}>
+        <img src={project.data.thumbnail} alt={project.data.thumbnailAlt ?? `${project.data.title} thumbnail`} loading="lazy" />
+      </a>
+    )
+  }
+
+  <div class="project-body">
+    <div class="project-meta-row">
+      <span class="meta-pill">{project.data.category}</span>
+      <span class="meta-date">{formatDate(project.data.date)}</span>
+    </div>
+    <h2>
+      <a href={`/projects/${project.slug}/`}>{project.data.title}</a>
+    </h2>
+    <p class="muted-copy">{project.data.tagline}</p>
+    <p>{project.data.summary}</p>
+    <p class="muted-note"><strong>Status:</strong> {project.data.status}</p>
+
+    <ul class="chip-list">
+      {project.data.tools.slice(0, compact ? 3 : 5).map((tool) => <li>{tool}</li>)}
+    </ul>
+  </div>
+</article>

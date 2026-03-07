@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import InsightCard from '../../components/InsightCard.astro';
+import { insightCategories } from '../../data/contentTaxonomy';
+import { normalizeCategory } from '../../utils/content';
+
+const insights = (await getCollection('insights'))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const dynamicCategories = [...new Set(insights.map((entry) => entry.data.category))];
+const categories = [...new Set([...insightCategories, ...dynamicCategories])];
+---
+
+<MainLayout
+  title="Insights"
+  description="Professional technical updates, publication highlights, and engineering notes."
+>
+  <SectionHeading
+    title="Insights"
+    icon="insight"
+    intro="Professional technical updates: concise notes on research milestones, simulation workflows, publications, and engineering progress."
+  />
+
+  <section class="stack-section" aria-label="Insights list">
+    <div class="filter-row" aria-label="Insight category filters">
+      <button type="button" class="filter-pill active" data-filter="all">All</button>
+      {
+        categories.map((category) => (
+          <button type="button" class="filter-pill" data-filter={normalizeCategory(category)}>
+            {category}
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="project-grid" id="insight-grid">
+      {insights.map((insight) => <InsightCard insight={insight} />)}
+    </div>
+  </section>
+
+  <script>
+    const buttons = Array.from(document.querySelectorAll('.filter-pill'));
+    const cards = Array.from(document.querySelectorAll('#insight-grid [data-category]'));
+
+    for (const button of buttons) {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter ?? 'all';
+
+        for (const candidate of buttons) {
+          candidate.classList.toggle('active', candidate === button);
+        }
+
+        for (const card of cards) {
+          const cardCategory = card.getAttribute('data-category');
+          const show = filter === 'all' || cardCategory === filter;
+          card.toggleAttribute('hidden', !show);
+        }
+      });
+    }
+  </script>
+</MainLayout>

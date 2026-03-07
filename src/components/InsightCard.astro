@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { estimateReadingTime, formatDate, normalizeCategory } from '../utils/content';
+
+interface Props {
+  insight: CollectionEntry<'insights'>;
+}
+
+const { insight } = Astro.props;
+const readingTime = insight.data.readingTime ?? estimateReadingTime(insight.body);
+const categorySlug = normalizeCategory(insight.data.category);
+---
+
+<article class="card insight-card reveal" data-category={categorySlug}>
+  <div class="project-meta-row">
+    <span class="meta-pill">{insight.data.category}</span>
+    <span class="meta-date">{formatDate(insight.data.date)}</span>
+  </div>
+  <h2>
+    <a href={`/insights/${insight.slug}/`}>{insight.data.title}</a>
+  </h2>
+  <p>{insight.data.summary}</p>
+  <p class="muted-note"><strong>Reading time:</strong> {readingTime}</p>
+  <ul class="chip-list">
+    {insight.data.tags.slice(0, 4).map((tag) => <li>{tag}</li>)}
+  </ul>
+</article>

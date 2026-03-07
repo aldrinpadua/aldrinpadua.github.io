@@ -1,0 +1,38 @@
+---
+import { profile } from '../data/profile';
+import { hasResume } from '../utils/resume';
+
+const showResume = hasResume(profile.resumePath);
+---
+
+<section class="hero reveal" aria-labelledby="hero-title">
+  <div class="hero-animation" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="orb orb-c"></span>
+
+    <svg class="path-field" viewBox="0 0 800 320" preserveAspectRatio="none">
+      <path d="M0 210 C 130 160, 180 260, 300 210 S 520 140, 800 190" />
+      <path d="M0 250 C 170 195, 240 300, 420 220 S 610 160, 800 220" />
+      <circle cx="190" cy="210" r="4" />
+      <circle cx="420" cy="220" r="4" />
+      <circle cx="610" cy="176" r="4" />
+    </svg>
+
+    <div class="grid-layer"></div>
+  </div>
+
+  <div class="hero-content">
+    <p class="eyebrow">{profile.location}</p>
+    <h1 id="hero-title">{profile.name}</h1>
+    <p class="hero-title">{profile.title}</p>
+    <p class="hero-summary">{profile.heroSummary}</p>
+
+    <div class="hero-cta" aria-label="Primary actions">
+      <a class="btn btn-primary" href="/publications">View Publications</a>
+      <a class="btn" href="/experience">View Experience</a>
+      <a class="btn" href="/contact">Contact</a>
+      {showResume && <a class="btn" href={profile.resumePath}>Download Resume</a>}
+    </div>
+  </div>
+</section>

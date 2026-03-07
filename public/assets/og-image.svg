@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Aldrin Padua portfolio preview image">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f9fbfd" />
+      <stop offset="100%" stop-color="#e5edf6" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <g stroke="#25598c" stroke-opacity="0.18" fill="none">
+    <path d="M0 120h1200M0 200h1200M0 280h1200M0 360h1200M0 440h1200M0 520h1200" />
+    <path d="M120 0v630M240 0v630M360 0v630M480 0v630M600 0v630M720 0v630M840 0v630M960 0v630M1080 0v630" />
+  </g>
+  <text x="90" y="255" font-size="68" font-family="Arial, sans-serif" fill="#17212b" font-weight="700">Aldrin Padua</text>
+  <text x="90" y="320" font-size="38" font-family="Arial, sans-serif" fill="#30485f">Robotics Researcher and Engineer</text>
+  <text x="90" y="380" font-size="28" font-family="Arial, sans-serif" fill="#4a5e73">New Jersey, USA</text>
+</svg>

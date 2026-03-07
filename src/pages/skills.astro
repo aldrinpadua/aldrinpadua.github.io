@@ -1,0 +1,30 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { skillGroups } from '../data/skills';
+---
+
+<MainLayout title="Skills" description="Technical skills across robotics, simulation, programming, and hardware systems.">
+  <SectionHeading
+    title="Skills"
+    icon="skills"
+    intro="Grouped technical competencies across robotics research, simulation workflows, software development, and hardware prototyping."
+  />
+
+  <section class="skills-grid" aria-label="Skill groups">
+    {
+      skillGroups.map((group) => (
+        <article class="card reveal skill-card">
+          <h2>{group.category}</h2>
+          <ul class="chip-list">
+            {
+              group.items.map((skill) => (
+                <li>{skill}</li>
+              ))
+            }
+          </ul>
+        </article>
+      ))
+    }
+  </section>
+</MainLayout>

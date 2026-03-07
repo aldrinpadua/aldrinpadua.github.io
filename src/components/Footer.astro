@@ -1,0 +1,32 @@
+---
+const year = new Date().getFullYear();
+
+const links = [
+  { href: '/about', label: 'About' },
+  { href: '/experience', label: 'Experience' },
+  { href: '/publications', label: 'Publications' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/insights', label: 'Insights' },
+  { href: '/skills', label: 'Skills' },
+  { href: '/contact', label: 'Contact' }
+];
+---
+
+<footer class="site-footer">
+  <div class="container footer-layout">
+    <div>
+      <p class="footer-name">Aldrin Padua</p>
+      <p class="footer-text">Robotics Researcher and Engineer</p>
+    </div>
+    <nav aria-label="Footer quick links">
+      <ul class="footer-links">
+        {
+          links.map((link) => (
+            <li><a href={link.href}>{link.label}</a></li>
+          ))
+        }
+      </ul>
+    </nav>
+    <p class="footer-text">© {year}</p>
+  </div>
+</footer>

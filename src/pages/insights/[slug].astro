@@ -1,0 +1,65 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+import { estimateReadingTime, formatDate } from '../../utils/content';
+
+export async function getStaticPaths() {
+  const insights = (await getCollection('insights'))
+    .filter((entry) => !entry.data.draft)
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+  return insights.map((insight, index) => ({
+    params: { slug: insight.slug },
+    props: {
+      insight,
+      prev: insights[index + 1] ?? null,
+      next: insights[index - 1] ?? null
+    }
+  }));
+}
+
+interface Props {
+  insight: CollectionEntry<'insights'>;
+  prev: CollectionEntry<'insights'> | null;
+  next: CollectionEntry<'insights'> | null;
+}
+
+const { insight, prev, next } = Astro.props;
+const { Content } = await insight.render();
+const readingTime = insight.data.readingTime ?? estimateReadingTime(insight.body);
+---
+
+<MainLayout title={insight.data.title} description={insight.data.summary} ogImage={insight.data.cover ?? '/assets/og-image.svg'}>
+  <article class="detail-article reveal">
+    <a class="back-link" href="/insights">← Back to Insights</a>
+
+    <header class="detail-header">
+      <p class="eyebrow-text">{insight.data.category}</p>
+      <h1>{insight.data.title}</h1>
+      <p>{insight.data.summary}</p>
+      <p class="muted-note">
+        <strong>Date:</strong> {formatDate(insight.data.date)} • <strong>Reading time:</strong> {readingTime}
+      </p>
+      <ul class="chip-list">
+        {insight.data.tags.map((tag) => <li>{tag}</li>)}
+      </ul>
+    </header>
+
+    {
+      insight.data.cover && (
+        <img class="detail-cover" src={insight.data.cover} alt={insight.data.coverAlt ?? `${insight.data.title} cover image`} />
+      )
+    }
+
+    <section class="detail-panel prose-block">
+      <Content />
+    </section>
+
+    {(prev || next) && (
+      <nav class="article-nav" aria-label="Insight navigation">
+        {next ? <a href={`/insights/${next.slug}/`}>← Newer: {next.data.title}</a> : <span></span>}
+        {prev ? <a href={`/insights/${prev.slug}/`}>Older: {prev.data.title} →</a> : <span></span>}
+      </nav>
+    )}
+  </article>
+</MainLayout>

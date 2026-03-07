@@ -1,0 +1,82 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projectCategories } from '../../data/contentTaxonomy';
+import { normalizeCategory } from '../../utils/content';
+
+const projects = (await getCollection('projects'))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const featuredProjects = projects.filter((project) => project.data.featured);
+const dynamicCategories = [...new Set(projects.map((project) => project.data.category))];
+const categories = [...new Set([...projectCategories, ...dynamicCategories])];
+---
+
+<MainLayout
+  title="Projects"
+  description="Selected robotics, simulation, and engineering projects with concise technical context."
+>
+  <SectionHeading
+    title="Projects"
+    icon="project"
+    intro="Selected technical projects presented for recruiter and collaborator review. Each entry focuses on problem framing, implementation approach, and tools used."
+  />
+
+  {featuredProjects.length > 0 && (
+    <section class="stack-section" aria-label="Featured projects">
+      <div class="section-row">
+        <h2>Featured Projects</h2>
+        <p class="muted-note">Curated highlights from ongoing and recent technical work.</p>
+      </div>
+      <div class="project-grid">
+        {featuredProjects.map((project) => <ProjectCard project={project} compact={true} />)}
+      </div>
+    </section>
+  )}
+
+  <section class="stack-section" aria-label="All projects">
+    <div class="section-row">
+      <h2>All Projects</h2>
+      <p class="muted-note">Use categories to quickly scan relevant project types.</p>
+    </div>
+
+    <div class="filter-row" aria-label="Project category filters">
+      <button type="button" class="filter-pill active" data-filter="all">All</button>
+      {
+        categories.map((category) => (
+          <button type="button" class="filter-pill" data-filter={normalizeCategory(category)}>
+            {category}
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="project-grid" id="project-grid">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+
+  <script>
+    const buttons = Array.from(document.querySelectorAll('.filter-pill'));
+    const cards = Array.from(document.querySelectorAll('#project-grid [data-category]'));
+
+    for (const button of buttons) {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter ?? 'all';
+
+        for (const candidate of buttons) {
+          candidate.classList.toggle('active', candidate === button);
+        }
+
+        for (const card of cards) {
+          const cardCategory = card.getAttribute('data-category');
+          const show = filter === 'all' || cardCategory === filter;
+          card.toggleAttribute('hidden', !show);
+        }
+      });
+    }
+  </script>
+</MainLayout>
