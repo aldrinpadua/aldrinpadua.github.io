@@ -15,7 +15,7 @@ export const publications: PublicationItem[] = [
     title:
       'Towards a Multifidelity Digital Human Model for Use in Simulation Environments for Tactile Human/Robot Interactions',
     venue: 'Military Medicine',
-    year: '16 Sep 2025',
+    year: '2025',
     doi: '10.1093/milmed/usaf086',
     summary:
       'Describes a multifidelity digital human model integrating multibody dynamics and finite element simulation for tactile human-robot interaction and casualty rescue scenarios.'

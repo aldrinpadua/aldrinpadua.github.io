@@ -4,6 +4,72 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 17:43 ET - Logging compliance catch-up for late-session UI/content updates
+- Added missing maintenance log coverage for all major updates made after 16:48 ET
+- Removed outdated follow-up note about publication year TODO (now resolved)
+- Logged changes spanning About, Home skills visuals/behavior, Contact layout consistency, Publications metadata, icon system, global/nav backgrounds, and typography alignment
+
+### 17:42 ET - Navigation bar background redesign (v2)
+- Replaced navbar dark-grid look with a lighter frosted engineering-style header
+- Added animated dotted technical overlay and updated nav text/hover contrast for the new palette
+- Updated animation keyframe from `nav-grid` usage to `nav-dots-drift`
+
+### 17:41 ET - About content expanded from resume
+- Expanded About profile content fields to align with resume:
+  - stronger professional positioning
+  - updated current focus items (DoD SBIR, ROS2/Gazebo/OpenSim workflows, prototype integration)
+  - expanded research interests and engineering approach
+  - refined technical identity and bio
+- Updated centralized profile data source used by About page rendering
+
+### 17:40 ET - Home skills section background redesign (doodle motif)
+- Replaced prior skills-section background with subtle animated engineering doodle motif
+- Added robot/mechanical/electronics-style SVG texture layer and drift animation behind moving skill nodes
+- Kept reduced-motion fallback and preserved skill node motion behavior
+
+### 17:38 ET - Contact cards equalized
+- Fixed unequal visual heights in Contact tab card layout
+- Ensured grid items stretch evenly and removed unintended top-margin interaction within `contact-grid`
+
+### 17:37 ET - Publication date badge formatting normalized
+- Updated Military Medicine publication date badge from full date to year-only format (`2025`)
+- Kept publication DOI/title/venue unchanged
+
+### 17:33 ET - Home skills section gained dedicated animated backdrop
+- Added additional subtle animated background layers specifically inside skills arena
+- Introduced drifting micro-grid/glow effects and reduced-motion disablement
+
+### 17:28 ET - Global background redesign (physics/robotics/mechanical theme)
+- Reworked site-wide background animation to physics/mechanical blueprint style:
+  - engineering grids
+  - rotating mechanical ring field
+  - kinematic/circuit traces and pulsing nodes
+- Updated persistent global layout background SVG path geometry
+
+### 17:24 ET - Skills hub navigation behavior
+- Made center `SKILLS` hub in Home section clickable to `/skills`
+- Removed separate “Explore full skills” link below the arena
+
+### 17:20 ET - Typography + nav contrast update
+- Applied global text justification for paragraph/list copy in main content while preserving explicit centered text
+- Redesigned navbar color treatment for stronger distinction from page background with professional contrast
+
+### 17:19 ET - Icon system refresh + persistent animated background
+- Enlarged section heading icons and introduced colorful per-section icon accents
+- Replaced section icon glyph set with richer filled variants
+- Added persistent global animated robotics-themed background layer in main layout
+- Added reduced-motion handling for newly introduced background animations
+
+### 17:16 ET - Home skills section redesign (center hub + moving logos)
+- Replaced side-wall skill badges with central `SKILLS` hub and orbiting/bouncing skill logo nodes
+- Added real branded logo assets via external icon CDN and randomized wall-bounce motion logic
+- Preserved responsiveness and reduced-motion behavior
+
+### 17:04 ET - About layout + branding updates
+- Changed About section card layout from two-column to single stacked column
+- Fixed spacing consistency between About cards and Contact/Social block
+- Updated favicon to use site logo and increased navbar brand/logo sizing
+
 ### 16:48 ET - Home section swap + robotics logo update
 - Hid Featured Projects and Latest Insights previews from Home page
 - Added new animated skill-logo wall section on Home with side-wall bouncing skill badges

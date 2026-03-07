@@ -100,6 +100,67 @@ This file records major work completed in the repository on March 7, 2026.
 - Updated site logo to a larger robotics/mechanical-themed mark and retained navbar brand alignment.
 - Added responsive fallback so skill-wall side animations are hidden on small screens.
 
+### 17:04 ET
+- About tab layout and spacing updates:
+  - switched About section cards to single-column stacking
+  - normalized spacing between About cards and Contact/Social card
+- Updated branding references:
+  - favicon now uses site logo
+  - increased navbar logo/brand text size
+
+### 17:16 ET
+- Rebuilt Home skills presentation:
+  - replaced wall badges with center `SKILLS` hub
+  - added moving/bouncing skill-logo nodes with branded logos
+- Added animation logic for randomized movement and collision within arena bounds.
+
+### 17:19 ET
+- Refreshed section heading icon system:
+  - larger icon badges
+  - more colorful section-specific icon styling
+  - updated icon glyph definitions
+- Added persistent global animated background in layout and CSS.
+
+### 17:20 ET
+- Updated global typography and navigation contrast:
+  - justified paragraph/list text in main content
+  - redesigned navbar colors for clearer separation from page background
+
+### 17:24 ET
+- Updated Home skills navigation behavior:
+  - removed standalone “Explore full skills” link
+  - made center `SKILLS` hub directly clickable to `/skills`
+
+### 17:28 ET
+- Reworked global background to physics/robotics/mechanical blueprint style:
+  - kinematic-style paths
+  - mechanical ring dynamics
+  - engineering-grid motion layers
+
+### 17:33 ET
+- Added a dedicated animated background treatment specifically to the Home skills section.
+
+### 17:37 ET
+- Normalized publication year badge format for Military Medicine paper to `2025` to match section formatting.
+
+### 17:38 ET
+- Fixed Contact tab card height mismatch by enforcing equal-height behavior and removing grid-internal adjacent card margin conflict.
+
+### 17:40 ET
+- Replaced Home skills section background with engineering doodle motif (robot/mechanical/electronics shapes) and subtle drift animation.
+
+### 17:41 ET
+- Expanded About page profile content using resume details:
+  - stronger summary and technical identity
+  - updated current focus, research interests, and engineering approach lists
+  - revised positioning/bio language for current research scope
+
+### 17:42 ET
+- Redesigned navbar background again to a lighter frosted technical pattern with animated dotted overlay.
+
+### 17:43 ET
+- Restored maintenance logging compliance by appending missing changelog/session entries for all late-session updates.
+
 ## Notable Constraints Enforced
 
 - No phone number published
@@ -111,6 +172,5 @@ This file records major work completed in the repository on March 7, 2026.
 
 ## Follow-up TODOs still open
 
-- Update second publication year in `src/data/publications.ts` (`year: 'TODO'`)
 - Replace placeholder project/insight entries with final public-safe content
 - Add real resume file at `public/assets/resume.pdf` if download button is desired
