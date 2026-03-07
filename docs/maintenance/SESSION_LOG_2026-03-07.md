@@ -161,6 +161,20 @@ This file records major work completed in the repository on March 7, 2026.
 ### 17:43 ET
 - Restored maintenance logging compliance by appending missing changelog/session entries for all late-session updates.
 
+### 17:47 ET
+- Redesigned navbar background for stronger contrast against the global animated background.
+- Applied a darker engineering-themed “tech panel” style with animated circuit/dot accents.
+- Updated navbar text, active/hover states, and mobile divider treatment to maintain clean readability.
+
+### 17:48 ET
+- Updated Home skills-section doodle background animation to pan continuously left-to-right.
+- Adjusted keyframe background-position values to create smooth horizontal looping motion.
+
+### 17:49 ET
+- Converted Home skills doodle background to a true endless marquee loop using dual repeated tracks.
+- Added `.skill-bg-pan` layer and `skill-bg-marquee` keyframes to eliminate visible reset/jump during looping.
+- Updated layer stacking so background remains behind moving skill logos and center hub.
+
 ## Notable Constraints Enforced
 
 - No phone number published

@@ -4,6 +4,21 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 17:49 ET - Home skills doodle background converted to true endless marquee loop
+- Replaced single-layer scrolling with dual-track doodle background marquee for continuous non-jumping left-to-right pan effect
+- Added dedicated `.skill-bg-pan` layer and `skill-bg-marquee` keyframes
+- Updated z-index layering so doodle background remains behind logo nodes and center SKILLS hub
+
+### 17:48 ET - Home skills background pan behavior updated
+- Changed Home skills-section doodle background animation to continuous left-to-right panning
+- Updated keyframe positions to scroll horizontally and loop cleanly
+
+### 17:47 ET - Navigation bar redesign (high-contrast playful engineering theme)
+- Redesigned navbar background to stand out strongly against the global page background
+- Switched to a darker “tech panel” gradient with animated circuit/dot overlay accents
+- Updated navbar brand, menu toggle, and link/hover colors for legibility on the new header theme
+- Adjusted mobile nav separator styling to remain visible in the updated palette
+
 ### 17:43 ET - Logging compliance catch-up for late-session UI/content updates
 - Added missing maintenance log coverage for all major updates made after 16:48 ET
 - Removed outdated follow-up note about publication year TODO (now resolved)
