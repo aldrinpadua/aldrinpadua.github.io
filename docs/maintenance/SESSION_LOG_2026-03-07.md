@@ -196,6 +196,17 @@ This file records major work completed in the repository on March 7, 2026.
   - Formlabs
 - Added local concept SVG assets for Windows/Microsoft Office/Formlabs where public icon endpoints were unavailable.
 
+### 18:07 ET
+- Updated Home skills moving logo nodes to circular tile styling (from square/rounded cards).
+- Reduced node movement speed by ~75% for smoother and less aggressive motion.
+
+### 18:09 ET
+- Enhanced navbar visibility for top-of-page viewing:
+  - stronger contrast against global background
+  - more visible upper-header patterning
+  - refined border/shadow/accent treatment while keeping engineering motif
+- Kept existing animation behavior and reduced-motion safeguards.
+
 ## Notable Constraints Enforced
 
 - No phone number published

@@ -4,6 +4,17 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 18:09 ET - Navbar top-region visibility/contrast enhancement
+- Increased navbar visual separation from global background for users primarily viewing the top strip
+- Strengthened header contrast, shadow, border, and top-line accent treatment
+- Increased overlay visibility in upper header region with gradient masking and tuned pattern opacity
+- Preserved engineering-themed animated motif while improving at-a-glance distinction
+
+### 18:07 ET - Home skills node shape and speed adjustment
+- Changed Home skills moving logo nodes from rounded-square cards to circular tiles
+- Reduced node movement speed by approximately 75% for calmer motion
+- Preserved existing collision/physics behavior and layout structure
+
 ### 18:02 ET - Home skills logos expanded with OS/tooling/manufacturing brands
 - Added `macOS`, `Windows OS`, `Microsoft Office`, `Bambu Lab`, and `Formlabs` to Home skills logo set
 - Used direct brand icon sources where available (Apple, Bambu Lab)
