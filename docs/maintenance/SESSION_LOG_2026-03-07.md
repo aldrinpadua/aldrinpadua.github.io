@@ -211,6 +211,26 @@ This file records major work completed in the repository on March 7, 2026.
 - Updated Home skills arena motion physics so moving logos bounce off each other.
 - Added pairwise collision resolution (separation + elastic velocity response) while keeping wall/center collisions active.
 
+### 18:15 ET
+- Increased Home skills moving-circle size by approximately 1.1x and scaled logo glyph size accordingly.
+- Removed “(Concept)” text from concept-logo labels shown in the Home skills section.
+
+### 18:16 ET
+- Simplified Gazebo logos in Home skills section by removing extra Gazebo variants.
+- Retained only `Gazebo Sim` as the single Gazebo-related entry.
+
+### 18:17 ET
+- Fixed navbar background visibility issue where only the upper portion appeared prominent.
+- Removed top-fade masking and centered the accent line so the design reads across the full nav bar height.
+
+### 18:18 ET
+- Added subtle robot/electronics/mechanics doodle motifs into animated navbar background.
+- Kept doodle layer low-opacity and repeating so it remains decorative without reducing nav readability.
+
+### 18:19 ET
+- Increased Home skills logo movement speed slightly to improve liveliness while keeping motion controlled.
+- Preserved wall, center, and logo-to-logo collision behavior.
+
 ## Notable Constraints Enforced
 
 - No phone number published

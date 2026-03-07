@@ -4,6 +4,29 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 18:19 ET - Home skills logo motion speed slightly increased
+- Increased Home skills moving-logo speed from prior slow setting to a moderate pace
+- Kept collision behavior and overall motion style unchanged
+
+### 18:18 ET - Navbar animated background enriched with engineering doodles
+- Added subtle repeating doodle layer to navbar animation including robot/electronics/mechanics motifs
+- Integrated doodle SVG texture into existing header background animation stack
+- Kept contrast and readability while increasing thematic detail
+
+### 18:17 ET - Navbar background full-height visibility adjustment
+- Removed top-heavy navbar overlay masking so background design is visible across the full header strip
+- Repositioned accent line to the vertical center of the navbar for better visibility at typical viewport/top positions
+- Tuned overlay opacity for cleaner full-height readability
+
+### 18:16 ET - Home skills Gazebo variants simplified
+- Removed extra Gazebo variant logos from Home skills section
+- Kept only `Gazebo Sim` as requested
+
+### 18:15 ET - Home skills circle size increased and concept label text cleaned
+- Increased Home skills node circle size by ~1.1x (including icon scale adjustment)
+- Removed “(Concept)” suffix from displayed labels for concept-logo entries (MATLAB, Path Planning, Motion Planning, Eng Math)
+- Preserved existing movement/physics behavior
+
 ### 18:11 ET - Home skills logos now bounce off each other
 - Added pairwise collision detection/resolution between moving skill logos in Home skills arena
 - Implemented elastic-style velocity response and overlap separation for node-to-node impacts

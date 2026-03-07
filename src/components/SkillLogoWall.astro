@@ -4,10 +4,7 @@ const skillLogos = [
   { label: 'C++', logo: 'https://cdn.simpleicons.org/cplusplus/00599C' },
   { label: 'Java', logo: 'https://cdn.simpleicons.org/openjdk/FFFFFF' },
   { label: 'ROS2', logo: 'https://cdn.simpleicons.org/ros/22314E' },
-  { label: 'Gazebo', logo: '/assets/skills/gazebo-concept.svg' },
-  { label: 'Gazebo Classic', logo: '/assets/skills/gazebo-classic-concept.svg' },
   { label: 'Gazebo Sim', logo: '/assets/skills/gazebo-sim-concept.svg' },
-  { label: 'Gazebo Physics', logo: '/assets/skills/gazebo-physics-concept.svg' },
   { label: 'Git', logo: 'https://cdn.simpleicons.org/git/F05032' },
   { label: 'GitHub', logo: 'https://cdn.simpleicons.org/github/181717' },
   { label: 'macOS', logo: 'https://cdn.simpleicons.org/apple/111111' },
@@ -19,17 +16,16 @@ const skillLogos = [
   { label: 'OpenCV', logo: 'https://cdn.simpleicons.org/opencv/5C3EE8' },
   { label: 'TensorFlow', logo: 'https://cdn.simpleicons.org/tensorflow/FF6F00' },
   { label: 'Keras', logo: 'https://cdn.simpleicons.org/keras/D00000' },
-  { label: 'MATLAB (Concept)', logo: '/assets/skills/matlab-concept.svg' },
-  { label: 'Path Planning (Concept)', logo: '/assets/skills/path-planning-concept.svg' },
-  { label: 'Motion Planning (Concept)', logo: '/assets/skills/motion-planning-concept.svg' },
-  { label: 'Eng Math (Concept)', logo: '/assets/skills/engineering-math-concept.svg' },
+  { label: 'MATLAB', logo: '/assets/skills/matlab-concept.svg' },
+  { label: 'Path Planning', logo: '/assets/skills/path-planning-concept.svg' },
+  { label: 'Motion Planning', logo: '/assets/skills/motion-planning-concept.svg' },
+  { label: 'Eng Math', logo: '/assets/skills/engineering-math-concept.svg' },
   { label: 'Scikit-learn', logo: 'https://cdn.simpleicons.org/scikitlearn/F7931E' },
   { label: 'Arduino', logo: 'https://cdn.simpleicons.org/arduino/00878F' },
   { label: 'Raspberry Pi', logo: 'https://cdn.simpleicons.org/raspberrypi/A22846' },
   { label: 'SolidWorks', logo: 'https://cdn.simpleicons.org/dassaultsystemes/005386' },
   { label: 'ROS2', logo: 'https://cdn.simpleicons.org/ros/22314E' },
-  { label: 'Gazebo', logo: '/assets/skills/gazebo-concept.svg' },
-  { label: 'Path Planning (Concept)', logo: '/assets/skills/path-planning-concept.svg' }
+  { label: 'Path Planning', logo: '/assets/skills/path-planning-concept.svg' }
 ];
 ---
 
@@ -64,7 +60,7 @@ const skillLogos = [
     let particles = [];
     let rafId = 0;
 
-    const randomSpeed = () => (0.65 + Math.random() * 0.65) * 0.25;
+    const randomSpeed = () => (0.65 + Math.random() * 0.65) * 0.35;
 
     const measure = () => {
       const bounds = arena.getBoundingClientRect();
