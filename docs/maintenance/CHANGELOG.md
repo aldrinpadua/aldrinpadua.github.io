@@ -4,6 +4,19 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 18:24 ET - Home skills hub background made more translucent
+- Reduced opacity in the center `SKILLS` hub fill layers for a lighter translucent look
+- Kept contrast and legibility of hub text while preserving existing hexagon shape and interaction
+
+### 18:23 ET - Navbar brand/logo size increased
+- Increased navbar website name (`.brand`) size for stronger header presence
+- Increased navbar logo image dimensions on desktop and mobile breakpoints for better visual balance
+- Kept existing responsive behavior and spacing structure intact
+
+### 18:21 ET - Home skills hub shape changed to hexagon
+- Updated center `SKILLS` hub from circular form to hexagon geometry
+- Applied hexagonal clip-path while preserving existing visual treatment and interaction behavior
+
 ### 18:19 ET - Home skills logo motion speed slightly increased
 - Increased Home skills moving-logo speed from prior slow setting to a moderate pace
 - Kept collision behavior and overall motion style unchanged

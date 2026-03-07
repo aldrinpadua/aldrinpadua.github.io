@@ -274,7 +274,7 @@ button:focus-visible {
   align-items: center;
   gap: 0.52rem;
   color: #f5fbff;
-  font-size: 1.12rem;
+  font-size: 1.24rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -282,8 +282,8 @@ button:focus-visible {
 }
 
 .brand img {
-  width: 46px;
-  height: 46px;
+  width: 56px;
+  height: 56px;
   display: block;
 }
 
@@ -792,11 +792,19 @@ main :where(p, li)[style*='text-align: center'] {
   z-index: 3;
   width: clamp(138px, 22vw, 220px);
   aspect-ratio: 1 / 1;
-  border-radius: 999px;
+  border-radius: 18px;
+  clip-path: polygon(
+    25% 6.7%,
+    75% 6.7%,
+    93.3% 50%,
+    75% 93.3%,
+    25% 93.3%,
+    6.7% 50%
+  );
   border: 1px solid rgba(227, 240, 255, 0.55);
   background:
-    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.06) 45%, rgba(18, 23, 29, 0.2) 100%),
-    rgba(24, 30, 38, 0.35);
+    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 45%, rgba(18, 23, 29, 0.14) 100%),
+    rgba(24, 30, 38, 0.18);
   color: #f7fbff;
   display: grid;
   place-items: center;
@@ -1440,12 +1448,12 @@ main :where(p, li)[style*='text-align: center'] {
   }
 
   .brand {
-    font-size: 0.95rem;
+    font-size: 1.08rem;
   }
 
   .brand img {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
   }
 
   .nav-list {
@@ -1470,7 +1478,7 @@ main :where(p, li)[style*='text-align: center'] {
 
 @media (max-width: 560px) {
   .brand {
-    font-size: 1rem;
+    font-size: 1.12rem;
     letter-spacing: 0.04em;
   }
 

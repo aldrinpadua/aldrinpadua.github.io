@@ -231,6 +231,19 @@ This file records major work completed in the repository on March 7, 2026.
 - Increased Home skills logo movement speed slightly to improve liveliness while keeping motion controlled.
 - Preserved wall, center, and logo-to-logo collision behavior.
 
+### 18:21 ET
+- Changed Home skills center hub (`SKILLS`) from circular shape to hexagon.
+- Preserved existing hover behavior, position, and visual styling layers.
+
+### 18:23 ET
+- Increased navbar brand name size to make the website title more prominent.
+- Increased navbar logo dimensions across desktop and mobile breakpoints.
+- Preserved existing responsive navbar layout and behavior.
+
+### 18:24 ET
+- Updated Home skills center hub (`SKILLS`) background to be more translucent.
+- Reduced fill-layer opacity while preserving text readability and existing hexagon styling.
+
 ## Notable Constraints Enforced
 
 - No phone number published
