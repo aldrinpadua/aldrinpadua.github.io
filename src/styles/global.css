@@ -1,20 +1,20 @@
 :root {
-  --bg: #f2f5f9;
+  --bg: #eceef1;
   --surface: #ffffff;
-  --surface-soft: #f8fbfe;
-  --line: #d5dde7;
-  --line-strong: #c7d2de;
-  --text: #152231;
-  --muted: #4f6173;
-  --brand: #1a4f83;
-  --brand-strong: #113d67;
-  --chip-bg: #ecf3fb;
-  --chip-text: #21486f;
+  --surface-soft: #f6f7f8;
+  --line: #d6d9dd;
+  --line-strong: #c4c9cf;
+  --text: #121417;
+  --muted: #4e5359;
+  --brand: #2b2f34;
+  --brand-strong: #0b0c0d;
+  --chip-bg: #eef0f2;
+  --chip-text: #2a2e33;
   --radius: 14px;
   --radius-lg: 18px;
   --container: 1120px;
-  --shadow-card: 0 10px 24px rgba(18, 34, 52, 0.06);
-  --shadow-elevated: 0 18px 34px rgba(18, 34, 52, 0.1);
+  --shadow-card: 0 10px 24px rgba(12, 13, 14, 0.08);
+  --shadow-elevated: 0 18px 34px rgba(12, 13, 14, 0.12);
 }
 
 * {
@@ -29,8 +29,8 @@ body {
   margin: 0;
   color: var(--text);
   background:
-    radial-gradient(circle at 90% -5%, rgba(26, 79, 131, 0.08), transparent 42%),
-    linear-gradient(180deg, #f9fbfd 0%, var(--bg) 48%, #eef2f7 100%);
+    radial-gradient(circle at 90% -5%, rgba(0, 0, 0, 0.08), transparent 42%),
+    linear-gradient(180deg, #f8f8f8 0%, var(--bg) 48%, #e8eaed 100%);
   font-family: 'IBM Plex Sans', 'Segoe UI', Roboto, sans-serif;
   text-rendering: optimizeLegibility;
   line-height: 1.72;
@@ -108,13 +108,36 @@ button:focus-visible {
   top: 0;
   z-index: 100;
   border-bottom: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
-  background: color-mix(in srgb, #f8fafc 88%, transparent);
+  background: color-mix(in srgb, #f8f8f8 88%, transparent);
   backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.site-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.35;
+  mask-image: linear-gradient(to right, transparent, #000 16%, #000 84%, transparent);
+  animation: nav-grid 18s linear infinite;
+  pointer-events: none;
+}
+
+.site-header .nav {
+  position: relative;
+  z-index: 1;
 }
 
 .nav {
   min-height: 72px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .nav-top {
@@ -137,8 +160,8 @@ button:focus-visible {
 }
 
 .brand img {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   display: block;
 }
 
@@ -146,7 +169,7 @@ button:focus-visible {
   display: none;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: #f8fbfe;
+  background: #f5f5f5;
   color: var(--text);
   font-size: 0.86rem;
   font-weight: 700;
@@ -177,7 +200,7 @@ button:focus-visible {
 .nav li a.active,
 .nav li a:hover {
   color: var(--brand-strong);
-  background: color-mix(in srgb, #dbe9f6 64%, white);
+  background: color-mix(in srgb, #dddddd 64%, white);
   text-decoration: none;
 }
 
@@ -187,8 +210,8 @@ button:focus-visible {
   border-radius: 22px;
   border: 1px solid var(--line);
   background:
-    linear-gradient(160deg, #f8fbfe 0%, #eef4fb 100%),
-    radial-gradient(circle at 15% 20%, rgba(26, 79, 131, 0.06), transparent 52%);
+    linear-gradient(160deg, #f8f8f8 0%, #eceef0 100%),
+    radial-gradient(circle at 15% 20%, rgba(0, 0, 0, 0.06), transparent 52%);
   box-shadow: var(--shadow-elevated);
 }
 
@@ -202,8 +225,8 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, rgba(26, 79, 131, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(26, 79, 131, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 0, 0, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
   background-size: 28px 28px;
   mask-image: radial-gradient(circle at 68% 18%, #000 5%, transparent 74%);
   animation: slide-grid 24s linear infinite;
@@ -218,14 +241,14 @@ button:focus-visible {
 
 .path-field path {
   fill: none;
-  stroke: rgba(26, 79, 131, 0.25);
+  stroke: rgba(0, 0, 0, 0.26);
   stroke-width: 1.9;
   stroke-dasharray: 9 12;
   animation: move-path 16s linear infinite;
 }
 
 .path-field circle {
-  fill: rgba(26, 79, 131, 0.45);
+  fill: rgba(0, 0, 0, 0.45);
   animation: pulse-node 5.4s ease-in-out infinite;
 }
 
@@ -240,7 +263,7 @@ button:focus-visible {
   height: 220px;
   top: -72px;
   right: 8%;
-  background: radial-gradient(circle, rgba(26, 79, 131, 0.16), transparent 68%);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.16), transparent 68%);
   animation: float 8.2s ease-in-out infinite;
 }
 
@@ -249,7 +272,7 @@ button:focus-visible {
   height: 120px;
   bottom: 4%;
   right: 23%;
-  background: radial-gradient(circle, rgba(26, 79, 131, 0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.18), transparent 70%);
   animation: float 10.2s ease-in-out infinite reverse;
 }
 
@@ -258,7 +281,7 @@ button:focus-visible {
   height: 96px;
   top: 26%;
   left: 56%;
-  background: radial-gradient(circle, rgba(26, 79, 131, 0.13), transparent 68%);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.13), transparent 68%);
   animation: float 9.3s ease-in-out infinite;
 }
 
@@ -302,6 +325,35 @@ button:focus-visible {
   }
 }
 
+@keyframes nav-grid {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(30px);
+  }
+}
+
+@keyframes wall-bounce-left {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(13px);
+  }
+}
+
+@keyframes wall-bounce-right {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-13px);
+  }
+}
+
 .hero-content {
   position: relative;
   z-index: 1;
@@ -323,13 +375,13 @@ button:focus-visible {
 .hero-title {
   margin: 0.74rem 0;
   font-size: clamp(1.02rem, 2vw, 1.3rem);
-  color: color-mix(in srgb, var(--text) 89%, #2d4760);
+  color: color-mix(in srgb, var(--text) 89%, #3e4349);
   font-weight: 600;
 }
 
 .hero-summary {
   max-width: 67ch;
-  color: #33485d;
+  color: #3f444a;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -358,8 +410,8 @@ button:focus-visible {
 .btn:hover {
   text-decoration: none;
   transform: translateY(-1px);
-  background: #f8fbfe;
-  border-color: #b9cbdf;
+  background: #f2f3f4;
+  border-color: #b8bcc2;
 }
 
 .btn-primary {
@@ -389,8 +441,8 @@ button:focus-visible {
   width: 46px;
   height: 46px;
   border-radius: 12px;
-  border: 1px solid #c3d3e3;
-  background: #edf4fb;
+  border: 1px solid #c6cace;
+  background: #f0f2f4;
   display: grid;
   place-items: center;
 }
@@ -427,6 +479,85 @@ button:focus-visible {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.skill-wall-section {
+  margin-top: 2rem;
+  position: relative;
+  min-height: 300px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, #ffffff 0%, #f1f2f3 100%);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.skill-wall-center {
+  position: relative;
+  z-index: 2;
+  width: min(92%, 720px);
+}
+
+.skill-wall {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 135px;
+  display: grid;
+  align-content: center;
+  gap: 0.75rem;
+  padding: 1rem 0.6rem;
+}
+
+.skill-wall.left {
+  left: 0;
+}
+
+.skill-wall.right {
+  right: 0;
+}
+
+.skill-logo {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 0.5rem;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f6f7f8;
+  padding: 0.42rem 0.52rem;
+  box-shadow: 0 7px 16px rgba(0, 0, 0, 0.08);
+}
+
+.skill-wall.left .skill-logo {
+  animation: wall-bounce-left 2.8s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+.skill-wall.right .skill-logo {
+  animation: wall-bounce-right 2.8s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+.skill-logo .mark {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #212428;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.skill-logo .label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 600;
 }
 
 .card,
@@ -488,9 +619,9 @@ button:focus-visible {
   display: inline-flex;
   border-radius: 999px;
   padding: 0.2rem 0.5rem;
-  background: #ecf4fc;
-  border: 1px solid #c5d9ed;
-  color: #1f4f7f;
+  background: #eceff2;
+  border: 1px solid #c8cdd3;
+  color: #2f3339;
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -528,7 +659,7 @@ button:focus-visible {
 .filter-pill {
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: #f7fafd;
+  background: #f3f4f5;
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 600;
@@ -537,7 +668,7 @@ button:focus-visible {
 }
 
 .filter-pill:hover {
-  border-color: #bdd0e4;
+  border-color: #b7bcc2;
   color: var(--brand-strong);
 }
 
@@ -554,8 +685,8 @@ button:focus-visible {
 .about-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: stretch;
+  grid-template-columns: 1fr;
+  align-items: start;
 }
 
 .about-card {
@@ -593,7 +724,7 @@ button:focus-visible {
 
 .lead-panel {
   margin-bottom: 1rem;
-  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f4f5f6 100%);
 }
 
 .muted-note {
@@ -616,7 +747,7 @@ button:focus-visible {
   padding: 0.44rem 0.73rem;
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: #f9fbfd;
+  background: #f5f6f7;
   color: var(--text);
   font-size: 0.89rem;
   font-weight: 600;
@@ -625,8 +756,8 @@ button:focus-visible {
 
 .social-pill:hover {
   text-decoration: none;
-  background: #edf4fb;
-  border-color: #bcd0e4;
+  background: #eef0f2;
+  border-color: #bcc1c8;
 }
 
 .social-pill.is-disabled,
@@ -648,8 +779,8 @@ button:focus-visible {
 }
 
 .timeline-card.highlight {
-  border-color: #b7cadf;
-  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+  border-color: #c1c6cc;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f5f6 100%);
 }
 
 .timeline-date {
@@ -670,18 +801,18 @@ button:focus-visible {
 }
 
 .role-badge-research {
-  background: #e8f1fa;
-  color: #1d5488;
+  background: #e7e9ec;
+  color: #1f2328;
 }
 
 .role-badge-teaching {
-  background: #eef4fa;
-  color: #315f89;
+  background: #eceef0;
+  color: #2e3339;
 }
 
 .role-badge-industry {
-  background: #f0f4f8;
-  color: #4e6278;
+  background: #f1f2f4;
+  color: #454a51;
 }
 
 .timeline-meta {
@@ -690,15 +821,15 @@ button:focus-visible {
 }
 
 .role-research {
-  border-left: 3px solid #1e598f;
+  border-left: 3px solid #2e3339;
 }
 
 .role-teaching {
-  border-left: 3px solid #3e6c95;
+  border-left: 3px solid #4d5258;
 }
 
 .role-industry {
-  border-left: 3px solid #5b7a98;
+  border-left: 3px solid #5d6269;
 }
 
 .publication-list {
@@ -707,7 +838,7 @@ button:focus-visible {
 }
 
 .publication-card {
-  background: linear-gradient(180deg, #ffffff 0%, #f9fcff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f5f6f7 100%);
 }
 
 .publication-header {
@@ -739,13 +870,13 @@ button:focus-visible {
   padding: 0.12rem 0.48rem;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: #f7fbff;
+  background: #f3f4f5;
   font-size: 0.86rem;
 }
 
 .doi-link:hover {
   text-decoration: none;
-  border-color: #b9cee3;
+  border-color: #b9bdc3;
 }
 
 .chip-list {
@@ -760,7 +891,7 @@ button:focus-visible {
 .chip-list li {
   padding: 0.34rem 0.62rem;
   border-radius: 999px;
-  border: 1px solid #c6d8e9;
+  border: 1px solid #c7ccd2;
   background: var(--chip-bg);
   color: var(--chip-text);
   font-size: 0.83rem;
@@ -944,6 +1075,10 @@ button:focus-visible {
 }
 
 @media (max-width: 980px) {
+  .nav {
+    display: block;
+  }
+
   .nav-top {
     min-height: 66px;
     gap: 0.7rem;
@@ -959,8 +1094,8 @@ button:focus-visible {
   }
 
   .brand img {
-    width: 26px;
-    height: 26px;
+    width: 32px;
+    height: 32px;
   }
 
   .nav-list {
@@ -1013,6 +1148,19 @@ button:focus-visible {
   .about-grid,
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .skill-wall-section {
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .skill-wall {
+    display: none;
+  }
+
+  .skill-wall-center {
+    width: 100%;
   }
 
   .article-nav {
