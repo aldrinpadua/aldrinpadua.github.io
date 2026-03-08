@@ -589,3 +589,6 @@ All significant changes are listed here in reverse chronological order.
 - Updated hub video thumbnail behavior on `/fun-academic-projects` to improve mobile autoplay reliability.
 - Removed controls from the hub card video thumbnail, preserved `autoplay`/`muted`/`loop`/`playsinline`.
 - Added JS playback enforcement (`video.play()` retry on metadata load) and explicit inline/muted/loop properties.
+
+### 00:09 ET - Corrected Grass project course code
+- Updated Grass Level Monitor course label on Fun Academic Projects from `DET091A / DET094A` to `DEE700 - Final Project`.

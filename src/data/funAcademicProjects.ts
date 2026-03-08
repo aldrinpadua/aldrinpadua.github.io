@@ -283,7 +283,7 @@ export const funAcademicProjects: AcademicProject[] = [
     slug: 'grass-level-monitor-cloud-iot-image-processing',
     title: 'Grass Level Monitor via Image Processing Using Python',
     institution: 'International College of Auckland, Auckland, New Zealand',
-    course: 'DET091A / DET094A - Cloud-based IoT Final Project',
+    course: 'DEE700 - Final Project',
     year: '2018',
     hubIntro:
       'Designed and implemented a cloud-connected IoT monitoring system that classifies grass condition from camera data and provides remote mowing-readiness visibility through AWS services and a Python frontend. The project integrated edge sensing, cellular/cloud communication, data persistence, and operator-facing status visualization into a complete end-to-end workflow.',
