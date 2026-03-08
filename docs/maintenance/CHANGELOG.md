@@ -417,3 +417,35 @@ All significant changes are listed here in reverse chronological order.
 ### 20:05 ET - Removed redundant Skills overview panel
 - Removed the extra Skills overview section text block from the Skills page to avoid repeating the SectionHeading intro.
 - Deleted now-unused `.skills-intro-panel` style rule from global stylesheet.
+
+### 20:09 ET - About focus-area chips made concise
+- Reduced redundancy in About snapshot chips by removing duplicated degree items already covered in the journey row.
+- Refined focus chips to emphasize distinct technical themes: Human-Robot Interaction, Human-Safe Manipulation, ROS2/Gazebo/OpenSim Workflows, Simulation-to-Prototype, and Safety-Oriented Validation.
+
+### 20:19 ET - About focus chips tightened again
+- Shortened About focus-area chip labels for cleaner scanability.
+- Updated chips to: Human-Robot Interaction, Safe Manipulation, ROS2/Gazebo/OpenSim, Simulation-to-Prototype, Safety Validation.
+
+### 20:21 ET - Replaced About snapshot labels for first-time readability
+- Replaced prior technical/redundant About snapshot labels with clearer plain-language terms.
+- Updated highlight chips to: People-Centered Robotics, Simulation + Prototyping, Controls + Mechatronics, Safety Testing, Research to Real Systems.
+- Updated journey row to: Electronics Foundation, Robotics Graduate Training, PhD Research, Human-Centered Robotics.
+
+### 20:23 ET - About snapshot tuned to prior style with new terms
+- Reverted About snapshot wording style closer to the previous version.
+- Removed undesired labels and replaced with new concise terms.
+- Journey row now uses: Electronics Engineering, MS Robotics, PhD Research, Safety-Critical Robotics.
+- Focus chips now use: Digital Human Modeling, Biomechanics-Aware Analysis, Robotic End-Effector Prototyping, Controls + System Integration, DoD SBIR Research.
+
+### 20:45 ET - Added profile photo to Home hero summary
+- Imported user photo as `public/assets/profile-photo.jpg`.
+- Updated Home hero layout to a two-column structure with text on the left and a fixed-size profile photo on the right.
+- Added responsive behavior: photo stacks below text on smaller screens while preserving clean sizing and framing.
+
+### 20:47 ET - Replaced Home profile photo asset
+- Replaced `public/assets/profile-photo.jpg` with a new user-provided photo.
+- Kept the existing Home hero layout and fixed-size photo frame unchanged.
+
+### 20:48 ET - Hero photo made fully responsive
+- Replaced fixed hero photo heights with `aspect-ratio: 4 / 5` for proportional scaling.
+- Kept responsive width behavior and increased mobile max width slightly for improved readability.

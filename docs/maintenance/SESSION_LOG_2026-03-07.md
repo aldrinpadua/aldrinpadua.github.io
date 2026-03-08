@@ -408,3 +408,31 @@ This file records major work completed in the repository on March 7, 2026.
 ### 20:05 ET
 - Removed redundant Skills intro panel content beneath the Skills tab header.
 - Cleaned up unused Skills intro panel CSS style.
+
+### 20:09 ET
+- Simplified About focus highlight chips to remove overlap with academic journey items.
+- Kept focus chips concise and theme-based rather than repeating degree titles.
+
+### 20:19 ET
+- Revised About focus highlight chips to a more concise set of short labels.
+
+### 20:21 ET
+- Replaced About journey/highlight labels with shorter, first-time-reader-friendly wording.
+- Removed prior overlapping technical phrasing from the About snapshot strip.
+
+### 20:23 ET
+- Adjusted About snapshot labels to match preferred previous style while removing disfavored terms.
+- Replaced both journey/focus entries with concise alternatives.
+
+### 20:45 ET
+- Added profile photo asset at `public/assets/profile-photo.jpg` from user-provided local path.
+- Updated `Hero.astro` to render the portrait on the right side of the summary content.
+- Added fixed-size hero photo styling and responsive fallback in `global.css`.
+
+### 20:47 ET
+- Swapped Home profile image to a new file from user path by replacing `public/assets/profile-photo.jpg`.
+- Previous in-project profile photo content removed via overwrite.
+
+### 20:48 ET
+- Converted Home hero photo container from fixed-height sizing to aspect-ratio-based responsive sizing.
+- Preserved responsive stacking/layout behavior across breakpoints.

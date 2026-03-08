@@ -23,16 +23,24 @@ const showResume = hasResume(profile.resumePath);
   </div>
 
   <div class="hero-content">
-    <p class="eyebrow">{profile.location}</p>
-    <h1 id="hero-title">{profile.name}</h1>
-    <p class="hero-title">{profile.title}</p>
-    <p class="hero-summary">{profile.heroSummary}</p>
+    <div class="hero-main">
+      <div class="hero-copy">
+        <p class="eyebrow">{profile.location}</p>
+        <h1 id="hero-title">{profile.name}</h1>
+        <p class="hero-title">{profile.title}</p>
+        <p class="hero-summary">{profile.heroSummary}</p>
 
-    <div class="hero-cta" aria-label="Primary actions">
-      <a class="btn btn-primary" href="/publications">View Publications</a>
-      <a class="btn" href="/experience">View Experience</a>
-      <a class="btn" href="/contact">Contact</a>
-      {showResume && <a class="btn" href={profile.resumePath}>Download Resume</a>}
+        <div class="hero-cta" aria-label="Primary actions">
+          <a class="btn btn-primary" href="/publications">View Publications</a>
+          <a class="btn" href="/experience">View Experience</a>
+          <a class="btn" href="/contact">Contact</a>
+          {showResume && <a class="btn" href={profile.resumePath}>Download Resume</a>}
+        </div>
+      </div>
+
+      <aside class="hero-photo" aria-label="Profile photo">
+        <img src="/assets/profile-photo.jpg" alt="Portrait of Aldrin Padua" loading="eager" decoding="async" />
+      </aside>
     </div>
   </div>
 </section>
