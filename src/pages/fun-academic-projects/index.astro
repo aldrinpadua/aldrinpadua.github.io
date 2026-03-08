@@ -46,10 +46,6 @@ import { funAcademicProjects, lostDocumentationProjects } from '../../data/funAc
 
             <div class="link-row">
               <a class="btn btn-primary" href={`/fun-academic-projects/${project.slug}`}>Read full project page</a>
-              <a class="btn" href={project.pdfUrl} target="_blank" rel="noreferrer">Project documentation (PDF)</a>
-              {project.sourceCodeUrl && (
-                <a class="btn" href={project.sourceCodeUrl} target="_blank" rel="noreferrer">Source code (ZIP)</a>
-              )}
             </div>
           </div>
         </article>

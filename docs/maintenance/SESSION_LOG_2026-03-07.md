@@ -542,3 +542,8 @@ This file records major work completed in the repository on March 7, 2026.
 
 ### 00:09 ET
 - Corrected Grass Level Monitor course code in fun academic projects data to `DEE700`.
+
+### 00:28 ET
+- Removed `Project documentation (PDF)` and `Source code (ZIP)` buttons from Fun Academic Projects hub cards.
+- Kept only `Read full project page` in each hub card action row.
+- Left article/detail pages intact so documentation and source-code links remain available there.

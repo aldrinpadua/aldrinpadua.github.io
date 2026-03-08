@@ -592,3 +592,8 @@ All significant changes are listed here in reverse chronological order.
 
 ### 00:09 ET - Corrected Grass project course code
 - Updated Grass Level Monitor course label on Fun Academic Projects from `DET091A / DET094A` to `DEE700 - Final Project`.
+
+### 00:28 ET - Removed direct doc/code buttons from project hub cards
+- Updated `/fun-academic-projects` overview cards to keep only `Read full project page`.
+- Removed `Project documentation (PDF)` and `Source code (ZIP)` buttons from the hub page.
+- Detail article pages remain unchanged and still provide documentation/source-code links.
