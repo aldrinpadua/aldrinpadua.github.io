@@ -338,6 +338,34 @@ This file records major work completed in the repository on March 7, 2026.
 - Added institution logo mapping in Education page and rendered a school logo for each education section entry.
 - Added Education institution-row/logo styles to align logos with institution/location metadata while preserving card readability.
 
+### 19:32 ET
+- Repositioned Education school logos to appear under each completion date in the timeline date column.
+- Enlarged Education logo presentation from small inline icons to regular-sized image blocks.
+- Removed inline institution-logo row wrapper and kept institution/location metadata as a clean text line.
+
+### 19:34 ET
+- Replaced remote Education school-logo sources with local static SVG assets to fix non-loading logos.
+- Added local school assets for Stevens, ICA, and Mapua and updated Education institution-to-logo mapping paths.
+
+### 19:38 ET
+- Removed Education logo rendering and switched school display to institution hyperlinks.
+- Added link mapping for Stevens, ICA, and Mapua websites in Education entries.
+- Deleted now-unused local Education logo assets from `public/assets/schools`.
+
+### 19:39 ET
+- Refreshed the Education-only icon glyph designs with a new visual set for all four degree sections.
+- Retained existing Education-specific icon mapping and color classes while changing icon artwork.
+
+### 19:42 ET
+- Added global section hover background-color response across tabs for cleaner interactive feedback.
+- Added dedicated hover background variants for Home overview cards except profile summary.
+- Kept explicit exemptions: no hover background-color change for Skills section cards and Home `Positioning` card.
+
+### 19:44 ET
+- Increased hover background contrast intensity across section cards for easier visual notice.
+- Enabled hover background-color shift on Skills cards to make hover state visible in Skills tab.
+- Increased hover accent intensity for Home Current Work / Publication / Technical Breadth cards.
+
 ## Notable Constraints Enforced
 
 - No phone number published
@@ -351,3 +379,20 @@ This file records major work completed in the repository on March 7, 2026.
 
 - Replace placeholder project/insight entries with final public-safe content
 - Add real resume file at `public/assets/resume.pdf` if download button is desired
+
+### 19:49 ET
+- Replaced `public/assets/site-logo.svg` artwork with a new mixed-motif doodle logo (robot arm + circuit + physics atom).
+- Increased brand contrast for navbar visibility using brighter accent colors and subtle glow treatment.
+- Updated `public/assets/favicon.svg` to align with the new logo style.
+
+### 19:52 ET
+- Made the primary site logo background transparent by removing the SVG background rect.
+- Increased navbar brand logo size for stronger visual presence on desktop and mobile breakpoints.
+
+### 19:54 ET
+- Updated `public/assets/site-logo.svg` with a second logo concept: one cohesive continuous-stroke emblem (transparent background).
+- Consolidated prior distinct motif clusters into a single integrated doodle-style mark for cleaner brand identity.
+
+### 19:54 ET
+- Increased navbar brand logo display size on desktop/mobile breakpoints.
+- Exported a large print-ready PNG logo (`4096 x 4096`) and saved it as `public/assets/site-logo-print-4096.png`.

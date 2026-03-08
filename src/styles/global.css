@@ -284,8 +284,8 @@ button:focus-visible {
 }
 
 .brand img {
-  width: 56px;
-  height: 56px;
+  width: 82px;
+  height: 82px;
   display: block;
 }
 
@@ -1030,6 +1030,12 @@ main :where(p, li)[style*='text-align: center'] {
   padding: 1.2rem;
 }
 
+.content-card:hover,
+.lead-panel:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #dce8f5 100%);
+  border-color: #9fb3c9;
+}
+
 .skill-card {
   background: linear-gradient(180deg, #ffffff 0%, var(--surface-soft) 100%);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -1037,8 +1043,9 @@ main :where(p, li)[style*='text-align: center'] {
 
 .skill-card:hover {
   transform: translateY(-2px);
-  border-color: #b5c8dc;
+  border-color: #8faec8;
   box-shadow: 0 16px 30px rgba(17, 31, 46, 0.1);
+  background: linear-gradient(180deg, #ffffff 0%, #d7e6f6 100%);
 }
 
 .home-overview-card {
@@ -1081,6 +1088,34 @@ main :where(p, li)[style*='text-align: center'] {
   background:
     radial-gradient(circle at 82% 22%, rgba(236, 143, 93, 0.12), transparent 40%),
     linear-gradient(180deg, #ffffff 0%, #fdf5ef 100%);
+}
+
+.home-overview-positioning:hover {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(39, 136, 209, 0.3), transparent 44%),
+    linear-gradient(180deg, #ffffff 0%, #d8eaf9 100%);
+  border-color: #7ea6c8;
+}
+
+.home-overview-current:hover {
+  background:
+    radial-gradient(circle at 84% 80%, rgba(52, 170, 145, 0.3), transparent 42%),
+    linear-gradient(180deg, #ffffff 0%, #d9f0e5 100%);
+  border-color: #83b7aa;
+}
+
+.home-overview-publication:hover {
+  background:
+    radial-gradient(circle at 24% 76%, rgba(109, 89, 221, 0.3), transparent 44%),
+    linear-gradient(180deg, #ffffff 0%, #e3defa 100%);
+  border-color: #9d91d8;
+}
+
+.home-overview-breadth:hover {
+  background:
+    radial-gradient(circle at 82% 22%, rgba(222, 120, 66, 0.28), transparent 40%),
+    linear-gradient(180deg, #ffffff 0%, #f6e0d1 100%);
+  border-color: #cba082;
 }
 
 .skills-intro-panel {
@@ -1302,8 +1337,9 @@ main :where(p, li)[style*='text-align: center'] {
 
 .about-card:hover {
   transform: translateY(-2px);
-  border-color: #b5c8dc;
+  border-color: #97aec8;
   box-shadow: 0 16px 30px rgba(17, 31, 46, 0.1);
+  background: linear-gradient(180deg, #ffffff 0%, #dce8f5 100%);
 }
 
 .about-card-head {
@@ -1470,8 +1506,9 @@ main :where(p, li)[style*='text-align: center'] {
 
 .timeline-card:hover {
   transform: translateY(-2px);
-  border-color: #b5c8dc;
+  border-color: #97aec8;
   box-shadow: 0 16px 30px rgba(17, 31, 46, 0.1);
+  background: linear-gradient(180deg, #ffffff 0%, #dce8f5 100%);
 }
 
 .timeline-card.highlight {
@@ -1532,23 +1569,6 @@ main :where(p, li)[style*='text-align: center'] {
   border-left: 3px solid #2e3339;
 }
 
-.education-institution-row {
-  display: flex;
-  align-items: center;
-  gap: 0.62rem;
-}
-
-.education-school-logo {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  border: 1px solid #c7d1dc;
-  background: #fff;
-  object-fit: contain;
-  flex-shrink: 0;
-  box-shadow: 0 6px 12px rgba(24, 37, 53, 0.08);
-}
-
 .publication-list {
   display: grid;
   gap: 0.95rem;
@@ -1564,8 +1584,9 @@ main :where(p, li)[style*='text-align: center'] {
 .contact-panel:hover,
 .scholar-card:hover {
   transform: translateY(-2px);
-  border-color: #b5c8dc;
+  border-color: #97aec8;
   box-shadow: 0 16px 30px rgba(17, 31, 46, 0.1);
+  background: linear-gradient(180deg, #ffffff 0%, #dce8f5 100%);
 }
 
 .publication-header {
@@ -1665,6 +1686,8 @@ main :where(p, li)[style*='text-align: center'] {
 .project-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 30px rgba(18, 34, 52, 0.1);
+  background: linear-gradient(180deg, #ffffff 0%, #dce8f5 100%);
+  border-color: #97aec8;
 }
 
 .detail-article {
@@ -1853,8 +1876,8 @@ main :where(p, li)[style*='text-align: center'] {
   }
 
   .brand img {
-    width: 40px;
-    height: 40px;
+    width: 58px;
+    height: 58px;
   }
 
   .nav-list {

@@ -4,6 +4,42 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 19:44 ET - Hover contrast increased globally and enabled visibly on Skills cards
+- Increased hover background contrast strength across section cards/panels for more noticeable feedback
+- Added explicit Skills card hover background-color shift (previously exempted) so hover change is now visible in Skills tab
+- Strengthened Home overview hover accent intensity for Current Work / Publication / Technical Breadth cards
+
+### 19:42 ET - Global section hover background-color response added with requested exemptions
+- Added subtle hover-time background color shift for section cards/panels across tabs to improve interactive feedback
+- Applied per-section hover color tuning for Home overview cards (Current Work, Publication, Technical Breadth)
+- Kept requested exemptions:
+  - no hover background-color change for Skills section cards
+  - no hover background-color change for Home profile summary section (`Positioning`)
+- Preserved existing clean/professional motion and border/shadow behavior
+
+### 19:39 ET - Education icon set refreshed again with a new unique glyph style
+- Replaced the four Education-only section icon glyphs with a new icon design set
+- Kept Education icon identifiers and mapping intact while updating the actual SVG visuals
+- Preserved section-specific coloring and uniqueness from non-Education tabs/pages
+
+### 19:38 ET - Education logos removed and institution hyperlinks added
+- Removed school logo rendering from Education entries and restored simple date column layout
+- Replaced institution display with clickable hyperlinks for:
+  - Stevens: `https://www.stevens.edu/`
+  - International College of Auckland: `https://ica.ac.nz/`
+  - Mapua Institute of Technology: `https://www.mapua.edu.ph/`
+- Removed now-unused local school logo assets under `public/assets/schools`
+
+### 19:34 ET - Education school logo loading reliability fix
+- Replaced external school-logo URLs with local static SVG assets under `public/assets/schools`
+- Updated Education logo mapping to local paths to prevent remote-loading failures
+- Added local logo assets for Stevens, ICA, and Mapua entries used in Education timeline
+
+### 19:32 ET - Education logo placement changed to larger date-column display
+- Moved each school logo from inline institution row to the date column under graduation/completion date
+- Increased Education logo display size from tiny icon style to regular image card style
+- Simplified institution metadata row by removing inline-logo wrapper and keeping text-only institution/location line
+
 ### 19:28 ET - Education section entries now show institution logos
 - Added school-logo rendering for each Education section using institution-to-logo mapping
 - Integrated logos into a dedicated institution row beside school/location metadata
@@ -349,3 +385,22 @@ All significant changes are listed here in reverse chronological order.
 - Added SEO + Open Graph metadata framework
 - Added GitHub Pages deployment workflow
 - Refined copy and visual hierarchy for recruiter-facing presentation
+
+### 19:49 ET - Website logo redesign for navbar contrast
+- Replaced the primary site logo SVG with a new custom doodle mark combining robot arm, circuit trace, and physics atom motifs.
+- Shifted logo palette to high-contrast cyan, lime, orange, pink, and warm yellow accents for stronger visibility over the animated navbar background.
+- Updated `public/assets/favicon.svg` to a matching visual language for consistent branding.
+
+### 19:52 ET - Transparent logo background and larger navbar brand mark
+- Removed the square background fill from `public/assets/site-logo.svg` so the logo renders with a transparent background.
+- Increased navbar logo display size to improve prominence: desktop `56px -> 68px`, mobile `40px -> 50px`.
+
+### 19:54 ET - Logo proposal refresh (single cohesive emblem)
+- Replaced navbar logo artwork with a new transparent-background concept built as one integrated emblem instead of separate motif clusters.
+- Designed the mark as a continuous monoline form to unify robotics, circuits, and physics cues into a single visual element.
+- Kept high-contrast accent gradient and glow for readability over the animated navbar background.
+
+### 19:54 ET - Larger navbar logo and printable PNG export
+- Increased navbar logo render size for stronger visual emphasis (desktop `82px`, mobile `58px`).
+- Generated high-resolution print-ready logo PNG from the current SVG at `4096x4096`.
+- Saved printable export as `public/assets/site-logo-print-4096.png`.

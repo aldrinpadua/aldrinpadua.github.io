@@ -20,10 +20,10 @@ const educationIconMeta = (degree: string) => {
   return { icon: 'edu-bs-ece', colorClass: 'edu-icon-bs-ece' };
 };
 
-const educationLogoMap: Record<string, string> = {
-  'Stevens Institute of Technology': 'https://logo.clearbit.com/stevens.edu',
-  'International College of Auckland': 'https://logo.clearbit.com/ica.ac.nz',
-  'Mapua Institute of Technology': 'https://logo.clearbit.com/mapua.edu.ph'
+const educationInstitutionLinks: Record<string, string> = {
+  'Stevens Institute of Technology': 'https://www.stevens.edu/',
+  'International College of Auckland': 'https://ica.ac.nz/',
+  'Mapua Institute of Technology': 'https://www.mapua.edu.ph/'
 };
 ---
 
@@ -50,18 +50,16 @@ const educationLogoMap: Record<string, string> = {
               </span>
               <h2>{item.degree}</h2>
             </div>
-            <div class="education-institution-row">
-              {educationLogoMap[item.institution] && (
-                <img
-                  class="education-school-logo"
-                  src={educationLogoMap[item.institution]}
-                  alt={`${item.institution} logo`}
-                  loading="lazy"
-                  decoding="async"
-                />
-              )}
-              <p class="timeline-meta">{item.institution} • {item.location}</p>
-            </div>
+            <p class="timeline-meta">
+              {educationInstitutionLinks[item.institution] ? (
+                <a href={educationInstitutionLinks[item.institution]} target="_blank" rel="noreferrer">
+                  {item.institution}
+                </a>
+              ) : (
+                item.institution
+              )}{' '}
+              • {item.location}
+            </p>
             <ul class="bullet-list compact">
               {item.focus && <li><strong>Research Focus:</strong> {item.focus}</li>}
               {item.gpa && <li><strong>GPA:</strong> {item.gpa}</li>}
