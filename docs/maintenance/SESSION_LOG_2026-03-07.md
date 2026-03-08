@@ -436,3 +436,7 @@ This file records major work completed in the repository on March 7, 2026.
 ### 20:48 ET
 - Converted Home hero photo container from fixed-height sizing to aspect-ratio-based responsive sizing.
 - Preserved responsive stacking/layout behavior across breakpoints.
+
+### 20:50 ET
+- Replaced Skills hub octagon with a 34-sided polygon clip-path.
+- Synced the polygon shape for both the core element and its hover outline.

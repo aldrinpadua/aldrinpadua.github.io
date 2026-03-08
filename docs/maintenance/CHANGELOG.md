@@ -449,3 +449,7 @@ All significant changes are listed here in reverse chronological order.
 ### 20:48 ET - Hero photo made fully responsive
 - Replaced fixed hero photo heights with `aspect-ratio: 4 / 5` for proportional scaling.
 - Kept responsive width behavior and increased mobile max width slightly for improved readability.
+
+### 20:50 ET - Skills hub shape changed to 34-sided polygon
+- Updated Home skills hub clip-path from octagon to a 34-sided regular polygon approximation.
+- Applied the same 34-sided polygon geometry to both `.skill-core` and `.skill-core::after` so base/hover ring remain aligned.
