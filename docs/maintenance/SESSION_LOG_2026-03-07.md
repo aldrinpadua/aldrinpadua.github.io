@@ -396,3 +396,7 @@ This file records major work completed in the repository on March 7, 2026.
 ### 19:54 ET
 - Increased navbar brand logo display size on desktop/mobile breakpoints.
 - Exported a large print-ready PNG logo (`4096 x 4096`) and saved it as `public/assets/site-logo-print-4096.png`.
+
+### 19:56 ET
+- Added employer website links to Experience entries for Stevens, WISS, and Accenture.
+- Updated Experience timeline organization line to render linked employer names with fallback to plain text for unmatched entries.

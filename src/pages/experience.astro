@@ -3,6 +3,12 @@ import MainLayout from '../layouts/MainLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import Icon from '../components/Icon.astro';
 import { experience } from '../data/experience';
+
+const employerLinks: Record<string, string> = {
+  'Stevens Institute of Technology': 'https://www.stevens.edu/',
+  'World Information System Solution Inc.': 'http://wiss1.co.jp/',
+  'Accenture Inc.': 'https://www.accenture.com/ph-en'
+};
 ---
 
 <MainLayout
@@ -39,7 +45,16 @@ import { experience } from '../data/experience';
                 </span>
                 <h2>{item.role}</h2>
               </div>
-              <p class="timeline-meta">{item.organization} • {item.location}</p>
+              <p class="timeline-meta">
+                {employerLinks[item.organization] ? (
+                  <a href={employerLinks[item.organization]} target="_blank" rel="noreferrer">
+                    {item.organization}
+                  </a>
+                ) : (
+                  item.organization
+                )}{' '}
+                • {item.location}
+              </p>
               <ul class="bullet-list compact">
                 {
                   item.bullets.map((bullet) => (

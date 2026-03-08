@@ -404,3 +404,7 @@ All significant changes are listed here in reverse chronological order.
 - Increased navbar logo render size for stronger visual emphasis (desktop `82px`, mobile `58px`).
 - Generated high-resolution print-ready logo PNG from the current SVG at `4096x4096`.
 - Saved printable export as `public/assets/site-logo-print-4096.png`.
+
+### 19:56 ET - Experience employer website links
+- Added employer hyperlink mapping in the Experience tab for Stevens Institute of Technology, World Information System Solution Inc., and Accenture Inc.
+- Updated experience organization rendering so mapped employers are clickable (open in new tab) while preserving plain-text fallback for unmatched organizations.
