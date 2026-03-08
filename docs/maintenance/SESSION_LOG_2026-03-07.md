@@ -547,3 +547,28 @@ This file records major work completed in the repository on March 7, 2026.
 - Removed `Project documentation (PDF)` and `Source code (ZIP)` buttons from Fun Academic Projects hub cards.
 - Kept only `Read full project page` in each hub card action row.
 - Left article/detail pages intact so documentation and source-code links remain available there.
+
+### 01:07 ET
+- Adjusted Fun Academic Projects hub thumbnail rendering so full image content is visible.
+- Applied `aspect-ratio: 16 / 10` and `object-fit: contain` to `.academic-preview-media img`.
+- This resolves cropping on the Inverse Kinematics project thumbnail card.
+
+### 01:08 ET
+- Replaced enforced hub-image ratio with natural image rendering for project thumbnails.
+- Applied `height: auto` and `aspect-ratio: auto` to `.academic-preview-media img`.
+- Ensures the Inverse Kinematics thumbnail shows entirely, including the top area.
+
+### 01:10 ET
+- Added a first-card-only style hook (`ik-hub-card`) on Fun Academic Projects overview.
+- Applied strict anti-crop rules to that card image: `object-fit: contain`, `object-position: top center`, `height: auto`.
+- Limited scope so only the first section box behavior changes.
+
+### 01:13 ET
+- Replaced the first-section Inverse Kinematics hub thumbnail source from `ik-038.png` to `ik-044.png`.
+- Updated the hub thumbnail alt/caption text to match the new image content.
+- Purpose: remove top clipping caused by the original source image itself.
+
+### 01:14 ET
+- Imported user-provided IK image from Downloads into repo:
+  - `public/assets/academic-projects/images/ik/ik-hub-user-selected.jpg`
+- Updated IK hub card thumbnail source in fun-academic-projects data to the new JPG file.

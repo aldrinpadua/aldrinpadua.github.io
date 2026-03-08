@@ -1883,6 +1883,21 @@ main :where(p, li)[style*='text-align: center'] {
   background: #fff;
 }
 
+.academic-preview-media img {
+  display: block;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: unset;
+}
+
+.ik-hub-card .academic-preview-media img {
+  width: 100%;
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: top center;
+  max-height: none;
+}
+
 .academic-preview-content h2 {
   margin: 0.2rem 0 0.55rem;
 }

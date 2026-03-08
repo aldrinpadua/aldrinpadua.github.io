@@ -67,9 +67,9 @@ export const funAcademicProjects: AcademicProject[] = [
     hubIntro:
       'Implemented a Newton-based inverse kinematics solver for a 4-DOF RRRR manipulator in 3D and compared it against geometric IK. The work focused on practical tradeoffs among solver generality, convergence behavior, and runtime, while also demonstrating how one numerical workflow can support multiple configurations without repeated symbolic re-derivation.',
     hubImage: {
-      src: '/assets/academic-projects/images/ik/ik-038.png',
-      alt: 'Inverse Kinematics Using Newton method screenshot with isometric, XY, YZ, and XZ panels',
-      caption: 'Multi-view manipulator result (isometric, XY, YZ, XZ).'
+      src: '/assets/academic-projects/images/ik/ik-hub-user-selected.jpg',
+      alt: 'Inverse kinematics project figure selected by user for hub thumbnail',
+      caption: 'Inverse Kinematics project figure (user-selected hub image).'
     },
     pdfUrl: '/assets/academic-projects/docs/inverse-kinematics-4dof.pdf',
     sourceCodeUrl: '/assets/academic-projects/source/inverse-kinematics-4dof-source.zip',

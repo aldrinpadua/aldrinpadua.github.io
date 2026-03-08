@@ -17,7 +17,12 @@ import { funAcademicProjects, lostDocumentationProjects } from '../../data/funAc
   <section class="stack-section" aria-label="Academic projects overview">
     {
       funAcademicProjects.map((project) => (
-        <article class="content-card reveal academic-preview-card">
+        <article
+          class:list={[
+            'content-card reveal academic-preview-card',
+            project.slug === 'inverse-kinematics-4dof-newton-vs-geometric' && 'ik-hub-card'
+          ]}
+        >
           <div class="academic-preview-media">
             {project.video ? (
               <video
