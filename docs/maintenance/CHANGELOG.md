@@ -584,3 +584,8 @@ All significant changes are listed here in reverse chronological order.
 - Expanded page-level intro text for stronger context on project selection rationale.
 - Expanded hub-section intro note for `Additional Projects (Documentation Lost)`.
 - Expanded per-project hub introductory descriptions for IK, obstacle-avoidance, and Grass Level Monitor entries to provide clearer technical context at first glance.
+
+### 00:04 ET - Mobile autoplay/loop fix for Fun Academic Projects hub video
+- Updated hub video thumbnail behavior on `/fun-academic-projects` to improve mobile autoplay reliability.
+- Removed controls from the hub card video thumbnail, preserved `autoplay`/`muted`/`loop`/`playsinline`.
+- Added JS playback enforcement (`video.play()` retry on metadata load) and explicit inline/muted/loop properties.

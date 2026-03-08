@@ -21,7 +21,6 @@ import { funAcademicProjects, lostDocumentationProjects } from '../../data/funAc
           <div class="academic-preview-media">
             {project.video ? (
               <video
-                controls
                 autoplay
                 muted
                 loop
@@ -89,6 +88,9 @@ import { funAcademicProjects, lostDocumentationProjects } from '../../data/funAc
     for (const video of academicVideos) {
       const rate = Number(video.getAttribute('data-playback-rate') ?? '1');
       if (!Number.isFinite(rate) || rate <= 0) continue;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
       video.defaultPlaybackRate = rate;
       video.playbackRate = rate;
       video.addEventListener(
@@ -96,9 +98,19 @@ import { funAcademicProjects, lostDocumentationProjects } from '../../data/funAc
         () => {
           video.defaultPlaybackRate = rate;
           video.playbackRate = rate;
+          video
+            .play()
+            .catch(() => {
+              // Mobile browsers may still block autoplay under device policies.
+            });
         },
         { once: true }
       );
+      video
+        .play()
+        .catch(() => {
+          // Retry path above covers delayed metadata cases.
+        });
     }
   </script>
 </MainLayout>
