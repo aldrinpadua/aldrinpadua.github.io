@@ -1,7 +1,21 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import Icon from '../components/Icon.astro';
 import { skillGroups } from '../data/skills';
+
+const skillThemes = ['skill-theme-a', 'skill-theme-b', 'skill-theme-c', 'skill-theme-d'];
+
+const iconForCategory = (category: string) => {
+  if (category.includes('Robotics') || category.includes('Controls')) return 'experience';
+  if (category.includes('Simulation') || category.includes('AI')) return 'insight';
+  if (category.includes('Programming')) return 'project';
+  if (category.includes('CAD') || category.includes('Engineering Tools')) return 'education';
+  if (category.includes('Hardware') || category.includes('Prototyping')) return 'skills';
+  if (category.includes('Platforms') || category.includes('Software')) return 'contact';
+  if (category.includes('Languages')) return 'about';
+  return 'skills';
+};
 ---
 
 <MainLayout title="Skills" description="Technical skills across robotics, simulation, programming, and hardware systems.">
@@ -11,11 +25,22 @@ import { skillGroups } from '../data/skills';
     intro="Grouped technical competencies across robotics research, simulation workflows, software development, and hardware prototyping."
   />
 
+  <section class="lead-panel reveal skills-intro-panel" aria-label="Skills overview">
+    <p>
+      A broad engineering stack spanning robot reasoning, physically interactive simulation, rapid prototyping, and full software-to-hardware delivery workflows.
+    </p>
+  </section>
+
   <section class="skills-grid" aria-label="Skill groups">
     {
-      skillGroups.map((group) => (
-        <article class="card reveal skill-card">
-          <h2>{group.category}</h2>
+      skillGroups.map((group, index) => (
+        <article class={`card reveal skill-card skill-card-rich ${skillThemes[index % skillThemes.length]}`}>
+          <div class="skill-card-head">
+            <span class="section-card-icon">
+              <Icon name={iconForCategory(group.category)} class="icon section-icon icon-skills" />
+            </span>
+            <h2>{group.category}</h2>
+          </div>
           <ul class="chip-list">
             {
               group.items.map((skill) => (

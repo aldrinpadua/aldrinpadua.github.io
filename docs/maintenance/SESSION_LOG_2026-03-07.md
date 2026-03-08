@@ -303,6 +303,18 @@ This file records major work completed in the repository on March 7, 2026.
 - Updated Publications icon wiring to map unique icons per publication entry.
 - Removed Home skills square overlay layer by deleting the `.skill-bg-pan` element from the Home skills arena markup.
 
+### 19:13 ET
+- Added a dedicated About Professional Summary icon variant so it is distinct from the page-level About icon.
+- Removed Education highlight-class styling from top entries to restore consistent hover feedback behavior across all entries.
+- Updated Experience icon mapping so `Research Assistant` no longer reuses the Publications-style icon.
+- Increased Publications primary button icon contrast via explicit white icon styling in primary button context.
+- Redesigned Skills page cards with richer header/icon treatment, themed accents, and stronger visual hierarchy.
+- Set Home skills arena overflow to visible so moving logos are not clipped by a residual square boundary around the octagon hub.
+
+### 19:15 ET
+- Updated Publications card icon classes so section icon colors differ from the tab-level Publications icon color.
+- Added dedicated per-entry Publications icon color variants for clearer in-page visual distinction.
+
 ## Notable Constraints Enforced
 
 - No phone number published

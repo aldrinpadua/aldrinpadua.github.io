@@ -19,6 +19,7 @@ import { publications } from '../data/publications';
     {
       publications.map((publication, index) => {
         const publicationIcon = index % 2 === 0 ? 'pub-casualty' : 'pub-multifidelity';
+        const publicationIconClass = index % 2 === 0 ? 'pub-entry-icon-a' : 'pub-entry-icon-b';
 
         return (
           <article class="publication-card reveal">
@@ -29,7 +30,7 @@ import { publications } from '../data/publications';
 
             <div class="section-card-head">
               <span class="section-card-icon">
-                <Icon name={publicationIcon} class="icon section-icon icon-publication" />
+                <Icon name={publicationIcon} class={`icon section-icon ${publicationIconClass}`} />
               </span>
               <h2>{publication.title}</h2>
             </div>

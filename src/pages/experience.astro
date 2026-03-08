@@ -24,8 +24,9 @@ import { experience } from '../data/experience';
   <section class="timeline" aria-label="Experience timeline">
     {
       experience.map((item) => {
-        const roleIcon = item.category === 'research' ? 'publication' : item.category === 'teaching' ? 'education' : 'project';
-        const roleIconClass = item.category === 'research' ? 'icon-publication' : item.category === 'teaching' ? 'icon-education' : 'icon-project';
+        const isResearchAssistant = item.role.toLowerCase().includes('research assistant');
+        const roleIcon = isResearchAssistant ? 'insight' : item.category === 'teaching' ? 'education' : item.category === 'industry' ? 'project' : 'experience';
+        const roleIconClass = isResearchAssistant ? 'icon-insight' : item.category === 'teaching' ? 'icon-education' : item.category === 'industry' ? 'icon-project' : 'icon-experience';
 
         return (
           <article class={`timeline-card reveal role-${item.category}`}>

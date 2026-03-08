@@ -4,6 +4,18 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 19:15 ET - Publications section icon colors decoupled from tab icon color
+- Updated Publications card section icons to use a dedicated in-page color palette
+- Kept tab-level Publications icon color unchanged while assigning distinct colors for per-entry section icons
+
+### 19:13 ET - About/Education/Experience/Publications/Skills/Home targeted UX corrections
+- Made About page heading icon and Professional Summary icon visually unique by introducing a dedicated summary-profile icon
+- Removed Education highlight-state class from first two entries so hover interaction behaves consistently across all education cards
+- Changed Experience `Research Assistant` icon mapping to a non-publication icon to avoid duplication with Publications visuals
+- Improved Publications `View Google Scholar` button icon contrast by forcing white icon color on primary buttons
+- Enhanced Skills tab visual design with richer intro panel, themed group cards, section icon headers, and accent strip variants
+- Removed remaining Home skills arena occlusion effect by allowing arena overflow visibility so moving logos are not clipped by a translucent square boundary
+
 ### 19:05 ET - Publications unique icon set + Home skills square overlay removal
 - Added publication-specific unique icons used only in Publications cards and Scholar CTA button
 - Updated Publications card icon mapping per entry so section visuals better match publication content while avoiding icon reuse across tabs

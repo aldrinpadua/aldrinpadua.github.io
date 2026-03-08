@@ -11,6 +11,7 @@ interface Props {
     | 'insight'
     | 'skills'
     | 'about'
+    | 'about-profile'
     | 'about-summary'
     | 'about-focus'
     | 'about-research'
@@ -114,6 +115,15 @@ const { name, class: className = '' } = Astro.props;
       <path d="M12 3 1.8 8.2 12 13.4l10.2-5.2L12 3Z" />
       <path d="M5.2 11.2V15c0 3 3 5.2 6.8 5.2s6.8-2.2 6.8-5.2v-3.8L12 15.1l-6.8-3.9Z" opacity="0.55" />
       <circle cx="19.6" cy="12.7" r="1.1" />
+    </svg>
+  )
+}
+{
+  name === 'about-profile' && (
+    <svg viewBox="0 0 24 24" class={className} aria-hidden="true">
+      <path d="M6 3h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" />
+      <circle cx="12" cy="10" r="2.4" opacity="0.55" />
+      <path d="M8.6 16c.8-1.6 2-2.4 3.4-2.4s2.6.8 3.4 2.4" opacity="0.55" />
     </svg>
   )
 }
