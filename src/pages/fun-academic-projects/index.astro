@@ -1,0 +1,104 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import { funAcademicProjects, lostDocumentationProjects } from '../../data/funAcademicProjects';
+---
+
+<MainLayout
+  title="Fun Academic Projects"
+  description="A selective set of academic projects from my journey that most deepened my understanding in robotics, simulation, controls, and systems engineering."
+>
+  <SectionHeading
+    title="Fun Academic Projects"
+    icon="project"
+    intro="A curated subset of projects from my academic journey. This is not an exhaustive list, but a selected set of builds that significantly shaped how I approach robotics, controls, simulation, and system integration."
+  />
+
+  <section class="stack-section" aria-label="Academic projects overview">
+    {
+      funAcademicProjects.map((project) => (
+        <article class="content-card reveal academic-preview-card">
+          <div class="academic-preview-media">
+            {project.video ? (
+              <video
+                controls
+                autoplay
+                muted
+                loop
+                playsinline
+                data-playback-rate="2"
+                preload="metadata"
+                poster={project.video.poster}
+                aria-label={project.video.caption}
+              >
+                <source src={project.video.src} type="video/mp4" />
+              </video>
+            ) : (
+              <img src={project.hubImage.src} alt={project.hubImage.alt} loading="lazy" decoding="async" />
+            )}
+            <p class="muted-note academic-caption">{project.hubImage.caption}</p>
+          </div>
+
+          <div class="academic-preview-content">
+            <p class="card-kicker">{project.course}</p>
+            <h2>{project.title}</h2>
+            <p class="timeline-meta">{project.institution} • {project.year}</p>
+            <p>{project.hubIntro}</p>
+
+            <div class="link-row">
+              <a class="btn btn-primary" href={`/fun-academic-projects/${project.slug}`}>Read full project page</a>
+              <a class="btn" href={project.pdfUrl} target="_blank" rel="noreferrer">Project documentation (PDF)</a>
+              {project.sourceCodeUrl && (
+                <a class="btn" href={project.sourceCodeUrl} target="_blank" rel="noreferrer">Source code (ZIP)</a>
+              )}
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="stack-section" aria-label="Projects with lost documentation">
+    <article class="content-card reveal">
+      <div class="section-row">
+        <h2>Additional Projects (Documentation Lost)</h2>
+        <p class="muted-note">
+          Earlier academic builds that remain important to my technical foundation even though full reports are no longer available. These projects reflect core hands-on training in electronics, communications, and automation that supported later robotics and research work.
+        </p>
+      </div>
+
+      <div class="lost-project-grid">
+        {
+          lostDocumentationProjects.map((project) => (
+            <section class="lost-project-card">
+              <h3>{project.title}</h3>
+              <p class="timeline-meta">{project.course}</p>
+              <p class="muted-note">{project.institution} • {project.year}</p>
+              <ul class="bullet-list compact">
+                {project.details.map((item) => <li>{item}</li>)}
+              </ul>
+            </section>
+          ))
+        }
+      </div>
+    </article>
+  </section>
+
+  <script>
+    const academicVideos = Array.from(document.querySelectorAll('video[data-playback-rate]'));
+    for (const video of academicVideos) {
+      const rate = Number(video.getAttribute('data-playback-rate') ?? '1');
+      if (!Number.isFinite(rate) || rate <= 0) continue;
+      video.defaultPlaybackRate = rate;
+      video.playbackRate = rate;
+      video.addEventListener(
+        'loadedmetadata',
+        () => {
+          video.defaultPlaybackRate = rate;
+          video.playbackRate = rate;
+        },
+        { once: true }
+      );
+    }
+  </script>
+</MainLayout>

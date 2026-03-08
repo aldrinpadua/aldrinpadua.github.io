@@ -1867,6 +1867,143 @@ main :where(p, li)[style*='text-align: center'] {
   text-align: right;
 }
 
+.academic-preview-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.academic-preview-media img,
+.academic-preview-media video {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
+  background: #fff;
+}
+
+.academic-preview-content h2 {
+  margin: 0.2rem 0 0.55rem;
+}
+
+.academic-caption {
+  margin-top: 0.45rem;
+  text-align: center;
+}
+
+.academic-video {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
+  background: #000;
+}
+
+.academic-pdf-panel {
+  padding-bottom: 0.9rem;
+}
+
+.academic-pdf-viewer {
+  width: 100%;
+  min-height: 78vh;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.comparison-video-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.comparison-video-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.8rem;
+  background: #fff;
+}
+
+.comparison-video-card h3 {
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+
+.comparison-video-card video {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #000;
+}
+
+.comparison-video-card .muted-note {
+  text-align: center;
+}
+
+.academic-gallery {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.academic-figure {
+  margin: 0;
+  display: grid;
+  gap: 0.4rem;
+  padding: 0.55rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.academic-figure img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background-color: #fff;
+}
+
+.academic-figure figcaption {
+  font-size: 0.82rem;
+  color: #4f5d6b;
+  line-height: 1.4;
+  padding: 0.1rem 0.15rem 0.15rem;
+}
+
+.academic-figure figcaption strong {
+  color: #2a3644;
+}
+
+.detail-article img {
+  background-color: #fff;
+}
+
+.lost-project-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.lost-project-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  padding: 0.9rem;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background-color 0.22s ease;
+}
+
+.lost-project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(16, 30, 48, 0.1);
+  border-color: #95b2cf;
+  background: linear-gradient(180deg, #ffffff 0%, #e5eef8 100%);
+}
+
+.lost-project-card h3 {
+  margin: 0;
+}
+
 .social-list {
   list-style: none;
   margin: 0.62rem 0 0;
@@ -2081,6 +2218,14 @@ main :where(p, li)[style*='text-align: center'] {
   .timeline-card {
     grid-template-columns: 1fr;
     gap: 0.66rem;
+  }
+
+  .academic-preview-card {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-video-grid {
+    grid-template-columns: 1fr;
   }
 
   .about-now-next-grid {

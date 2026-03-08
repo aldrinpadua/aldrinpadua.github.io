@@ -440,3 +440,99 @@ This file records major work completed in the repository on March 7, 2026.
 ### 20:50 ET
 - Replaced Skills hub octagon with a 34-sided polygon clip-path.
 - Synced the polygon shape for both the core element and its hover outline.
+
+### 22:18 ET
+- Removed duplicate ROS2 node from Home Skills animated logo wall.
+
+### 23:10 ET
+- Implemented new `Fun Academic Projects` hub page and three full detail article pages.
+- Added structured long-form project writeups for IK (Newton vs geometric), 8-DOF obstacle avoidance (TPRR vs APF), and Grass Level Monitor IoT.
+- Imported provided PDFs, source-code ZIPs, and obstacle demo video into `public/assets/academic-projects` and renamed to URL-safe asset names.
+- Extracted figure images from PDFs and integrated them into per-project galleries.
+- Added hub-page section buttons linking to each full project page, plus PDF/ZIP download buttons.
+- Updated Navbar and Footer with `Fun Academic Projects` navigation item.
+- Added CSS for new academic cards, media presentation, and responsive layout.
+- Ran `npm run build` successfully.
+
+### 23:13 ET
+- Updated Fun Academic Projects hub thumbnails to match user-requested project screenshots (IK + GLM).
+- Preserved video media rendering for the obstacle-avoidance project section.
+
+### 23:15 ET
+- Reaffirmed IK project thumbnail to requested multi-panel Newton screenshot and aligned first gallery figure accordingly.
+
+### 23:18 ET
+- Switched IK project image in Fun Academic Projects section box to `ik-044.png`.
+- No change to obstacle project video card behavior.
+
+### 23:17 ET
+- Added `ik-thumbnail-requested.png` and set IK hub section thumbnail to this dedicated requested image.
+
+### 23:18 ET
+- Set IK section-box thumbnail in Fun Academic Projects to `ik-038.png`.
+
+### 23:19 ET
+- Set Grass Level Monitor section-box thumbnail in Fun Academic Projects to `grass-thumbnail-requested.png`.
+
+### 23:20 ET
+- Set Grass Level Monitor hub section thumbnail to `grass-017.png`.
+
+### 23:22 ET
+- Enabled continuous autoplay looping for obstacle-avoidance project video on overview and detail pages.
+- Added muted/inline attributes to satisfy autoplay behavior in modern browsers.
+
+### 23:23 ET
+- Set obstacle-avoidance project videos to play at 2x speed on overview and full project pages.
+
+### 23:23 ET
+- Enforced white-background image presentation across article pages by updating `.academic-figure` and `.detail-article img` styles.
+
+### 23:25 ET
+- Converted all `public/assets/academic-projects/images/*.png` assets to white-background flattened PNGs using ImageMagick.
+
+### 23:29 ET
+- Added explicit numbered figure captions in academic project detail galleries.
+- Improved figure-caption styling for clarity.
+
+### 23:32 ET
+- Fixed black-background appearance in selected IK article figures by white-filling corner-connected dark backgrounds.
+
+### 23:32 ET
+- Simplified Fun Academic Project detail pages to embedded scrollable PDF format per request.
+- Removed detailed body sections, gallery extraction display, and detail-page video block.
+
+### 23:37 ET
+- Updated GLM hub caption text to remove `Requested GLM hub thumbnail:` prefix.
+
+### 23:39 ET
+- Updated IK hub caption text to remove `Requested Newton-method thumbnail:` prefix.
+
+### 23:40 ET
+- Centered caption text under Fun Academic Projects hub thumbnails.
+
+### 23:42 ET
+- Added single hub-only section for projects with lost documentation on Fun Academic Projects page.
+- Expanded each listed legacy project with concise technical detail bullets.
+
+### 23:53 ET
+- Added APF and TPRR side-by-side video comparison block to obstacle-avoidance article page.
+- Enabled autoplay + endless loop behavior for both clips.
+- Added responsive CSS so videos stack on small screens.
+
+### 23:55 ET
+- Updated obstacle article comparison videos to run at 2x playback speed.
+
+### 23:57 ET
+- Increased APF video speed in obstacle comparison block to 3x while keeping TPRR at 2x.
+
+### 23:59 ET
+- Centered APF/TPRR comparison video titles and captions in obstacle article page.
+
+### 00:00 ET
+- Implemented hover effects on Additional Projects section boxes (lift/shadow/border/background).
+
+### 00:01 ET
+- Updated Fun Academic Projects intro text to indicate page is a non-exhaustive, impact-focused subset of academic projects.
+
+### 00:04 ET
+- Expanded introductory copy across Fun Academic Projects page (header intro, additional-projects intro, and each project hub description).

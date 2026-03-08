@@ -1,0 +1,100 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { funAcademicProjects, type AcademicProject } from '../../data/funAcademicProjects';
+
+export function getStaticPaths() {
+  return funAcademicProjects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project }
+  }));
+}
+
+interface Props {
+  project: AcademicProject;
+}
+
+const { project } = Astro.props;
+---
+
+<MainLayout title={project.title} description={project.hubIntro}>
+  <article class="detail-article reveal">
+    <a class="back-link" href="/fun-academic-projects">← Back to Fun Academic Projects</a>
+
+    <header class="detail-header">
+      <p class="eyebrow-text">{project.course}</p>
+      <h1>{project.title}</h1>
+      <p class="muted-note">
+        <strong>Institution:</strong> {project.institution} • <strong>Year:</strong> {project.year}
+      </p>
+      <p>
+        Full documentation is embedded below for direct reading and scrolling.
+      </p>
+
+      <div class="link-row">
+        <a class="btn" href={project.pdfUrl} target="_blank" rel="noreferrer">Download documentation (PDF)</a>
+        {project.sourceCodeUrl && (
+          <a class="btn" href={project.sourceCodeUrl} target="_blank" rel="noreferrer">Download source code (ZIP)</a>
+        )}
+      </div>
+    </header>
+
+    {project.comparisonVideos && project.comparisonVideos.length > 0 && (
+      <section class="detail-panel" aria-label="Method comparison videos">
+        <h2>Method Comparison Videos</h2>
+        <div class="comparison-video-grid">
+          {
+            project.comparisonVideos.map((clip) => (
+              <article class="comparison-video-card">
+                <h3>{clip.label}</h3>
+                <video
+                  controls
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  data-playback-rate={String(clip.playbackRate ?? 2)}
+                  preload="metadata"
+                  poster={clip.poster}
+                >
+                  <source src={clip.src} type="video/mp4" />
+                </video>
+                <p class="muted-note">{clip.caption}</p>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+    )}
+
+    <section class="detail-panel academic-pdf-panel" aria-label="Embedded PDF documentation">
+      <h2>Project Documentation</h2>
+      <iframe
+        class="academic-pdf-viewer"
+        src={project.pdfUrl}
+        title={`${project.title} PDF documentation`}
+        loading="lazy"
+      ></iframe>
+      <p class="muted-note body-spacer">
+        If the PDF does not render in your browser, use the download button above.
+      </p>
+    </section>
+  </article>
+
+  <script>
+    const comparisonVideos = Array.from(document.querySelectorAll('video[data-playback-rate]'));
+    for (const video of comparisonVideos) {
+      const rate = Number(video.getAttribute('data-playback-rate') ?? '1');
+      if (!Number.isFinite(rate) || rate <= 0) continue;
+      video.defaultPlaybackRate = rate;
+      video.playbackRate = rate;
+      video.addEventListener(
+        'loadedmetadata',
+        () => {
+          video.defaultPlaybackRate = rate;
+          video.playbackRate = rate;
+        },
+        { once: true }
+      );
+    }
+  </script>
+</MainLayout>
