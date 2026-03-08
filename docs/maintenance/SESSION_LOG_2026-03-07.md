@@ -287,6 +287,22 @@ This file records major work completed in the repository on March 7, 2026.
 - Reworked navbar doodle motion into a dual-strip marquee for seamless continuous looping.
 - Switched navbar doodle animation from pseudo-element transform drift to background-position loop to remove reset snap.
 
+### 18:59 ET
+- Reworked Publications Google Scholar presentation to an end-of-page call-to-action button.
+- Unified Education hover behavior across all cards by removing special highlight-card visual divergence.
+- Added same hover-elevation style to Skills cards for consistency with other sections.
+- Updated Experience timeline card icons by role category for more relevant visual mapping.
+
+### 19:03 ET
+- Replaced About card icons with dedicated About-only icon variants (no reuse from other tabs/pages).
+- Added About-only icon color classes for summary/focus/research/approach sections.
+- Reduced navbar doodle marquee speed and shifted doodle vertical alignment to center motifs within navbar height.
+
+### 19:05 ET
+- Added Publications-only unique icon variants for the two publication cards and Scholar CTA button.
+- Updated Publications icon wiring to map unique icons per publication entry.
+- Removed Home skills square overlay layer by deleting the `.skill-bg-pan` element from the Home skills arena markup.
+
 ## Notable Constraints Enforced
 
 - No phone number published

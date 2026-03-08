@@ -4,6 +4,22 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 19:05 ET - Publications unique icon set + Home skills square overlay removal
+- Added publication-specific unique icons used only in Publications cards and Scholar CTA button
+- Updated Publications card icon mapping per entry so section visuals better match publication content while avoiding icon reuse across tabs
+- Removed Home skills `.skill-bg-pan` overlay element to fully eliminate remaining translucent square around the center octagon
+
+### 19:03 ET - About icon specificity + navbar doodle pacing/centering adjustment
+- Replaced About section card icons with dedicated About-only icons to avoid reusing icons from other tabs/pages
+- Added new icon color classes for About-only icon set to keep section-level visual distinction
+- Slowed navbar doodle marquee speed and vertically centered doodle strips for clearer full-figure visibility inside navbar height
+
+### 18:59 ET - Publications/education/skills/experience UI refinement pass
+- Moved Google Scholar on Publications to a clean end-of-page button CTA instead of showing the full raw URL inline
+- Normalized Education card hover consistency by removing special hover/base visual divergence on highlighted entries
+- Added the same hover interaction style to Skills cards for parity with other section cards
+- Updated Experience card icons to role-relevant visuals by category (research, teaching, industry)
+
 ### 18:51 ET - Navbar doodles expanded and converted to seamless marquee animation
 - Added a denser set of unique robotics/electronics/mechanics doodles in the navbar background layer
 - Replaced single-pass doodle movement with a dual-strip marquee setup for continuous seamless looping
