@@ -4,6 +4,16 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 19:21 ET - Home overview cards given subtle alternating themed backgrounds
+- Added per-card Home overview variant classes for Positioning, Current Work, Publication, and Technical Breadth cards
+- Applied subtle alternating gradient/radial backgrounds and left accent borders to differentiate cards while preserving professional tone
+- Added lightweight overlay sheen for visual depth without increasing visual noise
+
+### 19:20 ET - Education and Skills section icons made category-specific with unique colors
+- Updated Education section-card icons to map by field of study (mechanical, robotics, electrical, electronics/communications) with distinct per-section colors
+- Updated Skills section-card icons to map by skill category with unique per-category icon color classes
+- Kept tab-level heading icons unchanged while making in-page section icons more domain-relevant and visually differentiated
+
 ### 19:15 ET - Publications section icon colors decoupled from tab icon color
 - Updated Publications card section icons to use a dedicated in-page color palette
 - Kept tab-level Publications icon color unchanged while assigning distinct colors for per-entry section icons

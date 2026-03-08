@@ -732,6 +732,54 @@ main :where(p, li)[style*='text-align: center'] {
   color: #06b6d4;
 }
 
+.edu-icon-mech {
+  color: #2563eb;
+}
+
+.edu-icon-robotics {
+  color: #0891b2;
+}
+
+.edu-icon-electrical {
+  color: #f59e0b;
+}
+
+.edu-icon-electronics {
+  color: #8b5cf6;
+}
+
+.skill-icon-robotics {
+  color: #0284c7;
+}
+
+.skill-icon-simulation {
+  color: #7c3aed;
+}
+
+.skill-icon-programming {
+  color: #0ea5e9;
+}
+
+.skill-icon-cad {
+  color: #2563eb;
+}
+
+.skill-icon-hardware {
+  color: #059669;
+}
+
+.skill-icon-platforms {
+  color: #db2777;
+}
+
+.skill-icon-languages {
+  color: #ea580c;
+}
+
+.skill-icon-default {
+  color: #0891b2;
+}
+
 .section-card-head {
   display: flex;
   align-items: center;
@@ -991,6 +1039,48 @@ main :where(p, li)[style*='text-align: center'] {
   transform: translateY(-2px);
   border-color: #b5c8dc;
   box-shadow: 0 16px 30px rgba(17, 31, 46, 0.1);
+}
+
+.home-overview-card {
+  position: relative;
+  overflow: hidden;
+  border-left: 4px solid transparent;
+}
+
+.home-overview-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.2), transparent 62%);
+}
+
+.home-overview-positioning {
+  border-left-color: #2f84c6;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(87, 162, 224, 0.13), transparent 44%),
+    linear-gradient(180deg, #ffffff 0%, #f3f8fc 100%);
+}
+
+.home-overview-current {
+  border-left-color: #0aa88b;
+  background:
+    radial-gradient(circle at 84% 80%, rgba(85, 186, 166, 0.13), transparent 42%),
+    linear-gradient(180deg, #ffffff 0%, #f2faf7 100%);
+}
+
+.home-overview-publication {
+  border-left-color: #7c6af1;
+  background:
+    radial-gradient(circle at 24% 76%, rgba(138, 120, 236, 0.12), transparent 44%),
+    linear-gradient(180deg, #ffffff 0%, #f5f3fd 100%);
+}
+
+.home-overview-breadth {
+  border-left-color: #ea580c;
+  background:
+    radial-gradient(circle at 82% 22%, rgba(236, 143, 93, 0.12), transparent 40%),
+    linear-gradient(180deg, #ffffff 0%, #fdf5ef 100%);
 }
 
 .skills-intro-panel {

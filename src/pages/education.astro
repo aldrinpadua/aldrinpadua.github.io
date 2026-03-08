@@ -3,6 +3,22 @@ import MainLayout from '../layouts/MainLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import Icon from '../components/Icon.astro';
 import { education } from '../data/education';
+
+const educationIconMeta = (degree: string) => {
+  const lower = degree.toLowerCase();
+
+  if (lower.includes('mechanical')) {
+    return { icon: 'project', colorClass: 'edu-icon-mech' };
+  }
+  if (lower.includes('robotics')) {
+    return { icon: 'skills', colorClass: 'edu-icon-robotics' };
+  }
+  if (lower.includes('electrical')) {
+    return { icon: 'insight', colorClass: 'edu-icon-electrical' };
+  }
+
+  return { icon: 'experience', colorClass: 'edu-icon-electronics' };
+};
 ---
 
 <MainLayout title="Education" description="Academic progression and training in robotics and engineering.">
@@ -14,14 +30,17 @@ import { education } from '../data/education';
 
   <section class="timeline" aria-label="Education timeline">
     {
-      education.map((item, index) => (
+      education.map((item, index) => {
+        const eduIcon = educationIconMeta(item.degree);
+
+        return (
         <article class="timeline-card education-entry reveal">
           <div class="timeline-date">{item.completed}</div>
           <div>
             {index < 2 && <p class="role-badge role-badge-research">priority degree</p>}
             <div class="section-card-head">
               <span class="section-card-icon">
-                <Icon name="education" class="icon section-icon icon-education" />
+                <Icon name={eduIcon.icon} class={`icon section-icon ${eduIcon.colorClass}`} />
               </span>
               <h2>{item.degree}</h2>
             </div>
@@ -34,7 +53,8 @@ import { education } from '../data/education';
             </ul>
           </div>
         </article>
-      ))
+      );
+      })
     }
   </section>
 </MainLayout>

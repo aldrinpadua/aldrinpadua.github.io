@@ -12,28 +12,28 @@ import { skillGroups } from '../data/skills';
   <Hero />
 
   <section class="overview-grid" aria-label="Portfolio highlights">
-    <article class="card reveal">
+    <article class="card reveal home-overview-card home-overview-positioning">
       <p class="card-kicker">Positioning</p>
       <h2>Research-to-Implementation Engineering</h2>
       <p>{profile.professionalPositioning}</p>
       <a class="inline-link" href="/about">Read profile</a>
     </article>
 
-    <article class="card reveal">
+    <article class="card reveal home-overview-card home-overview-current">
       <p class="card-kicker">Current Work</p>
       <h2>Human-Safe Manipulation Research</h2>
       <p>{experience[0].bullets[1]}</p>
       <a class="inline-link" href="/experience">View experience</a>
     </article>
 
-    <article class="card reveal">
+    <article class="card reveal home-overview-card home-overview-publication">
       <p class="card-kicker">Publication</p>
       <h2>Latest First-Author Paper</h2>
       <p>{publications[0].title}</p>
       <a class="inline-link" href="/publications">View publications</a>
     </article>
 
-    <article class="card reveal">
+    <article class="card reveal home-overview-card home-overview-breadth">
       <p class="card-kicker">Technical Breadth</p>
       <h2>Core Capabilities</h2>
       <p>{skillGroups.slice(0, 4).map((group) => group.category).join(' • ')}</p>

@@ -315,6 +315,16 @@ This file records major work completed in the repository on March 7, 2026.
 - Updated Publications card icon classes so section icon colors differ from the tab-level Publications icon color.
 - Added dedicated per-entry Publications icon color variants for clearer in-page visual distinction.
 
+### 19:20 ET
+- Added Education field-specific icon mapping and unique colors per education section card.
+- Added Skills category-specific icon color classes so each skills section icon is visually distinct.
+- Updated Education/Skills in-page section icon rendering to use relevant icon + color metadata per section.
+
+### 19:21 ET
+- Added Home overview card-specific classes for Positioning, Current Work, Publication, and Technical Breadth.
+- Applied subtle alternating themed backgrounds and accent borders to improve section distinction while maintaining a professional look.
+- Added soft overlay sheen on Home overview cards for depth without heavy visual contrast.
+
 ## Notable Constraints Enforced
 
 - No phone number published
