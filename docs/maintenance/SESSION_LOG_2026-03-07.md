@@ -325,6 +325,19 @@ This file records major work completed in the repository on March 7, 2026.
 - Applied subtle alternating themed backgrounds and accent borders to improve section distinction while maintaining a professional look.
 - Added soft overlay sheen on Home overview cards for depth without heavy visual contrast.
 
+### 19:25 ET
+- Added a dedicated Education-only icon set with four new icons for each education section (PhD ME, MS Robotics, Diploma EE, BS ECE).
+- Updated Education section icon mapping to use those dedicated icons by degree content.
+- Renamed/applied Education icon color classes to match the new Education-only icon identifiers.
+
+### 19:27 ET
+- Added a dedicated Skills-only icon set (robotics, simulation, programming, CAD, hardware, platforms, languages).
+- Updated Skills section icon mapping to use the new Skills-only icon identifiers instead of shared icons from other tabs.
+
+### 19:28 ET
+- Added institution logo mapping in Education page and rendered a school logo for each education section entry.
+- Added Education institution-row/logo styles to align logos with institution/location metadata while preserving card readability.
+
 ## Notable Constraints Enforced
 
 - No phone number published

@@ -8,16 +8,22 @@ const educationIconMeta = (degree: string) => {
   const lower = degree.toLowerCase();
 
   if (lower.includes('mechanical')) {
-    return { icon: 'project', colorClass: 'edu-icon-mech' };
+    return { icon: 'edu-phd-me', colorClass: 'edu-icon-phd-me' };
   }
   if (lower.includes('robotics')) {
-    return { icon: 'skills', colorClass: 'edu-icon-robotics' };
+    return { icon: 'edu-ms-robotics', colorClass: 'edu-icon-ms-robotics' };
   }
   if (lower.includes('electrical')) {
-    return { icon: 'insight', colorClass: 'edu-icon-electrical' };
+    return { icon: 'edu-diploma-ee', colorClass: 'edu-icon-diploma-ee' };
   }
 
-  return { icon: 'experience', colorClass: 'edu-icon-electronics' };
+  return { icon: 'edu-bs-ece', colorClass: 'edu-icon-bs-ece' };
+};
+
+const educationLogoMap: Record<string, string> = {
+  'Stevens Institute of Technology': 'https://logo.clearbit.com/stevens.edu',
+  'International College of Auckland': 'https://logo.clearbit.com/ica.ac.nz',
+  'Mapua Institute of Technology': 'https://logo.clearbit.com/mapua.edu.ph'
 };
 ---
 
@@ -44,7 +50,18 @@ const educationIconMeta = (degree: string) => {
               </span>
               <h2>{item.degree}</h2>
             </div>
-            <p class="timeline-meta">{item.institution} • {item.location}</p>
+            <div class="education-institution-row">
+              {educationLogoMap[item.institution] && (
+                <img
+                  class="education-school-logo"
+                  src={educationLogoMap[item.institution]}
+                  alt={`${item.institution} logo`}
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
+              <p class="timeline-meta">{item.institution} • {item.location}</p>
+            </div>
             <ul class="bullet-list compact">
               {item.focus && <li><strong>Research Focus:</strong> {item.focus}</li>}
               {item.gpa && <li><strong>GPA:</strong> {item.gpa}</li>}

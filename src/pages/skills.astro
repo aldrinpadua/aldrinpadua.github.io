@@ -7,14 +7,14 @@ import { skillGroups } from '../data/skills';
 const skillThemes = ['skill-theme-a', 'skill-theme-b', 'skill-theme-c', 'skill-theme-d'];
 
 const iconForCategory = (category: string) => {
-  if (category.includes('Robotics') || category.includes('Controls')) return { icon: 'experience', colorClass: 'skill-icon-robotics' };
-  if (category.includes('Simulation') || category.includes('AI')) return { icon: 'insight', colorClass: 'skill-icon-simulation' };
-  if (category.includes('Programming')) return { icon: 'project', colorClass: 'skill-icon-programming' };
-  if (category.includes('CAD') || category.includes('Engineering Tools')) return { icon: 'education', colorClass: 'skill-icon-cad' };
-  if (category.includes('Hardware') || category.includes('Prototyping')) return { icon: 'skills', colorClass: 'skill-icon-hardware' };
-  if (category.includes('Platforms') || category.includes('Software')) return { icon: 'contact', colorClass: 'skill-icon-platforms' };
-  if (category.includes('Languages')) return { icon: 'about', colorClass: 'skill-icon-languages' };
-  return { icon: 'skills', colorClass: 'skill-icon-default' };
+  if (category.includes('Robotics') || category.includes('Controls')) return { icon: 'sk-robotics', colorClass: 'skill-icon-robotics' };
+  if (category.includes('Simulation') || category.includes('AI')) return { icon: 'sk-simulation', colorClass: 'skill-icon-simulation' };
+  if (category.includes('Programming')) return { icon: 'sk-programming', colorClass: 'skill-icon-programming' };
+  if (category.includes('CAD') || category.includes('Engineering Tools')) return { icon: 'sk-cad', colorClass: 'skill-icon-cad' };
+  if (category.includes('Hardware') || category.includes('Prototyping')) return { icon: 'sk-hardware', colorClass: 'skill-icon-hardware' };
+  if (category.includes('Platforms') || category.includes('Software')) return { icon: 'sk-platforms', colorClass: 'skill-icon-platforms' };
+  if (category.includes('Languages')) return { icon: 'sk-languages', colorClass: 'skill-icon-languages' };
+  return { icon: 'sk-robotics', colorClass: 'skill-icon-default' };
 };
 ---
 

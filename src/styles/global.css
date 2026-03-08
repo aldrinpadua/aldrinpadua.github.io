@@ -732,19 +732,19 @@ main :where(p, li)[style*='text-align: center'] {
   color: #06b6d4;
 }
 
-.edu-icon-mech {
+.edu-icon-phd-me {
   color: #2563eb;
 }
 
-.edu-icon-robotics {
+.edu-icon-ms-robotics {
   color: #0891b2;
 }
 
-.edu-icon-electrical {
+.edu-icon-diploma-ee {
   color: #f59e0b;
 }
 
-.edu-icon-electronics {
+.edu-icon-bs-ece {
   color: #8b5cf6;
 }
 
@@ -1530,6 +1530,23 @@ main :where(p, li)[style*='text-align: center'] {
 
 .education-entry {
   border-left: 3px solid #2e3339;
+}
+
+.education-institution-row {
+  display: flex;
+  align-items: center;
+  gap: 0.62rem;
+}
+
+.education-school-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #c7d1dc;
+  background: #fff;
+  object-fit: contain;
+  flex-shrink: 0;
+  box-shadow: 0 6px 12px rgba(24, 37, 53, 0.08);
 }
 
 .publication-list {

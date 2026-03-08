@@ -4,6 +4,31 @@ All significant changes are listed here in reverse chronological order.
 
 ## 2026-03-07
 
+### 19:28 ET - Education section entries now show institution logos
+- Added school-logo rendering for each Education section using institution-to-logo mapping
+- Integrated logos into a dedicated institution row beside school/location metadata
+- Added compact logo styling (size, border, fit, and spacing) to keep timeline cards readable and professional
+
+### 19:27 ET - Skills section icons replaced with Skills-only unique icon set
+- Added dedicated Skills-only icon glyphs for each Skills section category:
+  - `sk-robotics`
+  - `sk-simulation`
+  - `sk-programming`
+  - `sk-cad`
+  - `sk-hardware`
+  - `sk-platforms`
+  - `sk-languages`
+- Updated Skills icon mapping to use these dedicated icons so section icons are unique and not reused from other tabs/pages
+
+### 19:25 ET - Education section icons replaced with Education-only unique icon set
+- Added four new Education-specific icon glyphs used only in Education sections:
+  - `edu-phd-me`
+  - `edu-ms-robotics`
+  - `edu-diploma-ee`
+  - `edu-bs-ece`
+- Updated Education icon mapping to use these dedicated icons per degree/field so icons are specific to section content and not reused elsewhere
+- Updated Education icon color class names to match the new Education-only icon system
+
 ### 19:21 ET - Home overview cards given subtle alternating themed backgrounds
 - Added per-card Home overview variant classes for Positioning, Current Work, Publication, and Technical Breadth cards
 - Applied subtle alternating gradient/radial backgrounds and left accent borders to differentiate cards while preserving professional tone
