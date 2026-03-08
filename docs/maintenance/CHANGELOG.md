@@ -413,3 +413,7 @@ All significant changes are listed here in reverse chronological order.
 - Added stronger interactive hover/focus styling for the Home `SKILLS` octagon hub to signal clickability.
 - Added pointer cursor, lift/scale animation, brighter border/background treatment, and a soft outer glow ring on hover/focus-visible.
 - Preserved octagon geometry for both base and hover ring layers.
+
+### 20:05 ET - Removed redundant Skills overview panel
+- Removed the extra Skills overview section text block from the Skills page to avoid repeating the SectionHeading intro.
+- Deleted now-unused `.skills-intro-panel` style rule from global stylesheet.
