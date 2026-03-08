@@ -408,3 +408,8 @@ All significant changes are listed here in reverse chronological order.
 ### 19:56 ET - Experience employer website links
 - Added employer hyperlink mapping in the Experience tab for Stevens Institute of Technology, World Information System Solution Inc., and Accenture Inc.
 - Updated experience organization rendering so mapped employers are clickable (open in new tab) while preserving plain-text fallback for unmatched organizations.
+
+### 20:02 ET - Clickability hover cue for Home skills hub
+- Added stronger interactive hover/focus styling for the Home `SKILLS` octagon hub to signal clickability.
+- Added pointer cursor, lift/scale animation, brighter border/background treatment, and a soft outer glow ring on hover/focus-visible.
+- Preserved octagon geometry for both base and hover ring layers.

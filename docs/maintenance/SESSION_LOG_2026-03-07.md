@@ -400,3 +400,7 @@ This file records major work completed in the repository on March 7, 2026.
 ### 19:56 ET
 - Added employer website links to Experience entries for Stevens, WISS, and Accenture.
 - Updated Experience timeline organization line to render linked employer names with fallback to plain text for unmatched entries.
+
+### 20:02 ET
+- Enhanced Home Skills hub octagon hover state to better indicate it is clickable.
+- Added cursor pointer, hover/focus scale-lift motion, stronger border tint, and outer glow ring.
